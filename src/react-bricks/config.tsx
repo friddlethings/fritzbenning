@@ -1,16 +1,15 @@
 import { navigate } from 'gatsby'
 import { types } from 'react-bricks'
-
 import bricks from './bricks'
-import pageTypes from './pageTypes'
 import GatsbyLink from './GatsbyLink'
+import pageTypes from './pageTypes'
 
 const config: types.ReactBricksConfig = {
   appId: process.env.GATSBY_APP_ID,
   apiKey: process.env.API_KEY,
   pageTypes,
   bricks,
-  logo: '/logo.svg',
+  logo: '/ux-tollerei-logo.svg',
   //contentClassName: 'content',
   // isDarkColorMode: ...,
   // toggleColorMode: ...,
