@@ -1,0 +1,8 @@
+$grid-size: 12;
+$dm-size: 8px;
+
+@function dm($multiplier) {
+  $result: $dm-size * $multiplier;
+
+  @return $result;
+}

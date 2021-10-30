@@ -1,0 +1,71 @@
+@import '../../styles/breakpoints.scss';
+@import '../../styles/layout.scss';
+
+.column {
+  display: flex;
+  flex: 0 0 auto;
+
+  @for $i from 1 through $grid-size {
+    &.xs-#{$i} {
+      flex-basis: 100% / $grid-size * $i;
+    }
+  }
+
+  @each $breakpoint, $value in $breakpoints {
+    @for $i from 1 through $grid-size {
+      &.#{$breakpoint}-#{$i} {
+        @include breakpoint($breakpoint) {
+          flex-basis: 100% / $grid-size * $i;
+        }
+      }
+    }
+  }
+
+  &.justify-left {
+    justify-content: flex-start;
+  }
+
+  @each $breakpoint, $value in $breakpoints {
+    &.justify-#{$breakpoint}-left {
+      @include breakpoint($breakpoint) {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &.justify-center {
+    justify-content: center;
+  }
+
+  @each $breakpoint, $value in $breakpoints {
+    &.justify-#{$breakpoint}-center {
+      @include breakpoint($breakpoint) {
+        justify-content: center;
+      }
+    }
+  }
+
+  &.justify-right {
+    justify-content: flex-end;
+  }
+
+  @each $breakpoint, $value in $breakpoints {
+    &.justify-#{$breakpoint}-right {
+      @include breakpoint($breakpoint) {
+        justify-content: right;
+      }
+    }
+  }
+
+  &.align-top {
+    align-items: flex-start;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.align-bottom {
+    align-items: flex-end;
+  }
+}

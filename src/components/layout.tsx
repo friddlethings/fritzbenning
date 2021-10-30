@@ -1,13 +1,13 @@
 import React from 'react'
-
-import Header from './header'
 import Footer from './footer'
+import Header from './header'
+import './layout.scss'
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <div className="flex flex-col h-screen justify-between antialiased">
+    <div className="layout">
       <Header />
-      <main className="mb-auto">{children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
   )

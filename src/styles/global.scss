@@ -1,4 +1,19 @@
+@import './variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
 body {
   font-family: 'HK Grotesk', sans-serif;
-  font-weight: 400;
+  font-weight: $fw-regular;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
