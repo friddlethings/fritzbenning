@@ -1,8 +1,8 @@
+import 'normalize.css'
 import React from 'react'
 import { ReactBricks } from 'react-bricks'
-
 import config from './src/react-bricks/config'
-import './src/css/style.css'
+import './src/styles/index.scss'
 
 // Wraps every page in ReactBricks component
 export const wrapPageElement = ({ element }) => {
