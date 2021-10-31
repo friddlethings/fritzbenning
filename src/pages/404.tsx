@@ -1,14 +1,13 @@
 import React from 'react'
-
-import Layout from '../components/layout'
+import PageTemplate from '../components/PageTemplate'
 import Seo from '../components/seo'
 
 const NotFoundPage: React.FC = () => (
-  <Layout>
+  <PageTemplate>
     <Seo title="404: Not found" />
     <h1>NOT FOUND</h1>
     <p>This page doesn't exist.</p>
-  </Layout>
+  </PageTemplate>
 )
 
 export default NotFoundPage

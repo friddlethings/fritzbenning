@@ -1,0 +1,31 @@
+@import '../styles/layout.scss';
+
+.main-nav {
+  &__list {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      padding: 0 0 0 dm(3.5);
+
+      &__link {
+        font-size: 1.7rem;
+        transition: color 0.2s;
+
+        &:hover {
+          color: #ccc;
+        }
+
+        &.is-active {
+          color: blue;
+
+          &:hover {
+            color: blue;
+          }
+        }
+      }
+    }
+  }
+}

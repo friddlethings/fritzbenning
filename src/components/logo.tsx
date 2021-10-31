@@ -1,5 +1,5 @@
 import React from 'react'
-import './logo.scss'
+import './Logo.scss'
 
 const Logo: React.FC = () => <div className="logo">UX & Tollerei</div>
 

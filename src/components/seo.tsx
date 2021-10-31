@@ -8,12 +8,17 @@ interface SeoProps {
   meta?: HTMLMetaElement[]
 }
 
-const Seo: React.FC<SeoProps> = ({ title = '', description = '', lang = 'en', meta = [] }) => {
+const Seo: React.FC<SeoProps> = ({
+  title = '',
+  description = '',
+  lang = 'en',
+  meta = [],
+}) => {
   return (
     <Helmet
       htmlAttributes={{ lang }}
       title={title}
-      titleTemplate={`%s | React Bricks`}
+      titleTemplate={`%s | Fritz Benning`}
       meta={[
         {
           name: `description`,
