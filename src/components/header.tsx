@@ -2,8 +2,9 @@ import { Link } from 'gatsby'
 import React from 'react'
 import Column from './grid/column'
 import Row from './grid/row'
-import './header.scss'
+import './Header.scss'
 import Logo from './logo'
+import MainNav from './mainNav'
 
 const Header: React.FC = () => (
   <header className="header">
@@ -14,9 +15,7 @@ const Header: React.FC = () => (
         </Link>
       </Column>
       <Column xs={12} m={8} justify="left" mJustify="right">
-        <Link to="/ueber-mich">Fritz</Link>
-        <Link to="/sideprojects">Sideprojects</Link>
-        <Link to="/fotografie">Fotografie</Link>
+        <MainNav />
       </Column>
     </Row>
   </header>

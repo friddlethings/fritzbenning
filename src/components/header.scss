@@ -1,5 +1,7 @@
 @import '../styles/layout.scss';
 
 .header {
-  margin: dm(4) 0;
+  padding: dm(5) dm(3) dm(12) dm(3);
+  max-width: $max-width;
+  margin: 0 auto;
 }
