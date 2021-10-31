@@ -1,13 +1,19 @@
 @import '../styles/layout.scss';
+@import '../styles/variables.scss';
 
 .footer {
-  color: black;
+  color: $primary;
   font-size: 1.6rem;
-  background-color: #eee;
+  background-color: $primary-10;
+  margin-top: dm(20);
 
   &__inner {
     padding: dm(8) dm(3) dm(8) dm(3);
     max-width: $max-width;
     margin: 0 auto;
+  }
+
+  &__copyright {
+    text-align: right;
   }
 }

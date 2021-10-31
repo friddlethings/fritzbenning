@@ -11,8 +11,10 @@ const Footer = () => {
           <Column xs={12} m={6}>
             UX & Tollerei – Fritz Benning
           </Column>
-          <Column xs={12} m={6} mJustify="right">
-            © {new Date().getFullYear()} Fritz Benning
+          <Column xs={12} m={6}>
+            <div className="footer__copyright">
+              © {new Date().getFullYear()} Fritz Benning
+            </div>
           </Column>
         </Row>
       </div>

@@ -1,5 +1,7 @@
 import React from 'react'
 import { Text, types } from 'react-bricks'
+import Column from '../../components/grid/column'
+import Row from '../../components/grid/row'
 import './PageStage.scss'
 
 interface PageStageProps {
@@ -10,16 +12,24 @@ interface PageStageProps {
 const PageStage: types.Brick<PageStageProps> = () => {
   return (
     <div className="page-stage">
-      <Text
-        renderBlock={(props) => <h1>{props.children}</h1>}
-        placeholder="Wie soll die Seite heißen?"
-        propName="title"
-      />
-      <Text
-        renderBlock={(props) => <h4>{props.children}</h4>}
-        placeholder="Ein aussagekräftiger Einleitungstext"
-        propName="text"
-      />
+      <Row>
+        <Column xs={12}>
+          <Text
+            renderBlock={(props) => (
+              <h1 className="page-stage__title">{props.children}</h1>
+            )}
+            placeholder="Wie soll die Seite heißen?"
+            propName="title"
+          />
+          <Text
+            renderBlock={(props) => (
+              <h2 className="page-stage__text">{props.children}</h2>
+            )}
+            placeholder="Ein aussagekräftiger Einleitungstext"
+            propName="text"
+          />
+        </Column>
+      </Row>
     </div>
   )
 }

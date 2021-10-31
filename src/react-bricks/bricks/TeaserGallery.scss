@@ -1,0 +1,7 @@
+@import '../../styles/layout.scss';
+
+.teaser-gallery {
+  @include contrained;
+
+  margin-top: dm(12);
+}

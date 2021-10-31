@@ -1,7 +1,9 @@
 @import '../styles/layout.scss';
+@import '../styles/variables.scss';
 
 .main-nav {
   &__list {
+    justify-content: flex-end;
     list-style-type: none;
     display: flex;
     margin: 0;
@@ -15,14 +17,14 @@
         transition: color 0.2s;
 
         &:hover {
-          color: #ccc;
+          color: $primary-50;
         }
 
         &.is-active {
-          color: blue;
+          color: $secondary;
 
           &:hover {
-            color: blue;
+            color: $secondary;
           }
         }
       }

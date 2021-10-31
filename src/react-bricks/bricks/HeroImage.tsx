@@ -1,5 +1,7 @@
 import React from 'react'
 import { Image, Text, types } from 'react-bricks'
+import Column from '../../components/grid/column'
+import Row from '../../components/grid/row'
 import './HeroImage.scss'
 
 interface HeroImageProps {
@@ -10,19 +12,25 @@ interface HeroImageProps {
 const HeroImage: types.Brick<HeroImageProps> = () => {
   return (
     <div className="hero-image">
-      <Image
-        propName="image"
-        alt="Icon"
-        imageClassName="hero-image__inner"
-        maxWidth={2024}
-      />
-      <Text
-        renderBlock={(props) => (
-          <caption className="hero-image__caption">{props.children}</caption>
-        )}
-        placeholder="Optionaler Titel des Bildes"
-        propName="title"
-      />
+      <Row>
+        <Column xs={12}>
+          <Image
+            propName="image"
+            alt="Icon"
+            imageClassName="hero-image__inner"
+            maxWidth={2024}
+          />
+          <Text
+            renderBlock={(props) => (
+              <caption className="hero-image__caption">
+                {props.children}
+              </caption>
+            )}
+            placeholder="Optionaler Titel des Bildes"
+            propName="title"
+          />
+        </Column>
+      </Row>
     </div>
   )
 }

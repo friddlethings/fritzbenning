@@ -11,9 +11,10 @@ html {
 body {
   font-family: 'HK Grotesk', sans-serif;
   font-weight: $fw-regular;
+  color: $primary;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: $primary;
 }

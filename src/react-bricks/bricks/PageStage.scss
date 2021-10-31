@@ -1,5 +1,10 @@
 @import '../../styles/layout.scss';
+@import '../../styles/variables.scss';
 
 .page-stage {
   @include contrained;
+
+  &__text {
+    color: $primary-50;
+  }
 }
