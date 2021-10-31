@@ -1,0 +1,13 @@
+@import '../styles/layout.scss';
+
+.footer {
+  color: black;
+  font-size: 1.6rem;
+  background-color: #eee;
+
+  &__inner {
+    padding: dm(8) dm(3) dm(8) dm(3);
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+}
