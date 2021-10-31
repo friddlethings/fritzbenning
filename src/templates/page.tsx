@@ -3,7 +3,7 @@ import { cleanPage, PageViewer, ReactBricksContext, types } from 'react-bricks'
 import ErrorNoHomePage from '../components/errorNoHomePage'
 import ErrorNoKeys from '../components/errorNoKeys'
 import PageTemplate from '../components/PageTemplate'
-import Seo from '../components/Seo'
+import Seo from '../components/seo'
 
 interface ReactBricksPageProps {
   pageContext: {
