@@ -1,0 +1,9 @@
+@import '../../styles/layout.scss';
+
+.hero-image {
+  @include contrained;
+
+  &__inner {
+    width: 100%;
+  }
+}
