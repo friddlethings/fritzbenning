@@ -1,0 +1,17 @@
+@import './variables.scss';
+@import './layout.scss';
+
+h1 {
+  font-size: 4rem;
+  line-height: 5.2rem;
+  font-weight: $fw-medium;
+  margin: 0 0 dm(2) 0;
+}
+
+h4 {
+  font-size: 3.2rem;
+  line-height: 4.16rem;
+  color: #ccc;
+  font-weight: $fw-regular;
+  margin: 0 0 dm(1) 0;
+}
