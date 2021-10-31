@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { cleanPage, PageViewer, ReactBricksContext, types } from 'react-bricks'
 import ErrorNoHomePage from '../components/errorNoHomePage'
 import ErrorNoKeys from '../components/errorNoKeys'
-import Layout from '../components/layout'
-import Seo from '../components/seo'
+import PageTemplate from '../components/PageTemplate'
+import Seo from '../components/Seo'
 
 interface ReactBricksPageProps {
   pageContext: {
@@ -22,7 +22,7 @@ const Page: React.FC<ReactBricksPageProps> = ({
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
 
   return (
-    <Layout>
+    <PageTemplate>
       {pageOk && (
         <>
           <Seo
@@ -36,7 +36,7 @@ const Page: React.FC<ReactBricksPageProps> = ({
       )}
       {error === 'NOKEYS' && <ErrorNoKeys />}
       {error === 'NOPAGE' && <ErrorNoHomePage />}
-    </Layout>
+    </PageTemplate>
   )
 }
 

@@ -1,3 +1,4 @@
+$max-width: 1024px;
 $grid-size: 12;
 $dm-size: 8px;
 
@@ -5,4 +6,10 @@ $dm-size: 8px;
   $result: $dm-size * $multiplier;
 
   @return $result;
+}
+
+@mixin contrained {
+  padding: 0 dm(3) 0 dm(3);
+  max-width: $max-width;
+  margin: 0 auto;
 }
