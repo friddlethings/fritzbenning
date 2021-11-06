@@ -9,12 +9,15 @@ const Footer = () => {
       <div className="footer__inner">
         <Row>
           <Column xs={12} m={6}>
-            UX & Tollerei – Fritz Benning
+            UX & Tollerei / © {new Date().getFullYear()} Fritz Benning
           </Column>
           <Column xs={12} m={6}>
-            <div className="footer__copyright">
-              © {new Date().getFullYear()} Fritz Benning
-            </div>
+            <nav className="footer__copyright">
+              <ul>
+                <li>Say Hi</li>
+                <li>Impressum</li>
+              </ul>
+            </nav>
           </Column>
         </Row>
       </div>
