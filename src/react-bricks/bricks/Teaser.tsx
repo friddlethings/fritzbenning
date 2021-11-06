@@ -18,6 +18,7 @@ const Teaser: types.Brick<TeaserProps> = ({ ...rest }) => {
             alt="Icon"
             imageClassName="teaser__inner__image"
             maxWidth={2048}
+            aspectRatio="1.33"
           />
         </div>
         <div className="teaser__caption">
