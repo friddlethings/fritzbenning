@@ -4,6 +4,10 @@
 .page-stage {
   @include contrained;
 
+  &__inner {
+    max-width: 840px;
+  }
+
   &__text {
     color: $primary-50;
   }

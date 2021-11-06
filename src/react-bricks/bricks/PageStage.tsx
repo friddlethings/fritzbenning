@@ -14,20 +14,22 @@ const PageStage: types.Brick<PageStageProps> = () => {
     <div className="page-stage">
       <Row>
         <Column xs={12}>
-          <Text
-            renderBlock={(props) => (
-              <h1 className="page-stage__title">{props.children}</h1>
-            )}
-            placeholder="Wie soll die Seite heißen?"
-            propName="title"
-          />
-          <Text
-            renderBlock={(props) => (
-              <h2 className="page-stage__text">{props.children}</h2>
-            )}
-            placeholder="Ein aussagekräftiger Einleitungstext"
-            propName="text"
-          />
+          <div className="page-stage__inner">
+            <Text
+              renderBlock={(props) => (
+                <h1 className="page-stage__title">{props.children}</h1>
+              )}
+              placeholder="Wie soll die Seite heißen?"
+              propName="title"
+            />
+            <Text
+              renderBlock={(props) => (
+                <h2 className="page-stage__text">{props.children}</h2>
+              )}
+              placeholder="Ein aussagekräftiger Einleitungstext"
+              propName="text"
+            />
+          </div>
         </Column>
       </Row>
     </div>
