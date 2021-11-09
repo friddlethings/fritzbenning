@@ -1,0 +1,12 @@
+@import '../styles/layout.scss';
+
+.brick {
+  &--contrained {
+    @include contrained;
+  }
+
+  &--displaced {
+    padding-top: dm(5);
+    padding-bottom: dm(5);
+  }
+}

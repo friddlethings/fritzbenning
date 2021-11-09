@@ -7,7 +7,23 @@ const pageTypes: types.IPageType[] = [
     defaultLocked: false,
     defaultStatus: types.PageStatus.Published,
     defaultLanguage: 'en',
-    getDefaultContent: () => [],
+    getDefaultContent: () => ['page-stage'],
+  },
+  {
+    name: 'doorpage',
+    pluralName: 'doorpages',
+    defaultLocked: false,
+    defaultStatus: types.PageStatus.Published,
+    defaultLanguage: 'en',
+    getDefaultContent: () => ['page-stage'],
+  },
+  {
+    name: 'post',
+    pluralName: 'posts',
+    defaultLocked: false,
+    defaultStatus: types.PageStatus.Published,
+    defaultLanguage: 'en',
+    getDefaultContent: () => ['page-stage'],
   },
 ]
 

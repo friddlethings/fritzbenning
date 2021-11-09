@@ -1,5 +1,6 @@
 import React from 'react'
 import { Image, Text, types } from 'react-bricks'
+import Brick from '../../components/Brick'
 import Column from '../../components/grid/column'
 import Row from '../../components/grid/row'
 import './HeroImage.scss'
@@ -11,7 +12,7 @@ interface HeroImageProps {
 
 const HeroImage: types.Brick<HeroImageProps> = () => {
   return (
-    <div className="hero-image">
+    <Brick className="hero-image" contrained displaced>
       <Row>
         <Column xs={12}>
           <Image
@@ -31,7 +32,7 @@ const HeroImage: types.Brick<HeroImageProps> = () => {
           />
         </Column>
       </Row>
-    </div>
+    </Brick>
   )
 }
 

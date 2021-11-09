@@ -16,7 +16,7 @@ $dm-size: 8px;
 }
 
 @mixin contrained {
-  padding: 0 dm(3) 0 dm(3);
   max-width: $max-width;
+  padding: 0 dm(3) 0 dm(3);
   margin: 0 auto;
 }

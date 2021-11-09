@@ -1,7 +1,12 @@
 @import '../styles/layout.scss';
 
 .page-template {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+
   &__main {
-    min-height: calc(100vh - 310px);
+    flex-grow: 1;
   }
 }

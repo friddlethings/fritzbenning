@@ -2,8 +2,6 @@
 @import '../../styles/variables.scss';
 
 .page-stage {
-  @include contrained;
-
   &__inner {
     max-width: 840px;
   }

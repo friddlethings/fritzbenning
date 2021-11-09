@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text, types } from 'react-bricks'
+import Brick from '../../components/Brick'
 import Column from '../../components/grid/column'
 import Row from '../../components/grid/row'
 import './PageStage.scss'
@@ -11,7 +12,7 @@ interface PageStageProps {
 
 const PageStage: types.Brick<PageStageProps> = () => {
   return (
-    <div className="page-stage">
+    <Brick className="page-stage" contrained displaced>
       <Row>
         <Column xs={12}>
           <div className="page-stage__inner">
@@ -32,7 +33,7 @@ const PageStage: types.Brick<PageStageProps> = () => {
           </div>
         </Column>
       </Row>
-    </div>
+    </Brick>
   )
 }
 

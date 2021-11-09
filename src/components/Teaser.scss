@@ -1,0 +1,63 @@
+@import '../styles/layout.scss';
+@import '../styles/variables.scss';
+
+.teaser {
+  a {
+    color: $primary;
+  }
+
+  &:hover {
+    a {
+      color: $secondary;
+    }
+  }
+
+  &__inner {
+    overflow: hidden;
+
+    &__image {
+      width: 100%;
+      height: auto;
+      transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1),
+        filter 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+      display: block;
+      filter: grayscale(100) contrast(110%);
+
+      &:hover {
+        transform: scale(1.04);
+        filter: grayscale(0) contrast(100%);
+      }
+    }
+  }
+
+  &__caption {
+    padding: dm(1) 0 0 0;
+    color: currentColor;
+  }
+
+  &__title {
+    padding: dm(2) 0 0 0;
+    color: currentColor;
+    transition: color 0.3s;
+  }
+
+  &__tags {
+    list-style-type: none;
+    margin: 0;
+    padding: dm(0.5) 0 0 0;
+    display: flex;
+
+    &__item {
+      font-size: 1.4rem;
+      line-height: lh(1.4rem);
+      margin: 0;
+      padding: 0 dm(1) 0 0;
+      transition: color 0.3s;
+      text-transform: uppercase;
+
+      &:hover {
+        color: currentColor;
+      }
+    }
+  }
+}

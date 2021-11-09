@@ -1,9 +1,12 @@
 @import '../../styles/layout.scss';
 
 .hero-image {
-  @include contrained;
-
   &__inner {
     width: 100%;
+  }
+
+  &__caption {
+    margin-top: dm(2);
+    font-size: 1.7rem;
   }
 }

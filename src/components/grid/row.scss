@@ -1,6 +1,9 @@
+@import '../../styles/layout.scss';
+
 .row {
   display: flex;
   flex-wrap: wrap;
+  gap: dm(8) 0;
 
   &.align-top {
     align-items: flex-start;

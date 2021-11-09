@@ -6,6 +6,7 @@
   font-size: 1.6rem;
   background-color: $primary-10;
   margin-top: dm(20);
+  flex-grow: 0;
 
   &__inner {
     padding: dm(8) dm(3) dm(8) dm(3);
@@ -13,7 +14,19 @@
     margin: 0 auto;
   }
 
-  &__copyright {
+  &__nav {
     text-align: right;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+
+      li {
+        margin: 0 0 0 dm(3);
+      }
+    }
   }
 }

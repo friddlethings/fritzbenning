@@ -14,11 +14,6 @@
 
       &__link {
         font-size: 1.7rem;
-        transition: color 0.2s;
-
-        &:hover {
-          color: $primary-50;
-        }
 
         &.is-active {
           color: $secondary;

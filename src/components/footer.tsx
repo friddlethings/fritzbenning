@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import './Footer.scss'
 import Column from './grid/column'
@@ -9,13 +10,19 @@ const Footer = () => {
       <div className="footer__inner">
         <Row>
           <Column xs={12} m={6}>
-            UX & Tollerei / © {new Date().getFullYear()} Fritz Benning
+            UX & Tollerei © {new Date().getFullYear()} Fritz Benning
           </Column>
           <Column xs={12} m={6}>
-            <nav className="footer__copyright">
+            <nav className="footer__nav">
               <ul>
-                <li>Say Hi</li>
-                <li>Impressum</li>
+                <li>
+                  <a href="mailto:mail@fritzbenning.de">Say Hi</a>
+                </li>
+                <li>
+                  <Link to="/impressum" activeClassName="is-active">
+                    Impressum
+                  </Link>
+                </li>
               </ul>
             </nav>
           </Column>
