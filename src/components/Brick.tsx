@@ -5,22 +5,26 @@ import './Brick.scss'
 interface BrickProps {
   children: React.ReactNode
   className?: string
-  contrained?: boolean
   displaced?: boolean
+  width?: 'full' | 'default' | 'content'
+  paddingTop?: boolean
+  paddingBottom?: boolean
 }
 
 const Brick: React.FC<BrickProps> = ({
   children,
   className,
-  contrained,
-  displaced,
+  width,
+  paddingTop,
+  paddingBottom,
 }) => {
   return (
     <div
       className={cx({
         brick: true,
-        [`brick--contrained`]: contrained,
-        [`brick--displaced`]: displaced,
+        [`brick--${width}`]: width,
+        [`brick--withPaddingTop`]: paddingTop,
+        [`brick--withPaddingBottom`]: paddingBottom,
         [`${className}`]: className,
       })}
     >
@@ -30,8 +34,9 @@ const Brick: React.FC<BrickProps> = ({
 }
 
 Brick.defaultProps = {
-  contrained: false,
-  displaced: false,
+  width: 'default',
+  paddingTop: true,
+  paddingBottom: true,
 }
 
 export default Brick

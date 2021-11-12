@@ -4,6 +4,7 @@ import './column.scss'
 
 interface ColumnProps {
   children: React.ReactNode
+  noGutter?: boolean
   xs?: number
   s?: number
   m?: number
@@ -11,10 +12,19 @@ interface ColumnProps {
   xl?: number
 }
 
-const Column: React.FC<ColumnProps> = ({ children, xs, s, m, l, xl }) => (
+const Column: React.FC<ColumnProps> = ({
+  children,
+  noGutter,
+  xs,
+  s,
+  m,
+  l,
+  xl,
+}) => (
   <div
     className={cx({
       column: true,
+      'column--noGutter': noGutter,
       [`xs-${xs}`]: xs,
       [`s-${s}`]: s,
       [`m-${m}`]: m,
@@ -25,5 +35,9 @@ const Column: React.FC<ColumnProps> = ({ children, xs, s, m, l, xl }) => (
     {children}
   </div>
 )
+
+Column.defaultProps = {
+  noGutter: false,
+}
 
 export default Column

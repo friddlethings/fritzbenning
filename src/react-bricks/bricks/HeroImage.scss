@@ -3,10 +3,16 @@
 .hero-image {
   &__inner {
     width: 100%;
+
+    img {
+      display: block;
+    }
   }
 
   &__caption {
     margin-top: dm(2);
-    font-size: 1.7rem;
+    font-size: 1.6rem;
+    text-align: center;
+    display: block;
   }
 }

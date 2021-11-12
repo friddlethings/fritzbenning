@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { types, useAdminContext, usePages, usePagesPublic } from 'react-bricks'
 import Brick from '../../components/Brick'
-import Column from '../../components/grid/column'
-import Row from '../../components/grid/row'
+import Column from '../../components/grid/Column'
+import Row from '../../components/grid/Row'
 import Teaser from '../../components/Teaser'
 import './PostGallery.scss'
 
@@ -66,8 +66,8 @@ const PostGallery: types.Brick<PostGalleryProps> = ({ tag, category }) => {
   }
 
   return (
-    <Brick className="teaser-gallery" contrained displaced>
-      <Row>{isAdmin ? <AdminView /> : <FrontendView />}</Row>
+    <Brick className="teaser-gallery" displaced>
+      <Row verticalGap>{isAdmin ? <AdminView /> : <FrontendView />}</Row>
     </Brick>
   )
 }

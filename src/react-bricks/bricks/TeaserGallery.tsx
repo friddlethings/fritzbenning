@@ -11,7 +11,7 @@ interface TeaserGalleryProps {
 
 const TeaserGallery: types.Brick<TeaserGalleryProps> = () => {
   return (
-    <Brick className="teaser-gallery" contrained displaced>
+    <Brick className="teaser-gallery" displaced>
       <Repeater
         propName="teasers"
         renderWrapper={(items) => <Row>{items}</Row>}

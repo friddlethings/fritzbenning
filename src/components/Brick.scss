@@ -1,12 +1,23 @@
 @import '../styles/layout.scss';
 
 .brick {
-  &--contrained {
-    @include contrained;
+  &--default {
+    @include default-width;
   }
 
-  &--displaced {
+  &--content {
+    @include content-width;
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &--withPaddingTop {
     padding-top: dm(5);
+  }
+
+  &--withPaddingBottom {
     padding-bottom: dm(5);
   }
 }

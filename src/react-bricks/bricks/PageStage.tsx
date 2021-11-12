@@ -1,8 +1,9 @@
 import React from 'react'
-import { Text, types } from 'react-bricks'
+import { RichText, Text, types } from 'react-bricks'
 import Brick from '../../components/Brick'
-import Column from '../../components/grid/column'
-import Row from '../../components/grid/row'
+import Column from '../../components/grid/Column'
+import Row from '../../components/grid/Row'
+import { randomIntFromInterval } from '../../utils'
 import './PageStage.scss'
 
 interface PageStageProps {
@@ -12,7 +13,7 @@ interface PageStageProps {
 
 const PageStage: types.Brick<PageStageProps> = () => {
   return (
-    <Brick className="page-stage" contrained displaced>
+    <Brick className="page-stage" displaced>
       <Row>
         <Column xs={12}>
           <div className="page-stage__inner">
@@ -23,11 +24,22 @@ const PageStage: types.Brick<PageStageProps> = () => {
               placeholder="Wie soll die Seite heißen?"
               propName="title"
             />
-            <Text
+            <RichText
               renderBlock={(props) => (
                 <h2 className="page-stage__text">{props.children}</h2>
               )}
+              allowedFeatures={[types.RichTextFeatures.Highlight]}
               placeholder="Ein aussagekräftiger Einleitungstext"
+              renderHighlight={(props) => (
+                <span
+                  className="is-highlighted"
+                  style={{
+                    ['--random' as any]: `${randomIntFromInterval(-1, 1)}deg`,
+                  }}
+                >
+                  {props.children}
+                </span>
+              )}
               propName="text"
             />
           </div>
