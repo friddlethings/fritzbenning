@@ -3,15 +3,29 @@ import { Repeater, types } from 'react-bricks'
 import Brick from '../../components/Brick'
 import Column from '../../components/grid/column'
 import Row from '../../components/grid/row'
+import {
+  LayoutDefaultProps,
+  LayoutInterface,
+  LayoutProps,
+} from './sideProps/LayoutProps'
 import './TeaserGallery.scss'
 
-interface KeyValueListProps {
+interface KeyValueListProps extends LayoutInterface {
   items: string
 }
 
-const KeyValueList: types.Brick<KeyValueListProps> = () => {
+const KeyValueList: types.Brick<KeyValueListProps> = ({
+  width,
+  paddingTop,
+  paddingBottom,
+}) => {
   return (
-    <Brick className="key-value-list" displaced>
+    <Brick
+      className="key-value-list"
+      width={width}
+      paddingTop={paddingTop}
+      paddingBottom={paddingBottom}
+    >
       <Repeater
         propName="items"
         renderWrapper={(items) => (
@@ -34,6 +48,7 @@ KeyValueList.schema = {
         value: 'Wert',
       },
     ],
+    ...LayoutDefaultProps,
   }),
   repeaterItems: [
     {
@@ -43,6 +58,7 @@ KeyValueList.schema = {
       max: 8,
     },
   ],
+  sideEditProps: [LayoutProps],
 }
 
 export default KeyValueList
