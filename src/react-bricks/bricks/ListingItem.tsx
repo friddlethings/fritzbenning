@@ -20,7 +20,7 @@ const ListingItem: types.Brick<ListingItemProps> = ({ ...rest }) => {
 
 ListingItem.schema = {
   name: 'listing-item',
-  label: 'Element',
+  label: 'Listeneintrag',
   hideFromAddMenu: true,
   getDefaultProps: () => ({
     text: 'Neues Element',

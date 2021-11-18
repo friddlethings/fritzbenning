@@ -8,9 +8,15 @@ import './PostGallery.scss'
 
 interface PostGalleryProps {
   category: string
+  pageSize: number
+  pagination: boolean
 }
 
-const PostGallery: types.Brick<PostGalleryProps> = ({ category }) => {
+const PostGallery: types.Brick<PostGalleryProps> = ({
+  category,
+  pagination,
+  pageSize,
+}) => {
   const { isAdmin, previewMode } = useAdminContext()
 
   const PublicView = () => {
@@ -18,6 +24,9 @@ const PostGallery: types.Brick<PostGalleryProps> = ({ category }) => {
       type: 'post',
       tag: category,
       language: 'de',
+      usePagination: pagination,
+      page: 1,
+      pageSize: pageSize,
     })
 
     return (
@@ -37,7 +46,14 @@ const PostGallery: types.Brick<PostGalleryProps> = ({ category }) => {
   }
 
   const AdminView = () => {
-    const { data } = usePages({ type: 'post', tag: category, language: 'de' })
+    const { data } = usePages({
+      type: 'post',
+      tag: category,
+      language: 'de',
+      usePagination: pagination,
+      page: 1,
+      pageSize: pageSize,
+    })
 
     return (
       <>
@@ -66,8 +82,9 @@ PostGallery.schema = {
   name: 'post-gallery',
   label: 'Beitragsgalerie',
   getDefaultProps: () => ({
-    tag: null,
     category: '',
+    pageSize: 8,
+    pagination: false,
   }),
   sideEditProps: [
     {
@@ -82,6 +99,16 @@ PostGallery.schema = {
           { value: 'sideproject', label: 'Sideprojects' },
         ],
       },
+    },
+    {
+      name: 'pagination',
+      label: 'Pagniation',
+      type: types.SideEditPropType.Boolean,
+    },
+    {
+      name: 'pageSize',
+      label: 'Maximale Anzahl pro Seite',
+      type: types.SideEditPropType.Number,
     },
   ],
 }

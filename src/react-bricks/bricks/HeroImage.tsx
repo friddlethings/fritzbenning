@@ -21,6 +21,7 @@ const HeroImage: types.Brick<HeroImageProps> = ({ title }) => {
             alt="Icon"
             imageClassName="hero-image__inner"
             maxWidth={2024}
+            aspectRatio={1.33}
           />
           {title && <caption className="hero-image__caption">{title}</caption>}
         </Column>

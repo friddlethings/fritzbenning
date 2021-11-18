@@ -37,7 +37,7 @@ const KeyValueItem: types.Brick<KeyValueItemProps> = ({ ...rest }) => {
 
 KeyValueItem.schema = {
   name: 'key-value-item',
-  label: 'Zeile',
+  label: 'Tabellenzeile',
   hideFromAddMenu: true,
   getDefaultProps: () => ({
     key: 'Name',
