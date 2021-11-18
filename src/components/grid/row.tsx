@@ -5,14 +5,14 @@ import './row.scss'
 interface RowProps {
   children: React.ReactNode
   align?: 'top' | 'center' | 'bottom'
-  verticalGap?: boolean
+  withVerticalGap?: boolean
 }
 
-const Row: React.FC<RowProps> = ({ children, verticalGap, align }) => (
+const Row: React.FC<RowProps> = ({ children, withVerticalGap, align }) => (
   <div
     className={cx({
       row: true,
-      'row--withVerticalGap': verticalGap,
+      'row--withVerticalGap': withVerticalGap,
       [`align-${align}`]: align,
     })}
   >
@@ -22,7 +22,7 @@ const Row: React.FC<RowProps> = ({ children, verticalGap, align }) => (
 
 Row.defaultProps = {
   align: 'top',
-  verticalGap: false,
+  withVerticalGap: false,
 }
 
 export default Row

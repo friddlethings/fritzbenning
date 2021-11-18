@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { types, useAdminContext, usePages, usePagesPublic } from 'react-bricks'
 import Brick from '../../components/Brick'
 import Column from '../../components/grid/Column'
@@ -7,23 +7,18 @@ import Teaser from '../../components/Teaser'
 import './PostGallery.scss'
 
 interface PostGalleryProps {
-  tag: string
   category: string
 }
 
-const PostGallery: types.Brick<PostGalleryProps> = ({ tag, category }) => {
+const PostGallery: types.Brick<PostGalleryProps> = ({ category }) => {
   const { isAdmin, previewMode } = useAdminContext()
 
-  const FrontendView = () => {
+  const PublicView = () => {
     const { data } = usePagesPublic({
       type: 'post',
       tag: category,
       language: 'de',
     })
-
-    useEffect(() => {
-      console.log(data)
-    }, [data])
 
     return (
       <>
@@ -44,11 +39,6 @@ const PostGallery: types.Brick<PostGalleryProps> = ({ tag, category }) => {
   const AdminView = () => {
     const { data } = usePages({ type: 'post', tag: category, language: 'de' })
 
-    useEffect(() => {
-      console.log(data)
-      const test = (props) => console.log(props)
-    }, [data])
-
     return (
       <>
         {data &&
@@ -66,8 +56,8 @@ const PostGallery: types.Brick<PostGalleryProps> = ({ tag, category }) => {
   }
 
   return (
-    <Brick className="teaser-gallery" displaced>
-      <Row verticalGap>{isAdmin ? <AdminView /> : <FrontendView />}</Row>
+    <Brick className="teaser-gallery" paddingTop>
+      <Row withVerticalGap>{isAdmin ? <AdminView /> : <PublicView />}</Row>
     </Brick>
   )
 }

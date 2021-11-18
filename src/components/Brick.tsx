@@ -5,7 +5,6 @@ import './Brick.scss'
 interface BrickProps {
   children: React.ReactNode
   className?: string
-  displaced?: boolean
   width?: 'full' | 'default' | 'content'
   paddingTop?: boolean
   paddingBottom?: boolean
