@@ -3,10 +3,23 @@
 .hero-image {
   &__inner {
     width: 100%;
+    cursor: zoom-in;
 
     img {
       width: 100%;
       height: auto;
+      max-height: 800px;
+      display: block;
+    }
+  }
+
+  &--lightbox {
+    height: 100%;
+    width: auto;
+
+    img {
+      height: 100%;
+      width: auto;
       display: block;
     }
   }
