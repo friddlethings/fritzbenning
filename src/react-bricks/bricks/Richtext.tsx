@@ -1,8 +1,8 @@
 import React from 'react'
 import { RichText, types } from 'react-bricks'
-import Brick from '../../components/Brick'
 import Column from '../../components/grid/column'
 import Row from '../../components/grid/row'
+import Unit from '../../components/Unit'
 import './Richtext.scss'
 import {
   LayoutDefaultProps,
@@ -20,7 +20,7 @@ const Richtext: types.Brick<HeroUnitProps> = ({
   paddingBottom,
 }) => {
   return (
-    <Brick
+    <Unit
       className="richtext"
       width={width}
       paddingTop={paddingTop}
@@ -52,7 +52,7 @@ const Richtext: types.Brick<HeroUnitProps> = ({
           />
         </Column>
       </Row>
-    </Brick>
+    </Unit>
   )
 }
 

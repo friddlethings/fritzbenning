@@ -12,9 +12,16 @@
   }
 
   &__text {
+    font-size: 3rem;
+    line-height: lh(3rem);
     color: $primary-50;
     margin: 0;
+    padding: 0;
     font-weight: $fw-regular;
+
+    &--withPaddingTop {
+      padding-top: dm(3);
+    }
 
     .is-highlighted {
       position: relative;

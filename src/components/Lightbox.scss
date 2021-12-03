@@ -4,14 +4,29 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.88);
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: zoom-out;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
 
   &__content {
-    height: 84vh;
+    height: 86vh;
     max-width: 90vw;
     box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.32);
+    transform: translate(0, 100px);
+    transition: transform 0.3s;
+
+    .is-visible & {
+      transform: translate(0, 0);
+    }
   }
 }

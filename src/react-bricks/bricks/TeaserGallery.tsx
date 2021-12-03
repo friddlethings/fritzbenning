@@ -1,8 +1,8 @@
 import React from 'react'
 import { Repeater, types } from 'react-bricks'
-import Brick from '../../components/Brick'
 import Column from '../../components/grid/column'
 import Row from '../../components/grid/row'
+import Unit from '../../components/Unit'
 import './TeaserGallery.scss'
 
 interface TeaserGalleryProps {
@@ -11,7 +11,7 @@ interface TeaserGalleryProps {
 
 const TeaserGallery: types.Brick<TeaserGalleryProps> = () => {
   return (
-    <Brick className="teaser-gallery" displaced>
+    <Unit className="teaser-gallery">
       <Repeater
         propName="teasers"
         renderWrapper={(items) => <Row>{items}</Row>}
@@ -21,7 +21,7 @@ const TeaserGallery: types.Brick<TeaserGalleryProps> = () => {
           </Column>
         )}
       />
-    </Brick>
+    </Unit>
   )
 }
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Repeater, types } from 'react-bricks'
-import Brick from '../../components/Brick'
 import Column from '../../components/grid/column'
 import Row from '../../components/grid/row'
 import Spacer from '../../components/Spacer'
@@ -25,7 +24,7 @@ const Listing: types.Brick<ListingProps> = ({
   paddingBottom,
 }) => {
   return (
-    <Brick
+    <Unit
       className="listing"
       width={width}
       paddingTop={paddingTop}
@@ -49,7 +48,7 @@ const Listing: types.Brick<ListingProps> = ({
           </Row>
         )}
       />
-    </Brick>
+    </Unit>
   )
 }
 

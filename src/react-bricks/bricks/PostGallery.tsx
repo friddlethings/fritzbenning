@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { types, useAdminContext, usePages, usePagesPublic } from 'react-bricks'
-import Brick from '../../components/Brick'
 import Column from '../../components/grid/Column'
 import Row from '../../components/grid/Row'
 import Teaser from '../../components/Teaser'
+import Unit from '../../components/Unit'
 import './PostGallery.scss'
 
 interface PostGalleryProps {
@@ -29,6 +29,10 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
       pageSize: pageSize,
     })
 
+    useEffect(() => {
+      console.log(data)
+    }, [data])
+
     return (
       <>
         {data &&
@@ -38,6 +42,7 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
                 title={post.name}
                 image={post.meta.featuredImage}
                 tags={post.tags}
+                to={`/${post.slug}`}
               />
             </Column>
           ))}
@@ -64,6 +69,7 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
                 title={post.name}
                 image={post.meta.featuredImage}
                 tags={post.tags}
+                to={`/${post.slug}`}
               />
             </Column>
           ))}
@@ -72,9 +78,9 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
   }
 
   return (
-    <Brick className="teaser-gallery" paddingTop>
+    <Unit className="teaser-gallery" paddingTop>
       <Row withVerticalGap>{isAdmin ? <AdminView /> : <PublicView />}</Row>
-    </Brick>
+    </Unit>
   )
 }
 

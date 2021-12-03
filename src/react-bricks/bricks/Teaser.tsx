@@ -5,20 +5,20 @@ import './Teaser.scss'
 interface TeaserProps {
   image: string
   title: string
+  to: string
   description: string
 }
 
-const Teaser: types.Brick<TeaserProps> = ({ ...rest }) => {
+const Teaser: types.Brick<TeaserProps> = ({ to, ...rest }) => {
   return (
     <div {...rest} className="teaser">
-      <Link href="/">
+      <Link href={to}>
         <div className="teaser__inner">
           <Image
             propName="image"
             alt="Icon"
             imageClassName="teaser__inner__image"
             maxWidth={2048}
-            aspectRatio="1.33"
           />
         </div>
         <div className="teaser__caption">

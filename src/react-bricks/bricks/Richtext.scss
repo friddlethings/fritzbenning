@@ -1,8 +1,10 @@
 @import '../../styles/layout.scss';
+@import '../../styles/variables.scss';
 
 .richtext {
   font-size: 2.2rem;
-  line-height: 3rem;
+  line-height: 3.2rem;
+  font-weight: $fw-light;
 
   // react bricks
   .toolbar {

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Repeater, types } from 'react-bricks'
-import Brick from '../../components/Brick'
 import Column from '../../components/grid/column'
 import Row from '../../components/grid/row'
+import Unit from '../../components/Unit'
 import './Listing.scss'
 import {
   LayoutDefaultProps,
@@ -20,7 +20,7 @@ const Listing: types.Brick<ListingProps> = ({
   paddingBottom,
 }) => {
   return (
-    <Brick
+    <Unit
       className="listing"
       width={width}
       paddingTop={paddingTop}
@@ -34,7 +34,7 @@ const Listing: types.Brick<ListingProps> = ({
           </Row>
         )}
       />
-    </Brick>
+    </Unit>
   )
 }
 

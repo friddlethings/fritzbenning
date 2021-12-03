@@ -1,8 +1,8 @@
 import cx from 'classnames'
 import React from 'react'
-import './Brick.scss'
+import './Unit.scss'
 
-interface BrickProps {
+interface UnitProps {
   children: React.ReactNode
   className?: string
   width?: 'full' | 'default' | 'content'
@@ -10,7 +10,7 @@ interface BrickProps {
   paddingBottom?: boolean
 }
 
-const Brick: React.FC<BrickProps> = ({
+const Unit: React.FC<UnitProps> = ({
   children,
   className,
   width,
@@ -32,10 +32,10 @@ const Brick: React.FC<BrickProps> = ({
   )
 }
 
-Brick.defaultProps = {
+Unit.defaultProps = {
   width: 'default',
   paddingTop: true,
   paddingBottom: true,
 }
 
-export default Brick
+export default Unit

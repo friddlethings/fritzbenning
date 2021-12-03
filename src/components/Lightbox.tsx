@@ -1,13 +1,15 @@
+import cx from 'classnames'
 import React from 'react'
 import './Lightbox.scss'
 
 interface LightboxProps {
   children: React.ReactNode
+  show: boolean
   close: any
 }
 
-const Lightbox: React.FC<LightboxProps> = ({ children, close }) => (
-  <div className="lightbox" onClick={close}>
+const Lightbox: React.FC<LightboxProps> = ({ children, show, close }) => (
+  <div className={cx({ lightbox: true, 'is-visible': show })} onClick={close}>
     <div className="lightbox__content">{children}</div>
   </div>
 )

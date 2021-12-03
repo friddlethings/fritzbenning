@@ -1,19 +1,29 @@
-import React from 'react'
-import { RichText, Text, types } from 'react-bricks'
-import Brick from '../../components/Brick'
+import cx from 'classnames'
+import React, { useEffect } from 'react'
+import { RichText, Text, types, usePageValues } from 'react-bricks'
 import Column from '../../components/grid/Column'
 import Row from '../../components/grid/Row'
+import Meta from '../../components/Meta'
+import Unit from '../../components/Unit'
 import { randomIntFromInterval } from '../../utils'
 import './PageStage.scss'
 
 interface PageStageProps {
   title: string
   text: string
+  subheadline: boolean
+  meta: boolean
 }
 
-const PageStage: types.Brick<PageStageProps> = () => {
+const PageStage: types.Brick<PageStageProps> = ({ subheadline, meta }) => {
+  const [page] = usePageValues()
+
+  useEffect(() => {
+    console.log(page)
+  }, [page])
+
   return (
-    <Brick className="page-stage" displaced>
+    <Unit className="page-stage">
       <Row>
         <Column xs={12}>
           <div className="page-stage__inner">
@@ -24,28 +34,38 @@ const PageStage: types.Brick<PageStageProps> = () => {
               placeholder="Wie soll die Seite heißen?"
               propName="title"
             />
-            <RichText
-              renderBlock={(props) => (
-                <h2 className="page-stage__text">{props.children}</h2>
-              )}
-              allowedFeatures={[types.RichTextFeatures.Highlight]}
-              placeholder="Ein aussagekräftiger Einleitungstext"
-              renderHighlight={(props) => (
-                <span
-                  className="is-highlighted"
-                  style={{
-                    ['--random' as any]: `${randomIntFromInterval(-1, 1)}deg`,
-                  }}
-                >
-                  {props.children}
-                </span>
-              )}
-              propName="text"
-            />
+            {meta && <Meta publishedAt={page.publishedAt} tags={page.tags} />}
+            {subheadline && (
+              <RichText
+                renderBlock={(props) => (
+                  <p
+                    className={cx({
+                      'page-stage__text': true,
+                      'page-stage__text--withPaddingTop': meta,
+                    })}
+                  >
+                    {props.children}
+                  </p>
+                )}
+                allowedFeatures={[types.RichTextFeatures.Highlight]}
+                placeholder="Ein aussagekräftiger Einleitungstext"
+                renderHighlight={(props) => (
+                  <span
+                    className="is-highlighted"
+                    style={{
+                      ['--random' as any]: `${randomIntFromInterval(-1, 1)}deg`,
+                    }}
+                  >
+                    {props.children}
+                  </span>
+                )}
+                propName="text"
+              />
+            )}
           </div>
         </Column>
       </Row>
-    </Brick>
+    </Unit>
   )
 }
 
@@ -56,7 +76,18 @@ PageStage.schema = {
     title: 'Seitentitel',
     text: 'Einleitungstext',
   }),
-  sideEditProps: [],
+  sideEditProps: [
+    {
+      name: 'meta',
+      label: 'Metainformationen anzeigen',
+      type: types.SideEditPropType.Boolean,
+    },
+    {
+      name: 'subheadline',
+      label: 'Einleitungstext anzeigen',
+      type: types.SideEditPropType.Boolean,
+    },
+  ],
 }
 
 export default PageStage

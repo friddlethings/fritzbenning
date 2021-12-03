@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Image, types } from 'react-bricks'
-import Brick from '../../components/Brick'
+import { Image, types, useAdminContext } from 'react-bricks'
 import Column from '../../components/grid/Column'
 import Row from '../../components/grid/Row'
 import Lightbox from '../../components/Lightbox'
+import Unit from '../../components/Unit'
 import './HeroImage.scss'
 import {
   LayoutDefaultProps,
@@ -22,10 +22,16 @@ const HeroImage: types.Brick<HeroImageProps> = ({
   paddingTop,
   paddingBottom,
 }) => {
+  const { isAdmin, previewMode } = useAdminContext()
+
   const [lightbox, setLightbox] = useState(false)
 
+  const handleLighbox = () => {
+    !isAdmin && setLightbox(!lightbox)
+  }
+
   return (
-    <Brick
+    <Unit
       className="hero-image"
       width={width}
       paddingTop={paddingTop}
@@ -33,31 +39,31 @@ const HeroImage: types.Brick<HeroImageProps> = ({
     >
       <Row>
         <Column xs={12}>
-          <div onClick={() => setLightbox(true)}>
+          <div onClick={handleLighbox}>
             <Image
               propName="image"
               alt="Icon"
-              containerClassName="hero-image__inner"
+              containerClassName="hero-image__floating"
               maxWidth={3000}
             />
           </div>
           {title && <caption className="hero-image__caption">{title}</caption>}
-          {lightbox && (
-            <Lightbox close={() => setLightbox(false)}>
-              <Image
-                propName="image"
-                alt="Icon"
-                containerClassName="hero-image--lightbox"
-                maxWidth={3000}
-              />
-              {title && (
-                <caption className="hero-image__caption">{title}</caption>
-              )}
-            </Lightbox>
-          )}
+          <Lightbox show={lightbox} close={handleLighbox}>
+            <Image
+              propName="image"
+              alt="Icon"
+              containerClassName="hero-image__lightbox"
+              maxWidth={3000}
+            />
+            {title && (
+              <caption className="hero-image__caption is-inverted">
+                {title}
+              </caption>
+            )}
+          </Lightbox>
         </Column>
       </Row>
-    </Brick>
+    </Unit>
   )
 }
 

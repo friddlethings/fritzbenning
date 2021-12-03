@@ -5,13 +5,14 @@ import './Teaser.scss'
 interface TeaserProps {
   title: string
   image: string
+  to: string
   tags: string[]
 }
 
-const Teaser: React.FC<TeaserProps> = ({ title, tags, image }) => {
+const Teaser: React.FC<TeaserProps> = ({ title, image, to, tags }) => {
   return (
     <div className="teaser">
-      <Link href="/">
+      <Link href={to}>
         <div className="teaser__inner">
           <img src={image} alt={title} className="teaser__inner__image" />
         </div>

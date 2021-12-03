@@ -1,18 +1,18 @@
 import React from 'react'
-import Brick from '../../components/Brick'
 import Column from '../../components/grid/Column'
 import Row from '../../components/grid/Row'
+import Unit from '../../components/Unit'
 import './Divider.scss'
 
 const Divider = () => {
   return (
-    <Brick className="divider" displaced>
+    <Unit className="divider">
       <Row>
         <Column xs={12}>
           <div className="divider__inner" />
         </Column>
       </Row>
-    </Brick>
+    </Unit>
   )
 }
 
