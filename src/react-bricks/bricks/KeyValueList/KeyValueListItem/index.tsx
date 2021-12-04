@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, types } from 'react-bricks'
-import Column from '../../../../components/_grid/column'
-import Row from '../../../../components/_grid/row'
+import Column from '../../../../components/_grid/Column'
+import Row from '../../../../components/_grid/Row'
 import './styles.scss'
 
 interface KeyValueItemProps {

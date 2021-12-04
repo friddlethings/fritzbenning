@@ -1,8 +1,8 @@
 import React from 'react'
 import { RichText, types } from 'react-bricks'
 import Unit from '../../../components/Unit'
-import Column from '../../../components/_grid/column'
-import Row from '../../../components/_grid/row'
+import Column from '../../../components/_grid/Column'
+import Row from '../../../components/_grid/Row'
 import {
   LayoutDefaultProps,
   LayoutInterface,

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { cleanPage, PageViewer, ReactBricksContext, types } from 'react-bricks'
-import ErrorNoHomePage from '../components/errorNoHomePage'
-import ErrorNoKeys from '../components/errorNoKeys'
+import ErrorNoHomePage from '../components/ErrorNoHomePage'
+import ErrorNoKeys from '../components/ErrorNoKeys'
 import PageTemplate from '../components/PageTemplate'
-import Seo from '../components/seo'
+import Seo from '../components/Seo'
 
 interface ReactBricksPageProps {
   pageContext: {

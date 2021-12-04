@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from '../footer'
-import Header from '../header'
+import Footer from '../Footer'
+import Header from '../Header'
 import './styles.scss'
 
 const PageTemplate: React.FC = ({ children }) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import PageTemplate from '../components/PageTemplate'
-import Seo from '../components/seo'
+import Seo from '../components/Seo'
 
 const NotFoundPage: React.FC = () => (
   <PageTemplate>

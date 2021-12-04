@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Image, types, useAdminContext } from 'react-bricks'
 import Lightbox from '../../../components/Lightbox'
 import Unit from '../../../components/Unit'
-import Column from '../../../components/_grid/column'
+import Column from '../../../components/_grid/Column'
 import Row from '../../../components/_grid/Row'
 import {
   LayoutDefaultProps,
