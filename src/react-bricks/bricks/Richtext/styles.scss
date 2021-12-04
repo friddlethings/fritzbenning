@@ -1,0 +1,31 @@
+@import '../../../styles/layout.scss';
+@import '../../../styles/variables.scss';
+
+.richtext {
+  font-size: 2.2rem;
+  line-height: 3.2rem;
+  font-weight: $fw-light;
+
+  // react bricks
+  .toolbar {
+    font-size: 1.4rem;
+  }
+
+  .is-highlighted {
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+
+  p {
+    padding: 0;
+    margin: 0 0 dm(2) 0;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    strong {
+      font-weight: 500;
+    }
+  }
+}

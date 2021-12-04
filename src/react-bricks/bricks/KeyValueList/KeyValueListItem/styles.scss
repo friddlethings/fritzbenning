@@ -1,0 +1,18 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/layout.scss';
+
+.key-value-item {
+  border-top: 1px solid $primary;
+  padding: dm(4) 0;
+
+  &:last-child {
+    border-bottom: 1px solid $primary;
+  }
+
+  &__key {
+    font-weight: 500;
+  }
+
+  &__value {
+  }
+}

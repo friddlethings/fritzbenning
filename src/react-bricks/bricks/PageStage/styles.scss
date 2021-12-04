@@ -1,0 +1,51 @@
+@import '../../../styles/layout.scss';
+@import '../../../styles/variables.scss';
+
+.page-stage {
+  // react bricks
+  .toolbar {
+    font-size: 1.4rem;
+  }
+
+  &__inner {
+    max-width: 840px;
+  }
+
+  &__text {
+    font-size: 3rem;
+    line-height: lh(3rem);
+    color: $primary-50;
+    margin: 0;
+    padding: 0;
+    font-weight: $fw-regular;
+
+    &--withPaddingTop {
+      padding-top: dm(3);
+    }
+
+    .is-highlighted {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      color: $secondary;
+      margin: 0 dm(0.5);
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: -6px;
+        width: calc(100% + 12px);
+        height: 100%;
+        background-color: $secondary;
+        z-index: -1;
+        border-radius: dm(0.5);
+        opacity: 0.2;
+        transform: rotate(var(--random));
+        //background-image: url("data:image/svg+xml,<svg width='12px' height='12px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><circle fill='currentColor' cx='4' cy='4' r='4'></circle></svg>");
+        //background-repeat: repeat;
+        //background-size: 8px;
+      }
+    }
+  }
+}

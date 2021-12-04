@@ -1,0 +1,40 @@
+@import '../../../styles/layout.scss';
+@import '../../../styles/variables.scss';
+
+.hero-image {
+  &__floating {
+    width: 100%;
+    cursor: zoom-in;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 800px;
+      display: block;
+      transition: opacity 0.3s;
+    }
+  }
+
+  &__lightbox {
+    height: 100%;
+    width: auto;
+
+    img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
+  }
+
+  &__caption {
+    margin-top: dm(2);
+    font-size: 1.5rem;
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+
+    &.is-inverted {
+      color: $primary-50;
+    }
+  }
+}
