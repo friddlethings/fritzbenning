@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import Column from '../_grid/Column'
-import Row from '../_grid/Row'
+import Column from '../Grid/Column'
+import Row from '../Grid/Row'
 import './styles.scss'
 
 const Footer = () => {

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Repeater, types } from 'react-bricks'
+import Column from '../../../components/Grid/Column'
+import Row from '../../../components/Grid/Row'
 import Spacer from '../../../components/Spacer'
 import Unit from '../../../components/Unit'
-import Column from '../../../components/_grid/Column'
-import Row from '../../../components/_grid/Row'
 import {
   LayoutDefaultProps,
   LayoutInterface,

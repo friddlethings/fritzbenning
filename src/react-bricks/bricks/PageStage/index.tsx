@@ -1,10 +1,10 @@
 import cx from 'classnames'
 import React, { useEffect } from 'react'
 import { RichText, Text, types, usePageValues } from 'react-bricks'
+import Column from '../../../components/Grid/Column'
+import Row from '../../../components/Grid/Row'
 import Meta from '../../../components/Meta'
 import Unit from '../../../components/Unit'
-import Column from '../../../components/_grid/Column'
-import Row from '../../../components/_grid/Row'
 import { randomIntFromInterval } from '../../../utils'
 import './styles.scss'
 

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { types, useAdminContext, usePages, usePagesPublic } from 'react-bricks'
+import Column from '../../../components/Grid/Column'
+import Row from '../../../components/Grid/Row'
 import Teaser from '../../../components/Teaser'
 import Unit from '../../../components/Unit'
-import Column from '../../../components/_grid/Column'
-import Row from '../../../components/_grid/Row'
 import './styles.scss'
 
 interface PostGalleryProps {

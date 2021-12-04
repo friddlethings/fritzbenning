@@ -1,7 +1,7 @@
 import React from 'react'
+import Column from '../../../components/Grid/Column'
+import Row from '../../../components/Grid/Row'
 import Unit from '../../../components/Unit'
-import Column from '../../../components/_grid/Column'
-import Row from '../../../components/_grid/Row'
 import './styles.scss'
 
 const Divider = () => {
