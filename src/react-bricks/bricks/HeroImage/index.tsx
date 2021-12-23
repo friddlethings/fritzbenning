@@ -22,7 +22,7 @@ const HeroImage: types.Brick<HeroImageProps> = ({
   paddingTop,
   paddingBottom,
 }) => {
-  const { isAdmin, previewMode } = useAdminContext()
+  const { isAdmin } = useAdminContext()
 
   const [lightbox, setLightbox] = useState(false)
 

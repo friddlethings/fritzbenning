@@ -11,16 +11,4 @@
       cursor: zoom-in;
     }
   }
-
-  &__lightbox {
-    &__element {
-      height: 100%;
-      width: auto;
-      img {
-        height: 100%;
-        width: auto;
-        display: block;
-      }
-    }
-  }
 }

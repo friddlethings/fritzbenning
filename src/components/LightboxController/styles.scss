@@ -1,0 +1,17 @@
+.lightbox-controller {
+  &__next,
+  &__prev {
+    position: absolute;
+    z-index: 2000;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__next {
+    right: 0;
+  }
+
+  &__prev {
+    left: 0;
+  }
+}

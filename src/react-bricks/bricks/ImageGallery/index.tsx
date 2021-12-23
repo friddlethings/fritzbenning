@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Repeater, types, useAdminContext } from 'react-bricks'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
 import Lightbox from '../../../components/Lightbox'
+import Slider from '../../../components/Slider'
 import Unit from '../../../components/Unit'
 import {
   LayoutDefaultProps,
@@ -21,12 +22,19 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
   paddingBottom,
 }) => {
   const [lightbox, setLightbox] = useState(false)
+  const sliderRef = useRef(null)
+  const firstSliderChildRef = useRef(null)
 
-  const { isAdmin, previewMode } = useAdminContext()
+  const { isAdmin } = useAdminContext()
 
-  const handleLighbox = () => {
+  const openLightbox = (i: number) => {
     !isAdmin && setLightbox(!lightbox)
+    sliderRef.current?.changeIndex(i)
   }
+
+  useEffect(() => {
+    console.log(sliderRef)
+  }, [sliderRef])
 
   return (
     <Unit
@@ -40,11 +48,10 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
           <div className="image-gallery__grid">
             <Repeater
               propName="images"
-              itemProps={{ handleLighbox }}
-              renderItemWrapper={(image) => {
+              renderItemWrapper={(image, index, imageCount) => {
                 const img = image.props.value.values.image
 
-                const getSpanEstimate = (width, height) => {
+                const getSpanEstimate = (width: number, height: number) => {
                   if (width < height) {
                     return 2
                   }
@@ -58,7 +65,11 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
                 }
 
                 return (
-                  <div className="image-gallery__grid__element" style={style}>
+                  <div
+                    className="image-gallery__grid__element"
+                    style={style}
+                    onClick={() => openLightbox(index)}
+                  >
                     {image}
                   </div>
                 )
@@ -66,15 +77,23 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
             />
           </div>
           <Lightbox show={lightbox} close={() => setLightbox(false)}>
-            <Repeater
-              propName="images"
-              renderWrapper={(images) => (
-                <div className="image-gallery__lightbox__gallery">{images}</div>
-              )}
-              renderItemWrapper={(image) => (
-                <div className="image-gallery__lightbox__element">{image}</div>
-              )}
-            />
+            <Slider
+              ref={sliderRef}
+              childrenCount={firstSliderChildRef.current?.dataset.children}
+            >
+              <Repeater
+                propName="images"
+                itemProps={{ lightbox }}
+                renderItemWrapper={(item, index, itemCount) => (
+                  <div
+                    ref={index === 0 ? firstSliderChildRef : null}
+                    data-children={itemCount}
+                  >
+                    {item}
+                  </div>
+                )}
+              />
+            </Slider>
           </Lightbox>
         </Column>
       </Row>

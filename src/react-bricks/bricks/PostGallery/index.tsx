@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { types, useAdminContext, usePages, usePagesPublic } from 'react-bricks'
+import React from 'react'
+import { types, usePagesPublic } from 'react-bricks'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
 import Teaser from '../../../components/Teaser'
@@ -17,69 +17,30 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
   pagination,
   pageSize,
 }) => {
-  const { isAdmin, previewMode } = useAdminContext()
-
-  const PublicView = () => {
-    const { data } = usePagesPublic({
-      type: 'post',
-      tag: category,
-      language: 'de',
-      usePagination: pagination,
-      page: 1,
-      pageSize: pageSize,
-    })
-
-    useEffect(() => {
-      console.log(data)
-    }, [data])
-
-    return (
-      <>
-        {data &&
-          data.map((post) => (
-            <Column xs={12} m={6}>
-              <Teaser
-                title={post.name}
-                image={post.meta.featuredImage}
-                tags={post.tags}
-                to={`/${post.slug}`}
-              />
-            </Column>
-          ))}
-      </>
-    )
-  }
-
-  const AdminView = () => {
-    const { data } = usePages({
-      type: 'post',
-      tag: category,
-      language: 'de',
-      usePagination: pagination,
-      page: 1,
-      pageSize: pageSize,
-    })
-
-    return (
-      <>
-        {data &&
-          data.map((post) => (
-            <Column xs={12} m={6}>
-              <Teaser
-                title={post.name}
-                image={post.meta.featuredImage}
-                tags={post.tags}
-                to={`/${post.slug}`}
-              />
-            </Column>
-          ))}
-      </>
-    )
-  }
+  const { data } = usePagesPublic({
+    type: 'post',
+    tag: category,
+    language: 'de',
+    usePagination: pagination,
+    page: 1,
+    pageSize: pageSize,
+  })
 
   return (
     <Unit className="teaser-gallery" paddingTop>
-      <Row withVerticalGap>{isAdmin ? <AdminView /> : <PublicView />}</Row>
+      <Row withVerticalGap>
+        {data &&
+          data.map((post) => (
+            <Column xs={12} m={6}>
+              <Teaser
+                title={post.name}
+                image={post.meta.featuredImage}
+                tags={post.tags}
+                to={`/${post.slug}`}
+              />
+            </Column>
+          ))}
+      </Row>
     </Unit>
   )
 }

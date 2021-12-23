@@ -1,0 +1,66 @@
+@import '../../styles/layout.scss';
+
+.slider {
+  &__container {
+    display: flex;
+    will-change: transform;
+
+    &.is-animated {
+      transition: transform 0.6s;
+    }
+
+    > div {
+      height: 100%;
+      width: 100%;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .image {
+        img {
+          height: 100%;
+          width: auto;
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__controller {
+    &__next,
+    &__prev {
+      pointer-events: all;
+      position: absolute;
+      z-index: 2000;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      padding: dm(2);
+      transition: transform 0.6s, opacity 0.3s, visibility 0.3s;
+      visibility: hidden;
+      opacity: 0;
+
+      &.is-visible {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    &__next {
+      right: 0;
+
+      &:hover {
+        transform: translate(dm(2), -50%);
+      }
+    }
+
+    &__prev {
+      left: 0;
+
+      &:hover {
+        transform: translate(dm(-2), -50%);
+      }
+    }
+  }
+}
