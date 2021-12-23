@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
+import cx from 'classnames'
+import React, { useRef, useState } from 'react'
 import { Repeater, types, useAdminContext } from 'react-bricks'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
@@ -32,10 +33,6 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
     sliderRef.current?.changeIndex(i)
   }
 
-  useEffect(() => {
-    console.log(sliderRef)
-  }, [sliderRef])
-
   return (
     <Unit
       className="image-gallery"
@@ -48,11 +45,15 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
           <div className="image-gallery__grid">
             <Repeater
               propName="images"
-              renderItemWrapper={(image, index, imageCount) => {
+              itemProps={{ openLightbox }}
+              renderItemWrapper={(image) => {
                 const img = image.props.value.values.image
+
+                let portrait = false
 
                 const getSpanEstimate = (width: number, height: number) => {
                   if (width < height) {
+                    portrait = true
                     return 2
                   }
 
@@ -66,9 +67,11 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
 
                 return (
                   <div
-                    className="image-gallery__grid__element"
+                    className={cx({
+                      'image-gallery__grid__element': true,
+                      'image-gallery__grid__element--portrait': portrait,
+                    })}
                     style={style}
-                    onClick={() => openLightbox(index)}
                   >
                     {image}
                   </div>
@@ -83,7 +86,7 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
             >
               <Repeater
                 propName="images"
-                itemProps={{ lightbox }}
+                itemProps={{ hover: false, frame: true }}
                 renderItemWrapper={(item, index, itemCount) => (
                   <div
                     ref={index === 0 ? firstSliderChildRef : null}

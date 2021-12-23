@@ -1,9 +1,9 @@
 @import '../../../styles/layout.scss';
 @import '../../../styles/variables.scss';
+@import '../../../styles/breakpoints.scss';
 
 .hero-image {
-  &__floating {
-    width: 100%;
+  &__img {
     cursor: zoom-in;
 
     img {
@@ -13,16 +13,23 @@
       display: block;
       transition: opacity 0.3s;
     }
-  }
 
-  &__lightbox {
-    height: 100%;
-    width: auto;
+    &--lightbox {
+      cursor: zoom-out;
+      padding: dm(3);
 
-    img {
-      height: 100%;
-      width: auto;
-      display: block;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: dm(1) solid white;
+
+        @include breakpoint('m') {
+          height: 100%;
+          width: auto;
+          border: dm(2) solid white;
+        }
+      }
     }
   }
 

@@ -1,9 +1,18 @@
 @import '../../styles/layout.scss';
+@import '../../styles/breakpoints.scss';
 
 .slider {
+  width: 100%;
+
   &__container {
     display: flex;
     will-change: transform;
+    align-items: center;
+    padding-bottom: dm(10);
+
+    @include breakpoint('m') {
+      padding-bottom: 0;
+    }
 
     &.is-animated {
       transition: transform 0.6s;
@@ -16,50 +25,62 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
-      .image {
-        img {
-          height: 100%;
-          width: auto;
-          display: block;
-        }
-      }
     }
   }
 
   &__controller {
     &__next,
     &__prev {
-      pointer-events: all;
       position: absolute;
       z-index: 2000;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-      padding: dm(2);
-      transition: transform 0.6s, opacity 0.3s, visibility 0.3s;
-      visibility: hidden;
-      opacity: 0;
 
-      &.is-visible {
-        visibility: visible;
+      transform: translateY(-50%);
+      padding: dm(2);
+      transition: transform 0.6s, opacity 0.3s;
+      opacity: 0;
+      top: auto;
+      bottom: 0;
+      pointer-events: all;
+      cursor: default;
+
+      @include breakpoint('l') {
+        top: 50%;
+        bottom: auto;
+        padding: dm(3);
+      }
+
+      &.is-enabled {
         opacity: 1;
+        cursor: pointer;
       }
     }
 
     &__next {
-      right: 0;
+      right: calc(50% - dm(11));
 
-      &:hover {
-        transform: translate(dm(2), -50%);
+      @include breakpoint('l') {
+        right: dm(6);
+        margin-left: 0;
+
+        &.is-enabled {
+          &:hover {
+            transform: translate(dm(2), -50%);
+          }
+        }
       }
     }
 
     &__prev {
-      left: 0;
+      left: calc(50% - dm(11));
 
-      &:hover {
-        transform: translate(dm(-2), -50%);
+      @include breakpoint('l') {
+        left: dm(6);
+
+        &.is-enabled {
+          &:hover {
+            transform: translate(dm(-2), -50%);
+          }
+        }
       }
     }
   }

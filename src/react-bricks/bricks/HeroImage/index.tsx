@@ -43,7 +43,7 @@ const HeroImage: types.Brick<HeroImageProps> = ({
             <Image
               propName="image"
               alt="Icon"
-              containerClassName="hero-image__floating"
+              containerClassName="hero-image__img"
               maxWidth={3000}
             />
           </div>
@@ -52,8 +52,7 @@ const HeroImage: types.Brick<HeroImageProps> = ({
             <Image
               propName="image"
               alt="Icon"
-              containerClassName="hero-image__lightbox"
-              maxWidth={3000}
+              containerClassName="hero-image__img hero-image__img--lightbox"
             />
             {title && (
               <caption className="hero-image__caption is-inverted">

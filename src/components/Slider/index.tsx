@@ -1,6 +1,13 @@
 import cx from 'classnames'
-import React, { forwardRef, useImperativeHandle, useState } from 'react'
+import React, {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react'
 import { ArrowLeft, ArrowRight } from 'react-feather'
+import { useHotkeys } from 'react-hotkeys-hook'
 import './styles.scss'
 
 interface SliderProps {
@@ -10,8 +17,32 @@ interface SliderProps {
 
 const Slider: React.FC<SliderProps> = forwardRef(
   ({ children, childrenCount }, ref) => {
-    const [index, setIndex] = useState(0)
+    const index = useRef(0)
+    const count = useRef(childrenCount)
+    const [sliderIndex, setSliderIndex] = useState(0)
     const [animated, setAnimated] = useState(true)
+
+    useEffect(() => {
+      count.current = childrenCount
+    }, [childrenCount])
+
+    const moveForward = () => {
+      if (index.current + 1 < count.current) {
+        index.current = index.current + 1
+        setSliderIndex((prevIndex) => prevIndex + 1)
+      }
+    }
+
+    const moveBackwards = () => {
+      if (index.current > 0) {
+        index.current = index.current - 1
+        setSliderIndex((prevIndex) => prevIndex - 1)
+      }
+    }
+
+    useHotkeys('a', () => alert('Key a was pressed'))
+    useHotkeys('right', moveForward)
+    useHotkeys('left', moveBackwards)
 
     const bypassAnimation = () => {
       setAnimated(false)
@@ -24,7 +55,7 @@ const Slider: React.FC<SliderProps> = forwardRef(
     useImperativeHandle(ref, () => ({
       changeIndex(i: number) {
         bypassAnimation()
-        setIndex(i)
+        index.current = i
       },
     }))
 
@@ -34,27 +65,19 @@ const Slider: React.FC<SliderProps> = forwardRef(
           <div
             className={cx({
               slider__controller__next: true,
-              'is-visible': index + 1 < childrenCount,
+              'is-enabled': sliderIndex + 1 < childrenCount,
             })}
           >
-            <ArrowRight
-              onClick={() => setIndex(index + 1)}
-              color="white"
-              size={40}
-            />
+            <ArrowRight onClick={moveForward} color="white" size={36} />
           </div>
 
           <div
             className={cx({
               slider__controller__prev: true,
-              'is-visible': index > 0,
+              'is-enabled': sliderIndex > 0,
             })}
           >
-            <ArrowLeft
-              onClick={() => setIndex(index - 1)}
-              color="white"
-              size={40}
-            />
+            <ArrowLeft onClick={moveBackwards} color="white" size={36} />
           </div>
         </div>
         <div
@@ -63,7 +86,7 @@ const Slider: React.FC<SliderProps> = forwardRef(
             'is-animated': animated,
           })}
           style={{
-            transform: `translate3d(${index * -100}%, 0, 0)`,
+            transform: `translate3d(${sliderIndex * -100}%, 0, 0)`,
           }}
         >
           {children}

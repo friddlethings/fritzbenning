@@ -5749,6 +5749,11 @@
   dependencies:
     "lru-cache" "^6.0.0"
 
+"hotkeys-js@3.8.7":
+  "integrity" "sha512-ckAx3EkUr5XjDwjEHDorHxRO2Kb7z6Z2Sxul4MbBkN8Nho7XDslQsgMJT+CiJ5Z4TgRxxvKHEpuLE3imzqy4Lg=="
+  "resolved" "https://registry.npmjs.org/hotkeys-js/-/hotkeys-js-3.8.7.tgz"
+  "version" "3.8.7"
+
 "html-entities@^1.2.1":
   "integrity" "sha512-8nxjcBcd8wovbeKx7h3wTji4e6+rhaVuPNpMqwWgnHh+N9ToqsCs6XztWRBPQ+UtzsoMAdKZtUENoVzU/EMtZA=="
   "resolved" "https://registry.npmjs.org/html-entities/-/html-entities-1.4.0.tgz"
@@ -8500,10 +8505,10 @@
     "minimist" "^1.2.0"
     "strip-json-comments" "~2.0.1"
 
-"react-bricks@^3.0.1":
-  "integrity" "sha512-LCpXCuGc3FfKC7dNRd9+Ly/Q4tT1fE+PT21KWRHzqvzcoTOgES++WTQxPeCMMDynAe9Z/VbuAvccnQP8kzlPhg=="
-  "resolved" "https://registry.npmjs.org/react-bricks/-/react-bricks-3.1.6.tgz"
-  "version" "3.1.6"
+"react-bricks@^3.2.5":
+  "integrity" "sha512-kLHdDZPT63Kp4hglvYv9pkybydjjIoyGTuZl+iFNKV5W35KMPqZ7P/0ReVTlZyN3qgB9FUjAPph/yOB16aGx0w=="
+  "resolved" "https://registry.npmjs.org/react-bricks/-/react-bricks-3.2.5.tgz"
+  "version" "3.2.5"
   dependencies:
     "@tippyjs/react" "^4.2.5"
     "axios" "^0.23.0"
@@ -8568,7 +8573,7 @@
     "strip-ansi" "6.0.0"
     "text-table" "0.2.0"
 
-"react-dom@*", "react-dom@^0.14.0 || ^15.0.0 || ^16 || ^17", "react-dom@^15.0.0-0 || ^16.0.0-0 || ^17.0.0-0", "react-dom@^16.3.2", "react-dom@^16.5.0 || ^17.0.0", "react-dom@^16.8.0 || ^17.0.0", "react-dom@^16.9.0 || ^17.0.0", "react-dom@^17.0.2", "react-dom@>=16.8", "react-dom@>=16.8.0", "react-dom@>=16.9.0", "react-dom@>=17", "react-dom@15.x || 16.x || 17.x":
+"react-dom@*", "react-dom@^0.14.0 || ^15.0.0 || ^16 || ^17", "react-dom@^15.0.0-0 || ^16.0.0-0 || ^17.0.0-0", "react-dom@^16.3.2", "react-dom@^16.5.0 || ^17.0.0", "react-dom@^16.8.0 || ^17.0.0", "react-dom@^16.9.0 || ^17.0.0", "react-dom@^17.0.2", "react-dom@>=16.8", "react-dom@>=16.8.0", "react-dom@>=16.8.1", "react-dom@>=16.9.0", "react-dom@>=17", "react-dom@15.x || 16.x || 17.x":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -8624,6 +8629,13 @@
   "integrity" "sha512-xYeBmQW6oqxDYAYVWIoZYC7tRD6lJBJt9b8Rr1Mv/VhZ+ZUCy2IuXlm2YA9i0/zl0TKKxqBWQOxGEb3qyVIhMg=="
   "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.20.5.tgz"
   "version" "7.20.5"
+
+"react-hotkeys-hook@^3.4.4":
+  "integrity" "sha512-vaORq07rWgmuF3owWRhgFV/3VL8/l2q9lz0WyVEddJnWTtKW+AOgU5YgYKuwN6h6h7bCcLG3MFsJIjCrM/5DvQ=="
+  "resolved" "https://registry.npmjs.org/react-hotkeys-hook/-/react-hotkeys-hook-3.4.4.tgz"
+  "version" "3.4.4"
+  dependencies:
+    "hotkeys-js" "3.8.7"
 
 "react-icons@^4.3.1":
   "integrity" "sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ=="
@@ -8695,7 +8707,7 @@
   "resolved" "https://registry.npmjs.org/react-tag-autocomplete/-/react-tag-autocomplete-6.3.0.tgz"
   "version" "6.3.0"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16 || ^17", "react@^15.0.0-0 || ^16.0.0-0 || ^17.0.0-0", "react@^15.3.0 || ^16.0.0 || ^17.0.0", "react@^16.3.0 || ^17.0.0", "react@^16.3.2", "react@^16.5.0 || ^17.0.0", "react@^16.8.0 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.6 || ^17", "react@^16.9.0 || ^17.0.0", "react@^17.0.2", "react@>= 16.8", "react@>=16.13.1", "react@>=16.3.0", "react@>=16.8", "react@>=16.8.0", "react@>=16.9.0", "react@>=17", "react@15.x || 16.x || 17.x", "react@17.0.2":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16 || ^17", "react@^15.0.0-0 || ^16.0.0-0 || ^17.0.0-0", "react@^15.3.0 || ^16.0.0 || ^17.0.0", "react@^16.3.0 || ^17.0.0", "react@^16.3.2", "react@^16.5.0 || ^17.0.0", "react@^16.8.0 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.6 || ^17", "react@^16.9.0 || ^17.0.0", "react@^17.0.2", "react@>= 16.8", "react@>=16.13.1", "react@>=16.3.0", "react@>=16.8", "react@>=16.8.0", "react@>=16.8.1", "react@>=16.9.0", "react@>=17", "react@15.x || 16.x || 17.x", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"

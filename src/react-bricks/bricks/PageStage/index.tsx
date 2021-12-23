@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { RichText, Text, types, usePageValues } from 'react-bricks'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
@@ -17,10 +17,6 @@ interface PageStageProps {
 
 const PageStage: types.Brick<PageStageProps> = ({ subheadline, meta }) => {
   const [page] = usePageValues()
-
-  useEffect(() => {
-    console.log(page)
-  }, [page])
 
   return (
     <Unit className="page-stage">

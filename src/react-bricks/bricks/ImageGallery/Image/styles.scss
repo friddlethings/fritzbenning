@@ -1,27 +1,32 @@
+@import '../../../../styles/layout.scss';
+@import '../../../../styles/breakpoints.scss';
+
 .image {
-  width: auto;
-  height: 100%;
   overflow: hidden;
-  pointer-events: none;
 
   img {
+    max-width: calc(100vw - dm(6));
     width: 100%;
     height: auto;
-    max-height: 800px;
+    max-height: 80vh;
     display: block;
     transform: translateZ(0) scale(1);
     transition: transform 0.3s;
+  }
 
-    &:hover {
-      transform: translateZ(0) scale(1.05);
+  &.with-hover {
+    img {
+      &:hover {
+        transform: translateZ(0) scale(1.05);
+      }
     }
   }
 
-  &--lightbox {
-    img {
-      &:hover {
-        transform: translateZ(0);
-      }
+  &.with-frame {
+    border: dm(1) solid white;
+
+    @include breakpoint('m') {
+      border: dm(2) solid white;
     }
   }
 }

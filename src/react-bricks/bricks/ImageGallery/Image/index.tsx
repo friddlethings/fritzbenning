@@ -8,12 +8,25 @@ interface ImageProps extends LayoutInterface {
   image: string
   title: string
   index: number
-  lightbox: boolean
+  hover: boolean
+  frame: boolean
+  openLightbox: (i: number) => void
 }
 
-const Image: types.Brick<ImageProps> = ({ title, lightbox, ...rest }) => {
+const Image: types.Brick<ImageProps> = ({
+  title,
+  openLightbox,
+  index,
+  hover,
+  frame,
+  ...rest
+}) => {
   return (
-    <div className={cx({ image: true, 'image--lightbox': lightbox })} {...rest}>
+    <div
+      className={cx({ image: true, 'with-hover': hover, 'with-frame': frame })}
+      {...rest}
+      onClick={() => openLightbox && openLightbox(index)}
+    >
       <Img propName="image" alt="Icon" maxWidth={3000} />
       {title && <caption className="image__caption">{title}</caption>}
     </div>
@@ -34,6 +47,11 @@ Image.schema = {
       type: types.SideEditPropType.Text,
     },
   ],
+}
+
+Image.defaultProps = {
+  hover: true,
+  frame: false,
 }
 
 export default Image
