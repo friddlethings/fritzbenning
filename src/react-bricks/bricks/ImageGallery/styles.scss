@@ -23,7 +23,11 @@
 
       &--portrait {
         img {
-          aspect-ratio: 2 / 2.725;
+          aspect-ratio: 2 / 2.75;
+
+          @include breakpoint('m') {
+            aspect-ratio: 2 / 2.725;
+          }
         }
       }
     }

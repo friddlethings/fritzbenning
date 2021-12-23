@@ -1,3 +1,5 @@
+@import './breakpoints.scss';
+
 $max-width: 1100px;
 $content-width: 800px;
 $grid-gutter: 12px;
@@ -18,12 +20,20 @@ $dm-size: 8px;
 
 @mixin default-width {
   max-width: $max-width;
-  padding: 0 dm(3) 0 dm(3);
+  padding: 0 dm(2) 0 dm(2);
   margin: 0 auto;
+
+  @include breakpoint('m') {
+    padding: 0 dm(3) 0 dm(3);
+  }
 }
 
 @mixin content-width {
   max-width: $content-width;
-  padding: 0 dm(3) 0 dm(3);
+  padding: 0 dm(2) 0 dm(2);
   margin: 0 auto;
+
+  @include breakpoint('m') {
+    padding: 0 dm(3) 0 dm(3);
+  }
 }
