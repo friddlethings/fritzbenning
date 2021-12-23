@@ -56,6 +56,7 @@ const Slider: React.FC<SliderProps> = forwardRef(
       changeIndex(i: number) {
         bypassAnimation()
         index.current = i
+        setSliderIndex(i)
       },
     }))
 
