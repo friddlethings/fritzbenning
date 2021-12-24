@@ -12,12 +12,17 @@
   }
 
   &__text {
-    font-size: 3rem;
-    line-height: lh(3rem);
+    font-size: 2.8rem;
+    line-height: lh(2.8rem);
     color: $primary-50;
     margin: 0;
     padding: 0;
     font-weight: $fw-medium;
+
+    @include breakpoint('m') {
+      font-size: 3rem;
+      line-height: lh(3rem);
+    }
 
     &--withPaddingTop {
       padding-top: dm(3);
