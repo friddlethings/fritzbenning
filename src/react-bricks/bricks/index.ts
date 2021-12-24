@@ -1,4 +1,4 @@
-import { types } from 'react-bricks'
+import { types } from 'react-bricks/frontend'
 import Divider from './Divider'
 import HeroImage from './HeroImage'
 import ImageGallery from './ImageGallery'

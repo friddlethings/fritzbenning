@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Image, types, useAdminContext } from 'react-bricks'
+import { Image, types, useAdminContext } from 'react-bricks/frontend'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
 import Lightbox from '../../../components/Lightbox'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, types } from 'react-bricks'
+import { Text, types } from 'react-bricks/frontend'
 import './styles.scss'
 
 interface ListingItemProps {

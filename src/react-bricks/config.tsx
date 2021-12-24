@@ -1,5 +1,5 @@
 import { navigate } from 'gatsby'
-import { types } from 'react-bricks'
+import { types } from 'react-bricks/frontend'
 import bricks from './bricks'
 import GatsbyLink from './GatsbyLink'
 import pageTypes from './pageTypes'

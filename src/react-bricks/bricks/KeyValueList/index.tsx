@@ -1,5 +1,5 @@
 import React from 'react'
-import { Repeater, types } from 'react-bricks'
+import { Repeater, types } from 'react-bricks/frontend'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
 import Unit from '../../../components/Unit'

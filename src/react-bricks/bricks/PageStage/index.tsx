@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import React from 'react'
-import { RichText, Text, types, usePageValues } from 'react-bricks'
+import { RichText, Text, types, usePageValues } from 'react-bricks/frontend'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
 import Meta from '../../../components/Meta'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-bricks'
+import { Link } from 'react-bricks/frontend'
 import './styles.scss'
 
 interface MetaProps {

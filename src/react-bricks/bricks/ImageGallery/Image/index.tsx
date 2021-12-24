@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import React from 'react'
-import { Image as Img, types } from 'react-bricks'
+import { Image as Img, types } from 'react-bricks/frontend'
 import { LayoutInterface } from '../../../sideProps/LayoutProps'
 import './styles.scss'
 

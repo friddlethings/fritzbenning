@@ -1,4 +1,4 @@
-import { types } from 'react-bricks'
+import { types } from 'react-bricks/frontend'
 
 export interface LayoutInterface {
   width: 'full' | 'default' | 'content'

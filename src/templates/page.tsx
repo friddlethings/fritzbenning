@@ -1,5 +1,10 @@
 import React, { useContext } from 'react'
-import { cleanPage, PageViewer, ReactBricksContext, types } from 'react-bricks'
+import {
+  cleanPage,
+  PageViewer,
+  ReactBricksContext,
+  types,
+} from 'react-bricks/frontend'
 import ErrorNoHomePage from '../components/ErrorNoHomePage'
 import ErrorNoKeys from '../components/ErrorNoKeys'
 import PageTemplate from '../components/PageTemplate'

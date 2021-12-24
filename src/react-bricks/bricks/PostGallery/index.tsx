@@ -1,5 +1,5 @@
 import React from 'react'
-import { types, usePagesPublic } from 'react-bricks'
+import { types, usePagesPublic } from 'react-bricks/frontend'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
 import Teaser from '../../../components/Teaser'

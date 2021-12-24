@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import React, { useRef, useState } from 'react'
-import { Repeater, types, useAdminContext } from 'react-bricks'
+import { Repeater, types, useAdminContext } from 'react-bricks/frontend'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
 import Lightbox from '../../../components/Lightbox'
