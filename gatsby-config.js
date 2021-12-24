@@ -9,13 +9,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby starter React Bricks + Tailwind`,
-        short_name: `React Bricks Starter`,
+        name: `UX & Tollerei – Blog & Portfolio von Fritz Benning`,
+        short_name: `UX & Tollerei`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#F65A8E`,
+        theme_color: `#044fd1`,
         display: `minimal-ui`,
-        icon: `src/images/reactbricks-icon.svg`,
+        icon: `src/images/ux-tollerei-icon.svg`,
       },
     },
     `gatsby-plugin-offline`,
