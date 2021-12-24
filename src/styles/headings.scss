@@ -1,11 +1,17 @@
 @import './variables.scss';
 @import './layout.scss';
+@import './breakpoints.scss';
 
 h1 {
-  font-size: 4rem;
-  line-height: 5.2rem;
+  font-size: 3.6rem;
+  line-height: 4.5rem;
   font-weight: $fw-medium;
   margin: 0 0 dm(2) 0;
+
+  @include breakpoint('m') {
+    font-size: 4rem;
+    line-height: 5.2rem;
+  }
 }
 
 h2 {

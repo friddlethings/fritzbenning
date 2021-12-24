@@ -14,7 +14,7 @@ const Header: React.FC = () => (
           <Logo />
         </Link>
       </Column>
-      <Column xs={12} m={8} justify="left" mJustify="right">
+      <Column xs={12} m={8}>
         <MainNav />
       </Column>
     </Row>

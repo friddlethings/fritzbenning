@@ -1,5 +1,6 @@
 @import '../../styles/layout.scss';
 @import '../../styles/variables.scss';
+@import '../../styles/breakpoints.scss';
 
 .meta {
   display: flex;
@@ -8,6 +9,11 @@
   color: $primary;
   text-transform: uppercase;
   padding-top: dm(1);
+  flex-direction: column;
+
+  @include breakpoint('m') {
+    flex-direction: row;
+  }
 
   &__publishedAt {
     margin: 0 dm(1) 0 0;
@@ -20,8 +26,12 @@
   &__tags {
     list-style-type: none;
     display: flex;
-    margin: 0 0 0 dm(1);
+    margin: dm(1) dm(1) 0 0;
     padding: 0;
+
+    @include breakpoint('m') {
+      margin: 0 0 0 dm(1);
+    }
 
     li {
       margin-right: dm(1);
