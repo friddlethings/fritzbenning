@@ -3,16 +3,29 @@
 
 .key-value-item {
   border-top: 1px solid $primary;
-  padding: dm(4) 0;
+  padding: dm(3) 0;
+
+  @include breakpoint('m') {
+    padding: dm(4) 0;
+  }
 
   &:last-child {
     border-bottom: 1px solid $primary;
   }
 
   &__key {
-    font-weight: 500;
+    font-weight: $fw-bold;
+
+    @include breakpoint('m') {
+      font-weight: $fw-medium;
+    }
   }
 
   &__value {
+    margin-top: dm(0.5);
+
+    @include breakpoint('m') {
+      margin-top: 0;
+    }
   }
 }
