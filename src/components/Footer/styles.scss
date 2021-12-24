@@ -1,5 +1,6 @@
 @import '../../styles/layout.scss';
 @import '../../styles/variables.scss';
+@import '../../styles/breakpoints.scss';
 
 .footer {
   color: $primary;
@@ -7,25 +8,38 @@
   background-color: $primary-10;
   margin-top: dm(20);
   flex-grow: 0;
+  font-weight: $fw-medium;
 
   &__inner {
-    padding: dm(8) dm(3) dm(8) dm(3);
+    padding: dm(5) dm(3) dm(5) dm(3);
     max-width: $max-width;
     margin: 0 auto;
+
+    @include breakpoint('m') {
+      padding: dm(8) dm(3) dm(8) dm(3);
+    }
   }
 
   &__nav {
     text-align: right;
+    font-weight: $fw-regular;
 
     ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: flex-end;
+
+      @include breakpoint('m') {
+        justify-content: flex-end;
+      }
 
       li {
-        margin: 0 0 0 dm(3);
+        margin: dm(2) dm(2) 0 0;
+
+        @include breakpoint('m') {
+          margin: 0 0 0 dm(3);
+        }
       }
     }
   }

@@ -1,8 +1,8 @@
 {
   "name": "fritzbenning",
   "private": true,
-  "description": "A simple starter to get started quickly with React Bricks and Gatsby",
-  "version": "0.3.0",
+  "description": "UX & Tollerei – Blog und Portfolio von Fritz Benning",
+  "version": "0.4.0",
   "author": "Fritz Benning",
   "dependencies": {
     "bluebird": "^3.7.2",
@@ -26,12 +26,12 @@
     "sass": "^1.43.4"
   },
   "keywords": [
-    "gatsby",
-    "react-bricks",
-    "react bricks",
-    "react visual builder",
-    "react cms",
-    "react blocks"
+    "Fritz Benning",
+    "Portfolio",
+    "Lost Places",
+    "Reisen",
+    "Travel",
+    "Sideprojects"
   ],
   "license": "MIT",
   "scripts": {
@@ -45,9 +45,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/reactbricks/gatsby-starter-reactbricks"
+    "url": "https://gitlab.com/pixelorbit/fritz-benning.git"
   },
   "bugs": {
-    "url": "https://github.com/reactbricks/gatsby-starter-reactbricks/issues"
+    "url": "https://gitlab.com/pixelorbit/fritz-benning/-/issues"
   }
 }

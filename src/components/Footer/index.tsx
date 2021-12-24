@@ -1,5 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
+import { Instagram } from 'react-feather'
 import Column from '../Grid/Column'
 import Row from '../Grid/Row'
 import './styles.scss'
@@ -22,6 +23,14 @@ const Footer = () => {
                   <Link to="/impressum" activeClassName="is-active">
                     Impressum
                   </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/fritz__ben"
+                    target="_blank"
+                  >
+                    <Instagram color="black" size={20} />
+                  </a>
                 </li>
               </ul>
             </nav>
