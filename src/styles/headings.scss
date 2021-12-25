@@ -3,29 +3,56 @@
 @import './breakpoints.scss';
 
 h1 {
-  font-size: 3.6rem;
-  line-height: 4.5rem;
+  font-size: 2.8rem;
+  line-height: lh(2.8rem);
   font-weight: $fw-medium;
-  margin: 0 0 dm(2) 0;
+  margin: 0 0 dm(1) 0;
 
   @include breakpoint('m') {
+    font-size: 3.4rem;
+    line-height: lh(3.4rem);
+    margin: 0 0 dm(2) 0;
+  }
+
+  @include breakpoint('l') {
     font-size: 4rem;
-    line-height: 5.2rem;
+    line-height: lh(4rem);
   }
 }
 
 h2 {
-  font-size: 3.2rem;
-  line-height: 4.16rem;
+  font-size: 2.4rem;
+  line-height: lh(2.4rem);
   font-weight: $fw-medium;
-  margin: 0 0 dm(1) 0;
+  margin: 0 0 dm(0.5) 0;
+
+  @include breakpoint('m') {
+    font-size: 2.8rem;
+    line-height: lh(2.8rem);
+    margin: 0 0 dm(1) 0;
+  }
+
+  @include breakpoint('l') {
+    font-size: 3.2rem;
+    line-height: lh(3.2rem);
+  }
 }
 
 h3 {
-  font-size: 3rem;
-  line-height: 3.9rem;
+  font-size: 2.2rem;
+  line-height: lh(2.2rem);
   font-weight: $fw-medium;
   margin: 0 0 dm(1) 0;
+
+  @include breakpoint('m') {
+    font-size: 2.6rem;
+    line-height: lh(2.6rem);
+  }
+
+  @include breakpoint('l') {
+    font-size: 3rem;
+    line-height: lh(3rem);
+  }
 }
 
 h4 {
