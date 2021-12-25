@@ -15,8 +15,8 @@
 
   &__folding-edge {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: dm(0.5);
+    right: dm(0.5);
     width: 0;
     height: 0;
     border-style: solid;
@@ -25,7 +25,6 @@
 
     @include breakpoint('l') {
       position: fixed;
-      border-width: 0 dm(4) dm(4) 0;
     }
   }
 }
