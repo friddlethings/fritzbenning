@@ -2,13 +2,18 @@
 @import '../../../styles/variables.scss';
 
 .page-stage {
+  @include breakpoint('m') {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
   // react bricks
   .toolbar {
     font-size: 1.4rem;
   }
 
   &__inner {
-    max-width: 840px;
+    max-width: 820px;
   }
 
   &__text {
