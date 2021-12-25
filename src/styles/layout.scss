@@ -5,6 +5,7 @@ $content-width: 800px;
 $grid-gutter: 12px;
 $grid-size: 12;
 $dm-size: 8px;
+$line-height-small: 1.1;
 $line-height: 1.25;
 $line-height-large: 1.4;
 
@@ -16,6 +17,12 @@ $line-height-large: 1.4;
 
 @function lh($fontsize) {
   $result: $fontsize * $line-height;
+
+  @return $result;
+}
+
+@function lh-small($fontsize) {
+  $result: $fontsize * $line-height-small;
 
   @return $result;
 }
