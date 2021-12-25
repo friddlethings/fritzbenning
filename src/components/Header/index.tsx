@@ -8,6 +8,7 @@ import './styles.scss'
 
 const Header: React.FC = () => (
   <header className="header">
+    <div className="header__folding-edge" />
     <Row align="center">
       <Column xs={12} m={4}>
         <Link to="/">

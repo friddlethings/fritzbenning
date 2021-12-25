@@ -9,14 +9,14 @@ h1 {
   margin: 0 0 dm(1) 0;
 
   @include breakpoint('m') {
-    font-size: 3.4rem;
-    line-height: lh(3.4rem);
+    font-size: 3.2rem;
+    line-height: lh(3.2rem);
     margin: 0 0 dm(2) 0;
   }
 
   @include breakpoint('l') {
-    font-size: 4rem;
-    line-height: lh(4rem);
+    font-size: 3.6rem;
+    line-height: lh(3.6rem);
   }
 }
 

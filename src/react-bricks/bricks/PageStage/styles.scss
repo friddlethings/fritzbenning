@@ -20,13 +20,13 @@
     font-weight: $fw-medium;
 
     @include breakpoint('m') {
-      font-size: 2.8rem;
-      line-height: lh(2.8rem);
+      font-size: 2.6rem;
+      line-height: lh(2.6rem);
     }
 
     @include breakpoint('l') {
-      font-size: 3rem;
-      line-height: lh(3rem);
+      font-size: 2.8rem;
+      line-height: lh(2.8rem);
     }
 
     &--withPaddingTop {
