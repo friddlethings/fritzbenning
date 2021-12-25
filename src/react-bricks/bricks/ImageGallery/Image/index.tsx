@@ -28,7 +28,7 @@ const Image: types.Brick<ImageProps> = ({
       onClick={() => openLightbox && openLightbox(index)}
     >
       <Img propName="image" alt="Icon" maxWidth={3000} />
-      {title && <caption className="image__caption">{title}</caption>}
+      {/* {title && <caption className="image__caption">{title}</caption>} */}
     </div>
   )
 }

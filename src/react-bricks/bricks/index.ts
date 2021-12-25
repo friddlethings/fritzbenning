@@ -8,11 +8,13 @@ import KeyValueItem from './KeyValueList/KeyValueListItem'
 import Listing from './Listing'
 import ListingItem from './Listing/ListingItem'
 import PageStage from './PageStage'
+import PostFooter from './PostFooter'
 import PostGallery from './PostGallery'
 import Richtext from './Richtext'
 
 const bricks: types.Brick<any>[] = [
   Richtext,
+  PostFooter,
   PageStage,
   HeroImage,
   PostGallery,

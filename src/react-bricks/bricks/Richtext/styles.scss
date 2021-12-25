@@ -4,17 +4,17 @@
 
 .richtext {
   font-size: 1.8rem;
-  line-height: calc(lh(1.8rem) + 0.3rem);
+  line-height: lh-large(1.8rem);
   font-weight: $fw-regular;
 
   @include breakpoint('m') {
     font-size: 2rem;
-    line-height: calc(lh(2rem) + 0.3rem);
+    line-height: lh-large(2rem);
   }
 
   @include breakpoint('l') {
     font-size: 2.2rem;
-    line-height: calc(lh(2.2rem) + 0.3rem);
+    line-height: lh-large(2.2rem);
   }
 
   // react bricks

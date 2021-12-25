@@ -10,11 +10,11 @@ import {
 } from '../../sideProps/LayoutProps'
 import './styles.scss'
 
-interface HeroUnitProps extends LayoutInterface {
+interface RichtextProps extends LayoutInterface {
   text: string
 }
 
-const Richtext: types.Brick<HeroUnitProps> = ({
+const Richtext: types.Brick<RichtextProps> = ({
   width,
   paddingTop,
   paddingBottom,

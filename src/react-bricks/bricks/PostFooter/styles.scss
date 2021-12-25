@@ -1,0 +1,61 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/breakpoints.scss';
+@import '../../../styles/layout.scss';
+
+.post-footer {
+  font-size: 1.6rem;
+  line-height: lh-large(1.6rem);
+  font-weight: $fw-regular;
+
+  @include breakpoint('m') {
+    font-size: 1.8rem;
+    line-height: lh-large(1.8rem);
+  }
+
+  @include breakpoint('l') {
+    font-size: 2rem;
+    line-height: lh-large(2rem);
+  }
+
+  &__inner {
+    border-top: 2px solid $primary;
+    padding: dm(1) 0 0 0;
+
+    @include breakpoint('m') {
+      padding: dm(2) 0 0 0;
+    }
+  }
+
+  p {
+    padding: dm(3) 0 0 0;
+
+    @include breakpoint('m') {
+      padding: dm(5) 0 0 0;
+    }
+    margin: 0;
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    line-height: lh(1.4rem);
+    text-transform: uppercase;
+    font-weight: $fw-medium;
+
+    @include breakpoint('m') {
+      font-size: 1.6rem;
+      line-height: lh(1.6rem);
+    }
+  }
+
+  &__action {
+    margin-top: dm(2);
+
+    font-size: 1.6rem;
+    line-height: lh(1.6rem);
+
+    @include breakpoint('m') {
+      font-size: 1.8rem;
+      line-height: lh(1.8rem);
+    }
+  }
+}

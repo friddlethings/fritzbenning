@@ -62,7 +62,9 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
 
                 const style = {
                   gridColumnEnd: `span 1`,
-                  gridRowEnd: `span ${getSpanEstimate(img.width, img.height)}`,
+                  gridRowEnd: `span ${
+                    img && getSpanEstimate(img.width, img.height)
+                  }`,
                 }
 
                 return (
@@ -115,7 +117,7 @@ ImageGallery.schema = {
       name: 'images',
       itemType: 'image',
       itemLabel: 'Bild',
-      max: 8,
+      max: 12,
     },
   ],
   sideEditProps: [LayoutProps],

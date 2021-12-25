@@ -13,7 +13,8 @@ import './styles.scss'
 
 interface ListingProps extends LayoutInterface {
   title: string
-  items: string
+  firstColumnItems: string
+  secondColumnItems: string
   columns: 1 | 2
 }
 
@@ -41,14 +42,16 @@ const Listing: types.Brick<ListingProps> = ({
           <Spacer size={1} />
         </>
       )}
-      <Repeater
-        propName="items"
-        renderWrapper={(items) => (
-          <Row>
-            <Column xs={12}>{items}</Column>
-          </Row>
+      <Row>
+        <Column xs={columns === 2 ? 6 : 12}>
+          <Repeater propName="firstColumnItems" />
+        </Column>
+        {columns === 2 && (
+          <Column xs={6}>
+            <Repeater propName="secondColumnItems" />
+          </Column>
         )}
-      />
+      </Row>
     </Unit>
   )
 }
@@ -57,7 +60,13 @@ Listing.schema = {
   name: 'listing',
   label: 'Liste',
   getDefaultProps: () => ({
-    items: [
+    title: 'Titel',
+    firstColumnItems: [
+      {
+        text: 'Listenelement',
+      },
+    ],
+    secondColumnItems: [
       {
         text: 'Listenelement',
       },
@@ -67,9 +76,15 @@ Listing.schema = {
   }),
   repeaterItems: [
     {
-      name: 'items',
+      name: 'firstColumnItems',
       itemType: 'listing-item',
-      itemLabel: 'Listenelement',
+      itemLabel: 'Element (Erste Spalte)',
+      max: 8,
+    },
+    {
+      name: 'secondColumnItems',
+      itemType: 'listing-item',
+      itemLabel: 'Element (Zweite Spalte)',
       max: 8,
     },
   ],

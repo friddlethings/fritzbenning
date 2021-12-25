@@ -70,7 +70,6 @@ HeroImage.schema = {
   name: 'hero-image',
   label: 'Hero Bild',
   getDefaultProps: () => ({
-    image: 'Seitentitel',
     title: 'Bildtitle',
     ...LayoutDefaultProps,
   }),
