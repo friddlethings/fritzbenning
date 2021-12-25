@@ -14,7 +14,7 @@
   }
 
   &__folding-edge {
-    position: absolute;
+    position: fixed;
     top: dm(0.5);
     right: dm(0.5);
     width: 0;
@@ -22,9 +22,5 @@
     border-style: solid;
     border-width: 0 dm(3) dm(3) 0;
     border-color: transparent $secondary transparent transparent;
-
-    @include breakpoint('l') {
-      position: fixed;
-    }
   }
 }
