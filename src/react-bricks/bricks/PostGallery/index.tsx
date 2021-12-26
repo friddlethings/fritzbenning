@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { types, usePagesPublic } from 'react-bricks/frontend'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import Column from '../../../components/Grid/Column'
@@ -20,11 +20,12 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
   pageSize,
 }) => {
   const galleryRef = useRef(null)
+
   const [page, setPage] = useState(1)
+
   const { data } = usePagesPublic({
     type: 'post',
     tag: category,
-    language: 'de',
     usePagination: pagination,
     page: page,
     pageSize: pageSize,
@@ -37,12 +38,7 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
       behavior: 'smooth',
     })
     setPage(newPage)
-    console.log(galleryRef.current.offsetTop)
   }
-
-  useEffect(() => {
-    console.log(data)
-  }, [data])
 
   return (
     <Unit className="teaser-gallery" paddingTop>
