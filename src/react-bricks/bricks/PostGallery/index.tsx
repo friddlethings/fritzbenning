@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { types, usePagesPublic } from 'react-bricks/frontend'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import Column from '../../../components/Grid/Column'
@@ -39,6 +39,10 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
     console.log(galleryRef.current.offsetTop)
   }
 
+  useEffect(() => {
+    console.log(data)
+  }, [data])
+
   return (
     <Unit className="teaser-gallery" paddingTop>
       <div ref={galleryRef}>
@@ -55,7 +59,7 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
                 data.map((post) => (
                   <Column xs={12} m={6}>
                     <Teaser
-                      title={post.name}
+                      title={post.meta.title}
                       image={post.meta.featuredImage}
                       tags={post.tags}
                       to={`/${post.slug}`}
@@ -66,7 +70,7 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
                 data.items.map((post) => (
                   <Column xs={12} m={6}>
                     <Teaser
-                      title={post.name}
+                      title={post.meta.title}
                       image={post.meta.featuredImage}
                       tags={post.tags}
                       to={`/${post.slug}`}

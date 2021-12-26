@@ -18,12 +18,22 @@
     font-weight: $fw-bold;
     color: $secondary;
     cursor: pointer;
+    transition: transform $speed-default, background-color $speed-default,
+      color $speed-default;
+
+    &:hover {
+      transform: translate(0, -2px);
+    }
 
     &.is-active {
       background-color: $primary-20;
       border-radius: 50%;
       color: $primary;
       cursor: default;
+
+      &:hover {
+        transform: none;
+      }
     }
   }
 }
