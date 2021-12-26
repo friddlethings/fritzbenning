@@ -11,7 +11,7 @@ interface TeaserProps {
 
 const Teaser: React.FC<TeaserProps> = ({ title, image, to, tags }) => {
   return (
-    <div className="teaser">
+    <div className="teaser" key={title}>
       <Link href={to}>
         <div className="teaser__inner">
           <img src={image} alt={title} className="teaser__inner__image" />

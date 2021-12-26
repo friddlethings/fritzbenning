@@ -7,7 +7,7 @@ const MainMenu: React.FC = () => (
     <ul className="main-nav__list">
       <li className="main-nav__list__item">
         <Link
-          to="/ueber-mich"
+          to="/ueber-mich/"
           className="main-nav__list__item__link"
           activeClassName="is-active"
         >
@@ -16,7 +16,7 @@ const MainMenu: React.FC = () => (
       </li>
       <li className="main-nav__list__item">
         <Link
-          to="/sideprojects"
+          to="/sideprojects/"
           className="main-nav__list__item__link"
           activeClassName="is-active"
         >
@@ -25,7 +25,7 @@ const MainMenu: React.FC = () => (
       </li>
       <li className="main-nav__list__item">
         <Link
-          to="/fotografie"
+          to="/fotografie/"
           className="main-nav__list__item__link"
           activeClassName="is-active"
         >

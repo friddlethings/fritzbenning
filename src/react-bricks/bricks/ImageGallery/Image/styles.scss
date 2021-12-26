@@ -1,6 +1,6 @@
 @import '../../../../styles/layout.scss';
 @import '../../../../styles/breakpoints.scss';
-@import '../../../../styles/breakpoints.scss';
+@import '../../../../styles/variables.scss';
 
 .image {
   overflow: hidden;
@@ -12,8 +12,8 @@
     max-height: 80vh;
     display: block;
     transform: translateZ(0) scale(1);
-    transition: transform 0.3s;
-    animation: fadeIn 0.6s;
+    transition: transform $speed-fast;
+    animation: fadeIn $speed-default;
   }
 
   &.with-hover {

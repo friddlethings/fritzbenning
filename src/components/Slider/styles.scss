@@ -1,5 +1,6 @@
 @import '../../styles/layout.scss';
 @import '../../styles/breakpoints.scss';
+@import '../../styles/variables.scss';
 
 .slider {
   width: 100%;
@@ -15,7 +16,7 @@
     }
 
     &.is-animated {
-      transition: transform 0.6s;
+      transition: transform $speed-default;
     }
 
     > div {
@@ -36,7 +37,7 @@
 
       transform: translateY(-50%);
       padding: dm(2);
-      transition: transform 0.6s, opacity 0.3s;
+      transition: transform $speed-default, opacity $speed-fast;
       opacity: 0;
       top: auto;
       bottom: 0;

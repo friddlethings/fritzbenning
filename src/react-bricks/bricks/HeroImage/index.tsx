@@ -44,7 +44,7 @@ const HeroImage: types.Brick<HeroImageProps> = ({
               propName="image"
               alt="Icon"
               containerClassName="hero-image__img"
-              maxWidth={3000}
+              aspectRatio={3 / 2}
             />
           </div>
           {title && <caption className="hero-image__caption">{title}</caption>}

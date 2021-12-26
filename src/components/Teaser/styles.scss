@@ -20,13 +20,13 @@
     &__image {
       width: 100%;
       height: auto;
-      transition: transform 0.3s cubic-bezier(0.45, 0, 0.55, 1),
-        filter 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+      transition: transform $speed-fast cubic-bezier(0.45, 0, 0.55, 1),
+        filter $speed-fast cubic-bezier(0.45, 0, 0.55, 1);
       display: block;
       filter: grayscale(100) contrast(110%);
       transform: translateZ(0) scale(1);
-      aspect-ratio: 2 / 2.5;
-      animation: fadeIn 0.6s;
+      aspect-ratio: 4 / 5;
+      animation: fadeIn $speed-default;
 
       &:hover {
         transform: translateZ(0) scale(1.04);
@@ -43,7 +43,7 @@
   &__title {
     padding: dm(2) 0 0 0;
     color: currentColor;
-    transition: color 0.3s;
+    transition: color $speed-fast;
   }
 
   &__tags {
@@ -57,7 +57,7 @@
       line-height: lh(1.4rem);
       margin: 0;
       padding: 0 dm(1) 0 0;
-      transition: color 0.3s;
+      transition: color $speed-fast;
       text-transform: uppercase;
 
       &:hover {

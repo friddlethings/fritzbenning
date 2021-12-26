@@ -8,13 +8,12 @@
     cursor: zoom-in;
 
     img {
-      animation: fadeIn 0.6s;
+      animation: fadeIn $speed-default;
       width: 100%;
       height: auto;
       max-height: 800px;
       display: block;
-      transition: opacity 0.3s;
-      aspect-ratio: 3 / 2;
+      transition: opacity $speed-fast;
     }
 
     &--lightbox {
