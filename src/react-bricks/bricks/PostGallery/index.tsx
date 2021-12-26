@@ -28,6 +28,7 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
     usePagination: pagination,
     page: page,
     pageSize: pageSize,
+    sort: '-createdAt',
   })
 
   const changePage = (newPage: number) => {
