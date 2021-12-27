@@ -42,51 +42,54 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
 
   return (
     <Unit className="teaser-gallery" paddingTop>
-      {pages && (
-        <div ref={galleryRef}>
-          <SwitchTransition mode="out-in">
-            <CSSTransition
-              key={`page-${page}`}
-              addEndListener={(node: any, done: boolean) => {
-                node.addEventListener('transitionend', done, false)
-              }}
-              classNames="fade"
-            >
-              <Row withVerticalGap>
-                {Array.isArray(pages) &&
-                  pages.map((post: any) => (
-                    <Column xs={12} m={6}>
-                      <Teaser
-                        title={post.meta.title}
-                        image={post.meta.featuredImage}
-                        tags={post.tags}
-                        to={`/${post.slug}`}
-                      />
-                    </Column>
-                  ))}
-                {Array.isArray(pages.items) &&
-                  pages.items.map((post: any) => (
-                    <Column xs={12} m={6}>
-                      <Teaser
-                        title={post.meta.title}
-                        image={post.meta.featuredImage}
-                        tags={post.tags}
-                        to={`/${post.slug}`}
-                      />
-                    </Column>
-                  ))}
-              </Row>
-            </CSSTransition>
-          </SwitchTransition>
-          {pagination && (
-            <Pagination
-              total={pages.pagination.totalPages}
-              currentPage={page}
-              changePage={changePage}
-            />
-          )}
-        </div>
-      )}
+      <SwitchTransition mode="out-in">
+        <CSSTransition
+          key={`page-${page}`}
+          addEndListener={(node: any, done: boolean) => {
+            node.addEventListener('transitionend', done, false)
+          }}
+          classNames="fade"
+        >
+          <>
+            {pages && (
+              <div ref={galleryRef}>
+                <Row withVerticalGap>
+                  {Array.isArray(pages) &&
+                    pages.map((post: any) => (
+                      <Column xs={12} m={6}>
+                        <Teaser
+                          title={post.meta.title}
+                          image={post.meta.featuredImage}
+                          tags={post.tags}
+                          to={`/${post.slug}`}
+                        />
+                      </Column>
+                    ))}
+                  {Array.isArray(pages.items) &&
+                    pages.items.map((post: any) => (
+                      <Column xs={12} m={6}>
+                        <Teaser
+                          title={post.meta.title}
+                          image={post.meta.featuredImage}
+                          tags={post.tags}
+                          to={`/${post.slug}`}
+                        />
+                      </Column>
+                    ))}
+                </Row>
+
+                {pagination && (
+                  <Pagination
+                    total={pages.pagination.totalPages}
+                    currentPage={page}
+                    changePage={changePage}
+                  />
+                )}
+              </div>
+            )}
+          </>
+        </CSSTransition>
+      </SwitchTransition>
     </Unit>
   )
 }
