@@ -1,24 +1,25 @@
-# React Bricks starter with Gatsby
+# fritzbenning.de
 
-Kick-start your project with this boilerplate for a complete Gatsby website based on [React Bricks](https://reactbricks.com), with both the front-end and admin dashboard.
+PORTFOLIO & BLOG by Fritz Benning.
 
-## 🚀 Quick start
-
-We suggest that you use the CLI and choose this starter.  
-In this way you will have the credentials already set up in a `.env.development` file:
+## Quick start
 
 ```bash
-npx create-reactbricks-app
-# or
-yarn create reactbricks-app
+npm install
 ```
 
-Otherwise you can directly clone this repo:
+## Development
 
 ```bash
-git clone https://github.com/reactbricks/gatsby-starter-reactbricks your-project
+gatsby develop
 ```
 
-## 📖 Documentation
+## Production
 
-Please, read our documentation at [Reactbricks.com](https://reactbricks.com).
+```bash
+gatsby build
+```
+
+```bash
+gatsby serve
+```
