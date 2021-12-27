@@ -29,7 +29,7 @@ const Richtext: types.Brick<RichtextProps> = ({
       <Row>
         <Column xs={12}>
           <RichText
-            renderBlock={(props) => <p>{props.children}</p>}
+            renderBlock={({ children }) => <p>{children}</p>}
             placeholder="Schreibe einen Text ..."
             propName="text"
             allowedFeatures={[
@@ -41,14 +41,10 @@ const Richtext: types.Brick<RichtextProps> = ({
               types.RichTextFeatures.Heading3,
               types.RichTextFeatures.Heading4,
             ]}
-            renderHighlight={(props) => (
-              <span className="is-highlighted">{props.children}</span>
+            renderHighlight={({ children }) => (
+              <span className="is-highlighted">{children}</span>
             )}
-            renderCode={(props) => (
-              <code className="text-sm py-1 px-2 bg-gray-200 dark:bg-gray-700 rounded">
-                {props.children}
-              </code>
-            )}
+            renderCode={({ children }) => <code>{children}</code>}
           />
         </Column>
       </Row>

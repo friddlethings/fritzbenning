@@ -6,7 +6,6 @@ import Row from '../../../components/Grid/Row'
 import Pagination from '../../../components/Pagination'
 import Teaser from '../../../components/Teaser'
 import Unit from '../../../components/Unit'
-import './styles.scss'
 
 interface PostGalleryProps {
   category: string
