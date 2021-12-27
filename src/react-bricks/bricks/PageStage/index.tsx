@@ -33,26 +33,26 @@ const PageStage: types.Brick<PageStageProps> = ({ subheadline, meta }) => {
             {meta && <Meta publishedAt={page.publishedAt} tags={page.tags} />}
             {subheadline && (
               <RichText
-                renderBlock={(props) => (
+                renderBlock={({ children }) => (
                   <p
                     className={cx({
                       'page-stage__text': true,
                       'page-stage__text--withPaddingTop': meta,
                     })}
                   >
-                    {props.children}
+                    {children}
                   </p>
                 )}
                 allowedFeatures={[types.RichTextFeatures.Highlight]}
                 placeholder="Ein aussagekräftiger Einleitungstext"
-                renderHighlight={(props) => (
+                renderHighlight={({ children }) => (
                   <span
                     className="is-highlighted"
                     style={{
                       ['--random' as any]: `${randomIntFromInterval(-1, 1)}deg`,
                     }}
                   >
-                    {props.children}
+                    {children}
                   </span>
                 )}
                 propName="text"

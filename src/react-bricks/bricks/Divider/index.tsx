@@ -1,10 +1,11 @@
 import React from 'react'
+import { types } from 'react-bricks/frontend'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
 import Unit from '../../../components/Unit'
 import './styles.scss'
 
-const Divider = () => {
+const Divider: types.Brick = () => {
   return (
     <Unit className="divider">
       <Row>

@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import React from 'react'
 import './styles.scss'
 
-const MainMenu: React.FC = () => (
+const MainNav: React.FC = () => (
   <nav className="main-nav">
     <ul className="main-nav__list">
       <li className="main-nav__list__item">
@@ -36,4 +36,4 @@ const MainMenu: React.FC = () => (
   </nav>
 )
 
-export default MainMenu
+export default MainNav

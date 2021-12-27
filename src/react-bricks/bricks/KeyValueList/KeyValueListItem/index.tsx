@@ -12,7 +12,7 @@ const KeyValueItem: types.Brick<KeyValueItemProps> = ({ ...rest }) => {
   return (
     <div className="key-value-item" {...rest}>
       <Row>
-        <Column xs={12} m={6} noGutter>
+        <Column xs={12} m={6} gutter={false}>
           <Text
             renderBlock={(props) => (
               <div className="key-value-item__key">{props.children}</div>
@@ -21,7 +21,7 @@ const KeyValueItem: types.Brick<KeyValueItemProps> = ({ ...rest }) => {
             propName="key"
           />
         </Column>
-        <Column xs={12} m={6} noGutter>
+        <Column xs={12} m={6} gutter={false}>
           <Text
             renderBlock={(props) => (
               <div className="key-value-item__value">{props.children}</div>

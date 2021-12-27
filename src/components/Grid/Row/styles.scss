@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  &--withVerticalGap {
+  &.with-vertical-gap {
     gap: dm(8) 0;
   }
 

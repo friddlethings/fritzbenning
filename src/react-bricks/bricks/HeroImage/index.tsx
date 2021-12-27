@@ -7,7 +7,7 @@ import Unit from '../../../components/Unit'
 import {
   LayoutDefaultProps,
   LayoutInterface,
-  LayoutProps,
+  LayoutProps
 } from '../../sideProps/LayoutProps'
 import './styles.scss'
 
@@ -23,7 +23,7 @@ const HeroImage: types.Brick<HeroImageProps> = ({
   paddingBottom,
 }) => {
   const { isAdmin } = useAdminContext()
-
+  
   const [lightbox, setLightbox] = useState(false)
 
   const handleLighbox = () => {

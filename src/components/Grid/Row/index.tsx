@@ -12,7 +12,7 @@ const Row: React.FC<RowProps> = ({ children, withVerticalGap, align }) => (
   <div
     className={cx({
       row: true,
-      'row--withVerticalGap': withVerticalGap,
+      'with-vertical-gap': withVerticalGap,
       [`align-${align}`]: align,
     })}
   >

@@ -4,15 +4,16 @@ import React, {
   useEffect,
   useImperativeHandle,
   useRef,
-  useState,
+  useState
 } from 'react'
 import { ArrowLeft, ArrowRight } from 'react-feather'
 import { useHotkeys } from 'react-hotkeys-hook'
 import './styles.scss'
 
 interface SliderProps {
-  ref: any
+  children: React.ReactNode
   childrenCount: number
+  ref: any
 }
 
 const Slider: React.FC<SliderProps> = forwardRef(
@@ -40,7 +41,6 @@ const Slider: React.FC<SliderProps> = forwardRef(
       }
     }
 
-    useHotkeys('a', () => alert('Key a was pressed'))
     useHotkeys('right', moveForward)
     useHotkeys('left', moveBackwards)
 

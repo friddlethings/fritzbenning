@@ -3,10 +3,9 @@
 
 .column {
   flex: 0 0 auto;
-  padding: 0 $grid-gutter;
 
-  &--noGutter {
-    padding: 0;
+  &.with-gutter {
+    padding: 0 $grid-gutter;
   }
 
   @for $i from 1 through $grid-size {

@@ -3,7 +3,7 @@ import React from 'react'
 import Column from '../Grid/Column'
 import Row from '../Grid/Row'
 import Logo from '../Logo'
-import MainNav from '../MainMenu'
+import MainNav from '../MainNav'
 import './styles.scss'
 
 const Header: React.FC = () => (

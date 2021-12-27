@@ -20,10 +20,10 @@ const Unit: React.FC<UnitProps> = ({
   return (
     <div
       className={cx({
-        brick: true,
-        [`brick--${width}`]: width,
-        [`brick--withPaddingTop`]: paddingTop,
-        [`brick--withPaddingBottom`]: paddingBottom,
+        unit: true,
+        [`unit--${width}`]: width,
+        [`unit--withPaddingTop`]: paddingTop,
+        [`unit--withPaddingBottom`]: paddingBottom,
         [`${className}`]: className,
       })}
     >

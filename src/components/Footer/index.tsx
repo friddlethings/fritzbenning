@@ -5,7 +5,7 @@ import Column from "../Grid/Column"
 import Row from "../Grid/Row"
 import "./styles.scss"
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <footer className="footer">
     <div className="footer__inner">
       <Row>

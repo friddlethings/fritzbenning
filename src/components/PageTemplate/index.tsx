@@ -3,7 +3,11 @@ import Footer from '../Footer'
 import Header from '../Header'
 import './styles.scss'
 
-const PageTemplate: React.FC = ({ children }) => {
+interface PageTemplateProps {
+  children: React.ReactNode
+}
+
+const PageTemplate: React.FC<PageTemplateProps> = ({ children }) => {
   return (
     <div className="page-template">
       <Header />

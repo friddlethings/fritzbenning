@@ -4,27 +4,27 @@ import './styles.scss'
 
 interface ColumnProps {
   children: React.ReactNode
-  noGutter?: boolean
   xs?: number
   s?: number
   m?: number
   l?: number
   xl?: number
+  gutter?: boolean
 }
 
 const Column: React.FC<ColumnProps> = ({
   children,
-  noGutter,
   xs,
   s,
   m,
   l,
   xl,
+  gutter,
 }) => (
   <div
     className={cx({
       column: true,
-      'column--noGutter': noGutter,
+      'with-gutter': gutter,
       [`xs-${xs}`]: xs,
       [`s-${s}`]: s,
       [`m-${m}`]: m,
@@ -37,7 +37,7 @@ const Column: React.FC<ColumnProps> = ({
 )
 
 Column.defaultProps = {
-  noGutter: false,
+  gutter: true,
 }
 
 export default Column

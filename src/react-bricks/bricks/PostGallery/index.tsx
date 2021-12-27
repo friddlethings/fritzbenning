@@ -23,7 +23,7 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
 
   const [page, setPage] = useState(1)
 
-  const { data } = usePagesPublic({
+  const { data: pages } = usePagesPublic({
     type: 'post',
     tag: category,
     usePagination: pagination,
@@ -42,49 +42,51 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
 
   return (
     <Unit className="teaser-gallery" paddingTop>
-      <div ref={galleryRef}>
-        <SwitchTransition mode="out-in">
-          <CSSTransition
-            key={`page-${page}`}
-            addEndListener={(node, done) => {
-              node.addEventListener('transitionend', done, false)
-            }}
-            classNames="fade"
-          >
-            <Row withVerticalGap>
-              {Array.isArray(data) &&
-                data.map((post) => (
-                  <Column xs={12} m={6}>
-                    <Teaser
-                      title={post.meta.title}
-                      image={post.meta.featuredImage}
-                      tags={post.tags}
-                      to={`/${post.slug}`}
-                    />
-                  </Column>
-                ))}
-              {Array.isArray(data?.items) &&
-                data.items.map((post) => (
-                  <Column xs={12} m={6}>
-                    <Teaser
-                      title={post.meta.title}
-                      image={post.meta.featuredImage}
-                      tags={post.tags}
-                      to={`/${post.slug}`}
-                    />
-                  </Column>
-                ))}
-            </Row>
-          </CSSTransition>
-        </SwitchTransition>
-        {data && pagination && (
-          <Pagination
-            total={data.pagination.totalPages}
-            currentPage={page}
-            changePage={changePage}
-          />
-        )}
-      </div>
+      {pages && (
+        <div ref={galleryRef}>
+          <SwitchTransition mode="out-in">
+            <CSSTransition
+              key={`page-${page}`}
+              addEndListener={(node: any, done: boolean) => {
+                node.addEventListener('transitionend', done, false)
+              }}
+              classNames="fade"
+            >
+              <Row withVerticalGap>
+                {Array.isArray(pages) &&
+                  pages.map((post: any) => (
+                    <Column xs={12} m={6}>
+                      <Teaser
+                        title={post.meta.title}
+                        image={post.meta.featuredImage}
+                        tags={post.tags}
+                        to={`/${post.slug}`}
+                      />
+                    </Column>
+                  ))}
+                {Array.isArray(pages.items) &&
+                  pages.items.map((post: any) => (
+                    <Column xs={12} m={6}>
+                      <Teaser
+                        title={post.meta.title}
+                        image={post.meta.featuredImage}
+                        tags={post.tags}
+                        to={`/${post.slug}`}
+                      />
+                    </Column>
+                  ))}
+              </Row>
+            </CSSTransition>
+          </SwitchTransition>
+          {pagination && (
+            <Pagination
+              total={pages.pagination.totalPages}
+              currentPage={page}
+              changePage={changePage}
+            />
+          )}
+        </div>
+      )}
     </Unit>
   )
 }
