@@ -1,15 +1,15 @@
-@import '../../styles/layout.scss';
-@import '../../styles/variables.scss';
-@import '../../styles/breakpoints.scss';
+@import "../../styles/layout";
+@import "../../styles/variables";
+@import "../../styles/breakpoints";
 
 .main-nav {
   &__list {
-    list-style-type: none;
     display: flex;
-    margin: dm(2) 0 0 0;
     padding: 0;
+    margin: dm(2) 0 0 0;
+    list-style-type: none;
 
-    @include breakpoint('m') {
+    @include breakpoint("m") {
       justify-content: flex-end;
       margin: 0;
     }
@@ -17,7 +17,7 @@
     &__item {
       padding: 0 dm(3) 0 0;
 
-      @include breakpoint('m') {
+      @include breakpoint("m") {
         padding: 0 0 0 dm(3.5);
       }
 

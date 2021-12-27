@@ -1,5 +1,5 @@
-@import '../../styles/layout.scss';
-@import '../../styles/breakpoints.scss';
+@import "../../styles/layout";
+@import "../../styles/breakpoints";
 
 .brick {
   &--default {
@@ -17,7 +17,7 @@
   &--withPaddingTop {
     padding-top: dm(3);
 
-    @include breakpoint('m') {
+    @include breakpoint("m") {
       padding-top: dm(5);
     }
   }
@@ -25,7 +25,7 @@
   &--withPaddingBottom {
     padding-bottom: dm(3);
 
-    @include breakpoint('m') {
+    @include breakpoint("m") {
       padding-bottom: dm(5);
     }
   }

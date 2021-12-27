@@ -1,9 +1,9 @@
-@import '../../../styles/breakpoints.scss';
+@import "../../../styles/breakpoints";
 
 .only-desktop {
   display: none;
 
-  @include breakpoint('m') {
+  @include breakpoint("m") {
     display: block;
   }
 }

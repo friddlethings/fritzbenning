@@ -1,17 +1,17 @@
-@import '../../styles/layout.scss';
-@import '../../styles/breakpoints.scss';
-@import '../../styles/variables.scss';
+@import "../../styles/layout";
+@import "../../styles/breakpoints";
+@import "../../styles/variables";
 
 .slider {
   width: 100%;
 
   &__container {
     display: flex;
-    will-change: transform;
     align-items: center;
     padding-bottom: dm(10);
+    will-change: transform;
 
-    @include breakpoint('m') {
+    @include breakpoint("m") {
       padding-bottom: 0;
     }
 
@@ -20,12 +20,12 @@
     }
 
     > div {
-      height: 100%;
-      width: 100%;
-      flex-shrink: 0;
       display: flex;
-      justify-content: center;
+      width: 100%;
+      height: 100%;
+      flex-shrink: 0;
       align-items: center;
+      justify-content: center;
     }
   }
 
@@ -34,32 +34,31 @@
     &__prev {
       position: absolute;
       z-index: 2000;
-
-      transform: translateY(-50%);
-      padding: dm(2);
-      transition: transform $speed-default, opacity $speed-fast;
-      opacity: 0;
       top: auto;
       bottom: 0;
-      pointer-events: all;
+      padding: dm(2);
       cursor: default;
+      opacity: 0;
+      pointer-events: all;
+      transform: translateY(-50%);
+      transition: transform $speed-default, opacity $speed-fast;
 
-      @include breakpoint('l') {
+      @include breakpoint("l") {
         top: 50%;
         bottom: auto;
         padding: dm(3);
       }
 
       &.is-enabled {
-        opacity: 1;
         cursor: pointer;
+        opacity: 1;
       }
     }
 
     &__next {
       right: calc(50% - dm(11));
 
-      @include breakpoint('l') {
+      @include breakpoint("l") {
         right: dm(6);
         margin-left: 0;
 
@@ -74,7 +73,7 @@
     &__prev {
       left: calc(50% - dm(11));
 
-      @include breakpoint('l') {
+      @include breakpoint("l") {
         left: dm(6);
 
         &.is-enabled {

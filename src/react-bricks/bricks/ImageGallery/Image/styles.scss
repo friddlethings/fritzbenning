@@ -1,19 +1,19 @@
-@import '../../../../styles/layout.scss';
-@import '../../../../styles/breakpoints.scss';
-@import '../../../../styles/variables.scss';
+@import "../../../../styles/layout";
+@import "../../../../styles/breakpoints";
+@import "../../../../styles/variables";
 
 .image {
   overflow: hidden;
 
   img {
-    max-width: calc(100vw - dm(6));
+    display: block;
     width: 100%;
+    max-width: calc(100vw - dm(6));
     height: auto;
     max-height: 80vh;
-    display: block;
+    animation: fade-in $speed-default;
     transform: translateZ(0) scale(1);
     transition: transform $speed-fast;
-    animation: fadeIn $speed-default;
   }
 
   &.with-hover {
@@ -27,7 +27,7 @@
   &.with-frame {
     border: dm(1) solid white;
 
-    @include breakpoint('m') {
+    @include breakpoint("m") {
       border: dm(2) solid white;
     }
   }

@@ -1,6 +1,6 @@
-@import '../../styles/layout.scss';
-@import '../../styles/variables.scss';
-@import '../../styles/animations.scss';
+@import "../../styles/layout";
+@import "../../styles/variables";
+@import "../../styles/animations";
 
 .teaser {
   a {
@@ -18,19 +18,20 @@
     background-color: #eee;
 
     &__image {
+      display: block;
       width: 100%;
       height: auto;
-      transition: transform $speed-fast cubic-bezier(0.45, 0, 0.55, 1),
-        filter $speed-fast cubic-bezier(0.45, 0, 0.55, 1);
-      display: block;
+      animation: fade-in $speed-default;
+      aspect-ratio: 4 / 5;
       filter: grayscale(100) contrast(110%);
       transform: translateZ(0) scale(1);
-      aspect-ratio: 4 / 5;
-      animation: fadeIn $speed-default;
+      transition:
+        transform $speed-fast cubic-bezier(0.45, 0, 0.55, 1),
+        filter $speed-fast cubic-bezier(0.45, 0, 0.55, 1);
 
       &:hover {
-        transform: translateZ(0) scale(1.04);
         filter: grayscale(0) contrast(100%);
+        transform: translateZ(0) scale(1.04);
       }
     }
   }
@@ -47,18 +48,18 @@
   }
 
   &__tags {
-    list-style-type: none;
-    margin: 0;
-    padding: dm(0.5) 0 0 0;
     display: flex;
+    padding: dm(0.5) 0 0 0;
+    margin: 0;
+    list-style-type: none;
 
     &__item {
+      padding: 0 dm(1) 0 0;
+      margin: 0;
       font-size: 1.4rem;
       line-height: lh(1.4rem);
-      margin: 0;
-      padding: 0 dm(1) 0 0;
-      transition: color $speed-fast;
       text-transform: uppercase;
+      transition: color $speed-fast;
 
       &:hover {
         color: currentColor;

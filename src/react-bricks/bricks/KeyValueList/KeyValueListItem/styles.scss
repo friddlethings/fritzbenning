@@ -1,11 +1,11 @@
-@import '../../../../styles/variables.scss';
-@import '../../../../styles/layout.scss';
+@import "../../../../styles/variables";
+@import "../../../../styles/layout";
 
 .key-value-item {
-  border-top: 1px solid $primary;
   padding: dm(3) 0;
+  border-top: 1px solid $primary;
 
-  @include breakpoint('m') {
+  @include breakpoint("m") {
     padding: dm(4) 0;
   }
 
@@ -16,7 +16,7 @@
   &__key {
     font-weight: $fw-bold;
 
-    @include breakpoint('m') {
+    @include breakpoint("m") {
       font-weight: $fw-medium;
     }
   }
@@ -24,7 +24,7 @@
   &__value {
     margin-top: dm(0.5);
 
-    @include breakpoint('m') {
+    @include breakpoint("m") {
       margin-top: 0;
     }
   }

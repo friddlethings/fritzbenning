@@ -1,23 +1,24 @@
-@import '../../../styles/layout.scss';
-@import '../../../styles/variables.scss';
-@import '../../../styles/breakpoints.scss';
+@import "../../../styles/layout";
+@import "../../../styles/variables";
+@import "../../../styles/breakpoints";
 
 .richtext {
   font-size: 1.8rem;
-  line-height: lh-large(1.8rem);
   font-weight: $fw-regular;
+  line-height: lh-large(1.8rem);
 
-  @include breakpoint('m') {
+  @include breakpoint("m") {
     font-size: 2rem;
     line-height: lh-large(2rem);
   }
 
-  @include breakpoint('l') {
+  @include breakpoint("l") {
     font-size: 2.2rem;
     line-height: lh-large(2.2rem);
   }
 
   // react bricks
+
   .toolbar {
     font-size: 1.4rem;
   }

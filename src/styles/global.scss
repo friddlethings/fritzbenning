@@ -1,5 +1,5 @@
-@import './variables.scss';
-@import './transitions.scss';
+@import "./variables";
+@import "./transitions";
 
 * {
   box-sizing: border-box;
@@ -12,15 +12,15 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
-  font-family: 'HK Grotesk', sans-serif;
-  font-weight: $fw-medium;
   color: $primary;
+  font-family: "HK Grotesk", sans-serif;
+  font-size: 1.6rem;
+  font-weight: $fw-medium;
 }
 
 a {
-  text-decoration: none;
   color: $primary;
+  text-decoration: none;
   transition: color 0.2s;
 
   &:hover {

@@ -6,9 +6,8 @@ import Unit from '../../../components/Unit'
 import {
   LayoutDefaultProps,
   LayoutInterface,
-  LayoutProps,
+  LayoutProps
 } from '../../sideProps/LayoutProps'
-import './styles.scss'
 
 interface KeyValueListProps extends LayoutInterface {
   items: string

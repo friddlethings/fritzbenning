@@ -24,8 +24,15 @@
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.4",
-    "prettier": "^2.4.1",
-    "sass": "^1.43.4"
+    "postcss": "^8.4.5",
+    "postcss-sorting": "^7.0.1",
+    "prettier": "^2.5.1",
+    "sass": "^1.43.4",
+    "stylelint": "^14.2.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.1.0"
   },
   "keywords": [
     "Fritz Benning",
@@ -40,6 +47,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "stylelint": "npx stylelint \"**/*.scss\" --fix",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
