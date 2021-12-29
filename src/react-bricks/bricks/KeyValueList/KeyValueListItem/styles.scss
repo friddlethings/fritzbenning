@@ -15,10 +15,6 @@
 
   &__key {
     font-weight: $fw-bold;
-
-    @include breakpoint("m") {
-      font-weight: $fw-medium;
-    }
   }
 
   &__value {

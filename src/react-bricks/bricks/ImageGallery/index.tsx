@@ -15,9 +15,11 @@ import './styles.scss'
 
 interface ImageGalleryProps extends LayoutInterface {
   images: string[]
+  columns: number
 }
 
 const ImageGallery: types.Brick<ImageGalleryProps> = ({
+  columns,
   width,
   paddingTop,
   paddingBottom,
@@ -42,7 +44,12 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
     >
       <Row>
         <Column xs={12}>
-          <div className="image-gallery__grid">
+          <div
+            className={cx({
+              'image-gallery__grid': true,
+              [`with-${columns}-columns`]: columns,
+            })}
+          >
             <Repeater
               propName="images"
               itemProps={{ openLightbox }}
@@ -110,6 +117,7 @@ ImageGallery.schema = {
   name: 'image-gallery',
   label: 'Bildergalerie',
   getDefaultProps: () => ({
+    columns: 3,
     ...LayoutDefaultProps,
   }),
   repeaterItems: [
@@ -117,10 +125,23 @@ ImageGallery.schema = {
       name: 'images',
       itemType: 'image',
       itemLabel: 'Bild',
-      max: 12,
+      max: 16,
     },
   ],
-  sideEditProps: [LayoutProps],
+  sideEditProps: [
+    LayoutProps,
+    {
+      name: 'columns',
+      label: 'Spalten',
+      type: types.SideEditPropType.Number,
+      validate: (value: number) => (value >= 2 && value <= 3 ? true : false),
+      rangeOptions: {
+        min: 2,
+        max: 3,
+        step: 1,
+      },
+    },
+  ],
 }
 
 export default ImageGallery

@@ -7,7 +7,7 @@ import Unit from '../../../components/Unit'
 import {
   LayoutDefaultProps,
   LayoutInterface,
-  LayoutProps
+  LayoutProps,
 } from '../../sideProps/LayoutProps'
 import './styles.scss'
 
@@ -23,7 +23,7 @@ const HeroImage: types.Brick<HeroImageProps> = ({
   paddingBottom,
 }) => {
   const { isAdmin } = useAdminContext()
-  
+
   const [lightbox, setLightbox] = useState(false)
 
   const handleLighbox = () => {
@@ -45,6 +45,7 @@ const HeroImage: types.Brick<HeroImageProps> = ({
               alt="Icon"
               containerClassName="hero-image__img"
               aspectRatio={3 / 2}
+              maxWidth={3000}
             />
           </div>
           {title && <caption className="hero-image__caption">{title}</caption>}
@@ -53,6 +54,7 @@ const HeroImage: types.Brick<HeroImageProps> = ({
               propName="image"
               alt="Icon"
               containerClassName="hero-image__img hero-image__img--lightbox"
+              maxWidth={3000}
             />
             {title && (
               <caption className="hero-image__caption is-inverted">
