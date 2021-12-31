@@ -1,6 +1,6 @@
 import React from 'react'
 import { types } from 'react-bricks/frontend'
-import ErrorNoKeys from '../components/errorNoKeys'
+import ErrorNoKeys from '../components/ErrorNoKeys'
 import Seo from '../components/seo'
 
 interface BlogListThumbnailsProps {
