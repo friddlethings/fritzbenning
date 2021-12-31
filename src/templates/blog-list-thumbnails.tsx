@@ -1,7 +1,7 @@
 import React from 'react'
 import { types } from 'react-bricks/frontend'
 import ErrorNoKeys from '../components/ErrorNoKeys'
-import Seo from '../components/seo'
+import Seo from '../components/Seo'
 
 interface BlogListThumbnailsProps {
   pageContext: { error: string; posts: types.Page[] }
