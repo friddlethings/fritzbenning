@@ -60,7 +60,7 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
                           title={post.meta.title}
                           image={post.meta.featuredImage}
                           tags={post.tags}
-                          to={`/${post.slug}`}
+                          to={`/blog/${post.slug}`}
                         />
                       </Column>
                     ))}

@@ -2,9 +2,9 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const bluebird = require('bluebird')
-const fetchPages = require('react-bricks').fetchPages
-const fetchPage = require('react-bricks').fetchPage
+const fetchPages = require('react-bricks/frontend').fetchPages
+const fetchPage = require('react-bricks/frontend').fetchPage
+const fetchTags = require('react-bricks/frontend').fetchTags
 
 exports.createPages = async ({ actions: { createPage } }) => {
   const appId = process.env.GATSBY_APP_ID
@@ -22,7 +22,13 @@ exports.createPages = async ({ actions: { createPage } }) => {
     return
   }
 
-  const allPages = await fetchPages(apiKey)
+  const { items: tags } = await fetchTags(apiKey)
+  tags.sort()
+
+  const allPages = await fetchPages(apiKey, {
+    pageSize: 1000,
+    sort: '-publishedAt',
+  })
 
   if (!allPages || allPages.length === 0) {
     console.error(
@@ -30,38 +36,55 @@ exports.createPages = async ({ actions: { createPage } }) => {
     )
     createPage({
       path: `/`,
-      component: require.resolve('./src/templates/page.tsx'),
+      component: require.resolve('./src/templates/index.tsx'),
       context: { page: null, error: 'NOPAGE' },
     })
     return
   }
 
-  const allPagesWithContent = await bluebird.map(
-    allPages,
-    (page) => {
-      return fetchPage(page.slug, apiKey)
-    },
-    { concurrency: 2 }
-  )
+  const posts = allPages.filter((page) => page.type === 'post')
+  // const popularPosts = allPages.filter(
+  //   (page) => page.type === 'post' && page.tags?.includes('popular')
+  // )
+  const pages = allPages.filter((page) => page.type !== 'post')
 
-  // Home Page
-  const homePage = allPagesWithContent.find((page) => page.slug === 'home')
-  if (homePage) {
+  createPage({
+    path: `/`,
+    component: require.resolve('./src/templates/index.tsx'),
+    context: { posts, tags },
+  })
+
+  createPage({
+    path: `/thumbnails`,
+    component: require.resolve('./src/templates/blog-list-thumbnails.tsx'),
+    context: { posts },
+  })
+
+  tags.forEach((tag) => {
+    const pagesByTag = posts.filter((page) => page.tags?.includes(tag))
+
     createPage({
-      path: `/`,
+      path: `/tag/${tag}`,
+      component: require.resolve('./src/templates/tag.tsx'),
+      context: { posts: pagesByTag, filterTag: tag, tags },
+    })
+  })
+
+  for (const { slug } of pages) {
+    const page = await fetchPage(slug, apiKey)
+    createPage({
+      path: `/${page.slug}/`,
       component: require.resolve('./src/templates/page.tsx'),
-      context: { page: homePage },
+      context: { page },
     })
   }
 
-  // Other pages
-  allPagesWithContent
-    .filter((page) => page.slug !== 'home')
-    .forEach((page) => {
-      createPage({
-        path: `/${page.slug}/`,
-        component: require.resolve('./src/templates/page.tsx'),
-        context: { page },
-      })
+  for (const { slug } of posts) {
+    const page = await fetchPage(slug, apiKey)
+    createPage({
+      path: `/blog/${page.slug}/`,
+      component: require.resolve('./src/templates/page.tsx'),
+      context: { page },
     })
+  }
 }

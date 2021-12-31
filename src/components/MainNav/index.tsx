@@ -16,7 +16,7 @@ const MainNav: React.FC = () => (
       </li>
       <li className="main-nav__list__item">
         <Link
-          to="/sideprojects/"
+          to="/tag/sideproject"
           className="main-nav__list__item__link"
           activeClassName="is-active"
         >
@@ -25,7 +25,7 @@ const MainNav: React.FC = () => (
       </li>
       <li className="main-nav__list__item">
         <Link
-          to="/fotografie/"
+          to="/tag/fotografie"
           className="main-nav__list__item__link"
           activeClassName="is-active"
         >

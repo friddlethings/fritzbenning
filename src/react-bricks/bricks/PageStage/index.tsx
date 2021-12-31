@@ -5,7 +5,7 @@ import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
 import Meta from '../../../components/Meta'
 import Unit from '../../../components/Unit'
-import { randomIntFromInterval } from '../../../utils'
+import { randomIntFromInterval } from '../../../utils/randomIntFromInterval'
 import './styles.scss'
 
 interface PageStageProps {

@@ -11,12 +11,14 @@ interface MetaProps {
 const Meta: React.FC<MetaProps> = ({ tags, publishedAt }) => (
   <div className="meta">
     <span className="meta__published-at">
-      Veröffentlicht am <strong>{new Date(publishedAt).toLocaleDateString('de-DE')}</strong></span>
+      Veröffentlicht am{' '}
+      <strong>{new Date(publishedAt).toLocaleDateString('de-DE')}</strong>
+    </span>
     {tags.length > 0 && <OnlyDesktop>&middot;</OnlyDesktop>}
     <ul className="meta__tags">
       {tags.map((tag) => (
         <li>
-          <Link href={`/${tag}/`}>{`#${tag}`}</Link>
+          <Link href={`/tag/${tag}`}>{`#${tag}`}</Link>
         </li>
       ))}
     </ul>
