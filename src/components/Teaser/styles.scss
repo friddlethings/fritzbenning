@@ -1,6 +1,7 @@
 @import "../../styles/layout";
 @import "../../styles/variables";
 @import "../../styles/animations";
+@import "../../styles/breakpoints";
 
 .teaser {
   a {
@@ -23,15 +24,18 @@
       height: auto;
       animation: fade-in $speed-default;
       aspect-ratio: 4 / 5;
-      filter: grayscale(100) contrast(110%);
       transform: translateZ(0) scale(1);
       transition:
         transform $speed-fast cubic-bezier(0.45, 0, 0.55, 1),
         filter $speed-fast cubic-bezier(0.45, 0, 0.55, 1);
 
-      &:hover {
-        filter: grayscale(0) contrast(100%);
-        transform: translateZ(0) scale(1.04);
+      @include breakpoint("m") {
+        filter: grayscale(100) contrast(110%);
+
+        &:hover {
+          filter: grayscale(0) contrast(100%);
+          transform: translateZ(0) scale(1.04);
+        }
       }
     }
   }
