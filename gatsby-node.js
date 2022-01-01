@@ -42,32 +42,14 @@ exports.createPages = async ({ actions: { createPage } }) => {
     return
   }
 
+  const pages = allPages.filter((page) => page.type === 'page')
+  const doorpages = allPages.filter((page) => page.type === 'doorpage')
   const posts = allPages.filter((page) => page.type === 'post')
-  // const popularPosts = allPages.filter(
-  //   (page) => page.type === 'post' && page.tags?.includes('popular')
-  // )
-  const pages = allPages.filter((page) => page.type !== 'post')
 
   createPage({
     path: `/`,
     component: require.resolve('./src/templates/index.tsx'),
     context: { posts, tags },
-  })
-
-  createPage({
-    path: `/thumbnails`,
-    component: require.resolve('./src/templates/blog-list-thumbnails.tsx'),
-    context: { posts },
-  })
-
-  tags.forEach((tag) => {
-    const pagesByTag = posts.filter((page) => page.tags?.includes(tag))
-
-    createPage({
-      path: `/tag/${tag}`,
-      component: require.resolve('./src/templates/tag.tsx'),
-      context: { posts: pagesByTag, filterTag: tag, tags },
-    })
   })
 
   for (const { slug } of pages) {
@@ -79,6 +61,17 @@ exports.createPages = async ({ actions: { createPage } }) => {
     })
   }
 
+  console.log(doorpages)
+
+  for (const { slug } of doorpages) {
+    const page = await fetchPage(slug, apiKey)
+    createPage({
+      path: `/${page.slug}/`,
+      component: require.resolve('./src/templates/doorpage.tsx'),
+      context: { page, posts, tags },
+    })
+  }
+
   for (const { slug } of posts) {
     const page = await fetchPage(slug, apiKey)
     createPage({
@@ -87,4 +80,14 @@ exports.createPages = async ({ actions: { createPage } }) => {
       context: { page },
     })
   }
+
+  tags.forEach((tag) => {
+    const pagesByTag = posts.filter((page) => page.tags?.includes(tag))
+
+    createPage({
+      path: `/tag/${tag}`,
+      component: require.resolve('./src/templates/tag.tsx'),
+      context: { posts: pagesByTag, filterTag: tag, tags },
+    })
+  })
 }

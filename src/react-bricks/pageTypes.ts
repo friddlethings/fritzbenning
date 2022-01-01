@@ -6,7 +6,7 @@ const pageTypes: types.IPageType[] = [
     pluralName: 'pages',
     defaultLocked: false,
     defaultStatus: types.PageStatus.Published,
-    defaultLanguage: 'en',
+    defaultLanguage: 'de',
     getDefaultContent: () => ['page-stage'],
   },
   {
@@ -14,7 +14,27 @@ const pageTypes: types.IPageType[] = [
     pluralName: 'doorpages',
     defaultLocked: false,
     defaultStatus: types.PageStatus.Published,
-    defaultLanguage: 'en',
+    defaultLanguage: 'de',
+    customFields: [
+      {
+        groupName: 'Doorpage',
+        defaultOpen: true,
+        props: [
+          {
+            name: 'category',
+            label: 'Kategorie',
+            type: types.SideEditPropType.Select,
+            selectOptions: {
+              display: types.OptionsDisplay.Select,
+              options: [
+                { value: 'fotografie', label: 'fotografie' },
+                { value: 'sideproject', label: 'sideproject' },
+              ],
+            },
+          },
+        ],
+      },
+    ],
     getDefaultContent: () => ['page-stage'],
   },
   {
@@ -22,7 +42,7 @@ const pageTypes: types.IPageType[] = [
     pluralName: 'posts',
     defaultLocked: false,
     defaultStatus: types.PageStatus.Published,
-    defaultLanguage: 'en',
+    defaultLanguage: 'de',
     getDefaultContent: () => ['page-stage'],
   },
 ]
