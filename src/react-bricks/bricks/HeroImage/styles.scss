@@ -17,12 +17,11 @@
     }
 
     &--lightbox {
-      padding: dm(3);
       cursor: zoom-out;
 
       img {
         display: block;
-        width: 100%;
+        max-width: calc(100vw - dm(4));
         height: auto;
         border: dm(1) solid white;
 
