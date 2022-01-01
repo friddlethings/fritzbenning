@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { types, usePagesPublic } from 'react-bricks/frontend'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import Column from '../../../components/Grid/Column'
@@ -30,10 +30,6 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
     pageSize: pageSize,
     sort: '-createdAt',
   })
-
-  useEffect(() => {
-    console.log
-  }, [])
 
   const changePage = (newPage: number) => {
     window.scrollTo({

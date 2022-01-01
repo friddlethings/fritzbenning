@@ -25,7 +25,7 @@ const TagPage: React.FC<PageProps> = ({
   return (
     <PageTemplate>
       <Seo title={filterTag} description={filterTag} lang="de" />
-      <Stage title={`${capitalizeFirstLetter(filterTag)}`} />
+      <Stage title={`#${capitalizeFirstLetter(filterTag)}`} />
       <Unit paddingTop>
         <Row withVerticalGap>
           {posts.map((post: any) => (

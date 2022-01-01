@@ -17,7 +17,7 @@ const Teaser: React.FC<TeaserProps> = ({ title, image, to, tags }) => {
           <img src={image} alt={title} className="teaser__inner__image" />
         </div>
         <div className="teaser__caption">
-          <h5 className="teaser__title">{title}</h5>
+          <h4 className="teaser__title">{title}</h4>
           {tags && (
             <ul className="teaser__tags">
               {tags.map((tag) => (
