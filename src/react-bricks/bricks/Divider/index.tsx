@@ -1,16 +1,16 @@
 import React from 'react'
 import { types } from 'react-bricks/frontend'
+import Line from '../../../components/Divider'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
 import Unit from '../../../components/Unit'
-import './styles.scss'
 
 const Divider: types.Brick = () => {
   return (
-    <Unit className="divider">
+    <Unit>
       <Row>
         <Column xs={12}>
-          <div className="divider__inner" />
+          <Line />
         </Column>
       </Row>
     </Unit>

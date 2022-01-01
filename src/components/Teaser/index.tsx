@@ -6,7 +6,7 @@ interface TeaserProps {
   title: string
   image: string
   to: string
-  tags: string[]
+  tags?: string[]
 }
 
 const Teaser: React.FC<TeaserProps> = ({ title, image, to, tags }) => {

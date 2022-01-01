@@ -6,8 +6,6 @@ interface SpacerProps {
 }
 
 const Spacer: React.FC<SpacerProps> = ({ size }) => {
-  console.log(size)
-
   return (
     <div className="spacer" style={{ width: size * 8, height: size * 8 }} />
   )

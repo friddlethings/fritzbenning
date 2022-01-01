@@ -26,13 +26,13 @@
     line-height: lh(2.2rem);
 
     @include breakpoint("m") {
-      font-size: 2.6rem;
-      line-height: lh(2.6rem);
+      font-size: 2.4rem;
+      line-height: lh(2.4rem);
     }
 
     @include breakpoint("l") {
-      font-size: 2.8rem;
-      line-height: lh(2.8rem);
+      font-size: 2.6rem;
+      line-height: lh(2.6rem);
     }
 
     &--withPaddingTop {

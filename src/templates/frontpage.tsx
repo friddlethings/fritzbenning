@@ -6,6 +6,7 @@ import {
   ReactBricksContext,
   types,
 } from 'react-bricks/frontend'
+import Divider from '../components/Divider'
 import ErrorNoHomePage from '../components/ErrorNoHomePage'
 import ErrorNoKeys from '../components/ErrorNoKeys'
 import Column from '../components/Grid/Column'
@@ -19,7 +20,7 @@ interface ReactBricksPageProps {
   pageContext: {
     page: types.Page
     error: string
-    lastPosts: any
+    posts: any
     lastLostplacePosts: any
     lastTravelPosts: any
     lastSideprojectPosts: any
@@ -31,7 +32,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
   pageContext: {
     page,
     error,
-    lastPosts,
+    posts,
     lastLostplacePosts,
     lastTravelPosts,
     lastSideprojectPosts,
@@ -44,7 +45,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
   // Removes unknown or not allowed bricks
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
 
-  console.log(page)
+  console.log(posts)
 
   return (
     <PageTemplate>
@@ -53,36 +54,40 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
         subheadline="Hier findest du eine wilde Sammlung von Dingen, die ich neben meiner Arbeit als User Experience Designer noch so kreiere. Schau doch mal durch."
       /> */}
       <PageViewer page={pageOk} />
-      <Unit className="teaser-gallery" paddingTop>
+      <Unit paddingTop>
         <Row>
-          <Column xs={6}>
-            <h5>#lostplaces</h5>
-          </Column>
-          <Column xs={6}>
-            <Link to="/tag/lostplace">Alle Beiträge</Link>
+          <Column xs={12}>
+            <Link to="/tag/lostplace">
+              <h5>#lostplaces</h5>
+            </Link>
           </Column>
           <Spacer size={5} />
         </Row>
         <Row withVerticalGap>
           {lastLostplacePosts.map((post: any) => (
-            <Column xs={12} m={6}>
+            <Column xs={12} m={6} l={4}>
               <Teaser
                 title={post.meta.title}
                 image={post.meta.featuredImage}
-                tags={post.tags}
                 to={`/blog/${post.slug}`}
               />
             </Column>
           ))}
         </Row>
       </Unit>
-      <Unit className="teaser-gallery" paddingTop>
+      <Unit>
         <Row>
-          <Column xs={6}>
-            <h5>#travel</h5>
+          <Column xs={12}>
+            <Divider />
           </Column>
-          <Column xs={6}>
-            <Link to="/tag/travel">Alle Beiträge</Link>
+        </Row>
+      </Unit>
+      <Unit paddingTop>
+        <Row>
+          <Column xs={12}>
+            <Link to="/tag/travel">
+              <h5>#travel</h5>
+            </Link>
           </Column>
           <Spacer size={5} />
         </Row>
@@ -92,20 +97,25 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
               <Teaser
                 title={post.meta.title}
                 image={post.meta.featuredImage}
-                tags={post.tags}
                 to={`/blog/${post.slug}`}
               />
             </Column>
           ))}
         </Row>
       </Unit>
-      <Unit className="teaser-gallery" paddingTop>
+      <Unit>
         <Row>
-          <Column xs={6}>
-            <h5>#sideproject</h5>
+          <Column xs={12}>
+            <Divider />
           </Column>
-          <Column xs={6}>
-            <Link to="/tag/sideproject">Alle Beiträge</Link>
+        </Row>
+      </Unit>
+      <Unit paddingTop>
+        <Row>
+          <Column xs={12}>
+            <Link to="/tag/sideproject">
+              <h5>#sideproject</h5>
+            </Link>
           </Column>
           <Spacer size={5} />
         </Row>
@@ -115,7 +125,6 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
               <Teaser
                 title={post.meta.title}
                 image={post.meta.featuredImage}
-                tags={post.tags}
                 to={`/blog/${post.slug}`}
               />
             </Column>

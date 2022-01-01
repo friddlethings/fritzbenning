@@ -5,7 +5,11 @@
   flex-wrap: wrap;
 
   &.with-vertical-gap {
-    gap: dm(8) 0;
+    gap: dm(5) 0;
+
+    @include breakpoint("m") {
+      gap: dm(8) 0;
+    }
   }
 
   &.align-top {

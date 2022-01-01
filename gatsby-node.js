@@ -52,7 +52,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
 
   const lastLostplacePosts = posts
     .filter((post) => post.tags?.includes('lostplace'))
-    .splice(0, 4)
+    .splice(0, 6)
   const lastTravelPosts = posts
     .filter((post) => post.tags?.includes('travel'))
     .splice(0, 2)
@@ -65,7 +65,7 @@ exports.createPages = async ({ actions: { createPage } }) => {
     component: require.resolve('./src/templates/frontpage.tsx'),
     context: {
       page: homepage,
-      lastPosts: posts.splice(0, 4),
+      posts: posts,
       lastLostplacePosts,
       lastTravelPosts,
       lastSideprojectPosts,
@@ -106,7 +106,6 @@ exports.createPages = async ({ actions: { createPage } }) => {
   }
 
   tags.forEach((tag) => {
-    console.log(posts)
     const postsByTag = posts.filter((post) => post.tags?.includes(tag))
     createPage({
       path: `/tag/${tag}`,
