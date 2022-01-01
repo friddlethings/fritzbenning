@@ -25,10 +25,12 @@
   }
 
   &.with-frame {
-    border: dm(1) solid white;
+    img {
+      border: dm(1) solid white;
 
-    @include breakpoint("m") {
-      border: dm(2) solid white;
+      @include breakpoint("m") {
+        border: dm(2) solid white;
+      }
     }
   }
 }
