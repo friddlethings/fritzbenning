@@ -27,10 +27,6 @@ const Page: React.FC<ReactBricksPageProps> = ({
 }) => {
   const { pageTypes, bricks } = useContext(ReactBricksContext)
 
-  console.log(page)
-
-  // Clean the received content
-  // Removes unknown or not allowed bricks
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
 
   return (

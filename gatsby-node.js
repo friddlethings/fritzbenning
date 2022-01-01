@@ -61,14 +61,19 @@ exports.createPages = async ({ actions: { createPage } }) => {
     })
   }
 
-  console.log(doorpages)
-
   for (const { slug } of doorpages) {
     const page = await fetchPage(slug, apiKey)
+
+    console.log(page)
+
+    const postsByTag = posts.filter((post) =>
+      post.tags?.includes(page.customValues.tag)
+    )
+
     createPage({
       path: `/${page.slug}/`,
       component: require.resolve('./src/templates/doorpage.tsx'),
-      context: { page, posts, tags },
+      context: { page, posts: postsByTag, tags },
     })
   }
 
@@ -82,12 +87,12 @@ exports.createPages = async ({ actions: { createPage } }) => {
   }
 
   tags.forEach((tag) => {
-    const pagesByTag = posts.filter((page) => page.tags?.includes(tag))
+    const postsByTag = posts.filter((post) => post.tags?.includes(tag))
 
     createPage({
       path: `/tag/${tag}`,
       component: require.resolve('./src/templates/tag.tsx'),
-      context: { posts: pagesByTag, filterTag: tag, tags },
+      context: { posts: postsByTag, filterTag: tag, tags },
     })
   })
 }

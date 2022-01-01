@@ -21,8 +21,8 @@ const pageTypes: types.IPageType[] = [
         defaultOpen: true,
         props: [
           {
-            name: 'category',
-            label: 'Kategorie',
+            name: 'tag',
+            label: 'Tag',
             type: types.SideEditPropType.Select,
             selectOptions: {
               display: types.OptionsDisplay.Select,
