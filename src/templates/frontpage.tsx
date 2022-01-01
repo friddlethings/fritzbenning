@@ -69,6 +69,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
               <Teaser
                 title={post.meta.title}
                 image={post.meta.featuredImage}
+                tags={post.tags}
                 to={`/blog/${post.slug}`}
               />
             </Column>
@@ -97,6 +98,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
               <Teaser
                 title={post.meta.title}
                 image={post.meta.featuredImage}
+                tags={post.tags}
                 to={`/blog/${post.slug}`}
               />
             </Column>
@@ -125,6 +127,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
               <Teaser
                 title={post.meta.title}
                 image={post.meta.featuredImage}
+                tags={post.tags}
                 to={`/blog/${post.slug}`}
               />
             </Column>
