@@ -1,8 +1,8 @@
-import cx from 'classnames'
+import classNames from 'classnames'
 import React from 'react'
 import { Image as Img, types } from 'react-bricks/frontend'
 import { LayoutInterface } from '../../../sideProps/LayoutProps'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface ImageProps extends LayoutInterface {
   image: string
@@ -23,7 +23,11 @@ const Image: types.Brick<ImageProps> = ({
 }) => {
   return (
     <div
-      className={cx({ image: true, 'with-hover': hover, 'with-frame': frame })}
+      className={classNames(
+        styles.image,
+        hover && styles['with-hover'],
+        frame && styles['with-frame']
+      )}
       {...rest}
       onClick={() => openLightbox && openLightbox(index)}
     >
@@ -37,21 +41,21 @@ Image.schema = {
   name: 'image',
   label: 'Bild',
   getDefaultProps: () => ({
-    title: 'Titel',
+    title: 'Titel'
   }),
   sideEditProps: [
     {
       name: 'title',
       label: 'Bildunterschrift',
-      show: (props) => true,
-      type: types.SideEditPropType.Text,
-    },
-  ],
+      show: props => true,
+      type: types.SideEditPropType.Text
+    }
+  ]
 }
 
 Image.defaultProps = {
   hover: true,
-  frame: false,
+  frame: false
 }
 
 export default Image

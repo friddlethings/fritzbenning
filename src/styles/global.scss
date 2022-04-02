@@ -1,21 +1,20 @@
-@import "./variables";
-@import "./transitions";
+@import './headings';
 
 * {
-  box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
 }
 
 html {
-  font-size: 10px;
   -webkit-font-smoothing: antialiased;
+  font-size: 10px;
 }
 
 body {
   color: $primary;
-  font-family: "HK Grotesk", sans-serif;
-  font-size: 1.6rem;
   font-weight: $fw-medium;
+  font-size: 1.6rem;
+  font-family: 'HK Grotesk', sans-serif;
 }
 
 a {

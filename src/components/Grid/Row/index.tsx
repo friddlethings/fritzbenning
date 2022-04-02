@@ -1,6 +1,6 @@
-import cx from 'classnames'
+import classNames from 'classnames'
 import React from 'react'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface RowProps {
   children: React.ReactNode
@@ -10,11 +10,11 @@ interface RowProps {
 
 const Row: React.FC<RowProps> = ({ children, withVerticalGap, align }) => (
   <div
-    className={cx({
-      row: true,
-      'with-vertical-gap': withVerticalGap,
-      [`align-${align}`]: align,
-    })}
+    className={classNames(
+      styles.row,
+      withVerticalGap && styles['with-vertical-gap'],
+      align && styles[`align-${align}`]
+    )}
   >
     {children}
   </div>
@@ -22,7 +22,7 @@ const Row: React.FC<RowProps> = ({ children, withVerticalGap, align }) => (
 
 Row.defaultProps = {
   align: 'top',
-  withVerticalGap: false,
+  withVerticalGap: false
 }
 
 export default Row

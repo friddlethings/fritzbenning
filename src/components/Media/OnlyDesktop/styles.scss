@@ -1,9 +1,0 @@
-@import "../../../styles/breakpoints";
-
-.only-desktop {
-  display: none;
-
-  @include breakpoint("m") {
-    display: block;
-  }
-}

@@ -1,0 +1,39 @@
+@import '../../styles/layout';
+@import '../../styles/variables';
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: dm(12) 0 0 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: dm(6);
+  height: dm(6);
+  margin: 0 dm(1);
+  color: $secondary;
+  font-weight: $fw-bold;
+  font-size: 1.6rem;
+  line-height: lh(1.6rem);
+  cursor: pointer;
+  transition: transform $speed-default, background-color $speed-default,
+    color $speed-default;
+
+  &:hover {
+    transform: translate(0, -2px);
+  }
+
+  &.active {
+    border-radius: 50%;
+    background-color: $primary-20;
+    color: $primary;
+    cursor: default;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}

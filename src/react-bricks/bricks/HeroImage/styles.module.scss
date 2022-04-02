@@ -1,0 +1,46 @@
+@import '../../../styles/layout';
+@import '../../../styles/variables';
+@import '../../../styles/breakpoints';
+@import '../../../styles/animations';
+
+.image {
+  cursor: zoom-in;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    animation: fade-in $speed-default;
+    transition: opacity $speed-fast;
+  }
+
+  &.lightbox {
+    cursor: zoom-out;
+
+    img {
+      display: block;
+      max-width: calc(100vw - dm(4));
+      height: auto;
+      border: dm(1) solid white;
+
+      @include breakpoint('m') {
+        width: auto;
+        height: 100%;
+        border: dm(2) solid white;
+      }
+    }
+  }
+}
+
+.caption {
+  display: block;
+  margin-top: dm(2);
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  &.inverted {
+    color: $primary-50;
+  }
+}

@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React, { useState } from 'react'
 import { Image, types, useAdminContext } from 'react-bricks/frontend'
 import Column from '../../../components/Grid/Column'
@@ -7,9 +8,9 @@ import Unit from '../../../components/Unit'
 import {
   LayoutDefaultProps,
   LayoutInterface,
-  LayoutProps,
+  LayoutProps
 } from '../../sideProps/LayoutProps'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface HeroImageProps extends LayoutInterface {
   image: string
@@ -20,7 +21,7 @@ const HeroImage: types.Brick<HeroImageProps> = ({
   title,
   width,
   paddingTop,
-  paddingBottom,
+  paddingBottom
 }) => {
   const { isAdmin } = useAdminContext()
 
@@ -31,33 +32,28 @@ const HeroImage: types.Brick<HeroImageProps> = ({
   }
 
   return (
-    <Unit
-      className="hero-image"
-      width={width}
-      paddingTop={paddingTop}
-      paddingBottom={paddingBottom}
-    >
+    <Unit width={width} paddingTop={paddingTop} paddingBottom={paddingBottom}>
       <Row>
         <Column xs={12}>
-          <div onClick={handleLighbox}>
+          <div className={styles.image} onClick={handleLighbox}>
             <Image
               propName="image"
               alt="Icon"
-              containerClassName="hero-image__img"
+              containerClassName={styles.container}
               aspectRatio={3 / 2}
               maxWidth={3000}
             />
           </div>
-          {title && <caption className="hero-image__caption">{title}</caption>}
+          {title && <caption className={styles.caption}>{title}</caption>}
           <Lightbox show={lightbox} close={handleLighbox}>
             <Image
               propName="image"
               alt="Icon"
-              containerClassName="hero-image__img hero-image__img--lightbox"
+              containerClassName={classNames(styles.image, styles.lightbox)}
               maxWidth={3000}
             />
             {title && (
-              <caption className="hero-image__caption is-inverted">
+              <caption className={classNames(styles.caption, styles.inverted)}>
                 {title}
               </caption>
             )}
@@ -73,17 +69,17 @@ HeroImage.schema = {
   label: 'Hero Bild',
   getDefaultProps: () => ({
     title: 'Bildtitle',
-    ...LayoutDefaultProps,
+    ...LayoutDefaultProps
   }),
   sideEditProps: [
     {
       name: 'title',
       label: 'Bildunterschrift',
-      show: (props) => true,
-      type: types.SideEditPropType.Text,
+      show: props => true,
+      type: types.SideEditPropType.Text
     },
-    LayoutProps,
-  ],
+    LayoutProps
+  ]
 }
 
 export default HeroImage

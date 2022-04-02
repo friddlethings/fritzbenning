@@ -1,4 +1,4 @@
-import cx from 'classnames'
+import classNames from 'classnames'
 import React, {
   forwardRef,
   useEffect,
@@ -8,7 +8,7 @@ import React, {
 } from 'react'
 import { ArrowLeft, ArrowRight } from 'react-feather'
 import { useHotkeys } from 'react-hotkeys-hook'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface SliderProps {
   children: React.ReactNode
@@ -30,14 +30,14 @@ const Slider: React.FC<SliderProps> = forwardRef(
     const moveForward = () => {
       if (index.current + 1 < count.current) {
         index.current = index.current + 1
-        setSliderIndex((prevIndex) => prevIndex + 1)
+        setSliderIndex(prevIndex => prevIndex + 1)
       }
     }
 
     const moveBackwards = () => {
       if (index.current > 0) {
         index.current = index.current - 1
-        setSliderIndex((prevIndex) => prevIndex - 1)
+        setSliderIndex(prevIndex => prevIndex - 1)
       }
     }
 
@@ -57,37 +57,33 @@ const Slider: React.FC<SliderProps> = forwardRef(
         bypassAnimation()
         index.current = i
         setSliderIndex(i)
-      },
+      }
     }))
 
     return (
-      <div className="slider">
-        <div className="slider__controller">
+      <div className={styles.slider}>
+        <div className={styles.controller}>
           <div
-            className={cx({
-              slider__controller__next: true,
-              'is-enabled': sliderIndex + 1 < childrenCount,
-            })}
+            className={classNames(
+              styles.next,
+              sliderIndex + 1 < childrenCount && styles.enabled
+            )}
           >
             <ArrowRight onClick={moveForward} color="white" size={36} />
           </div>
-
           <div
-            className={cx({
-              slider__controller__prev: true,
-              'is-enabled': sliderIndex > 0,
-            })}
+            className={classNames(
+              styles.prev,
+              sliderIndex > 0 && styles.enabled
+            )}
           >
             <ArrowLeft onClick={moveBackwards} color="white" size={36} />
           </div>
         </div>
         <div
-          className={cx({
-            slider__container: true,
-            'is-animated': animated,
-          })}
+          className={classNames(styles.container, animated && styles.animated)}
           style={{
-            transform: `translate3d(${sliderIndex * -100}%, 0, 0)`,
+            transform: `translate3d(${sliderIndex * -100}%, 0, 0)`
           }}
         >
           {children}

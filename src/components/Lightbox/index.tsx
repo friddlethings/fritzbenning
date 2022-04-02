@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import React from 'react'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface LightboxProps {
   children: React.ReactNode
@@ -9,9 +9,9 @@ interface LightboxProps {
 }
 
 const Lightbox: React.FC<LightboxProps> = ({ children, show, close }) => (
-  <div className={cx({ lightbox: true, 'is-visible': show })}>
-    <div className="lightbox__background" onClick={close} />
-    <div className="lightbox__content">{children}</div>
+  <div className={cx(styles.lightbox, show && styles['is-visible'])}>
+    <div className={styles.background} onClick={close} />
+    <div className={styles.content}>{children}</div>
   </div>
 )
 

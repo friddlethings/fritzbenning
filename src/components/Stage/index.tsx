@@ -1,10 +1,10 @@
-import cx from 'classnames'
+import classNames from 'classnames'
 import React from 'react'
 import Column from '../Grid/Column'
 import Row from '../Grid/Row'
 import Meta from '../Meta'
 import Unit from '../Unit'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface StageProps {
   title: string
@@ -17,22 +17,22 @@ const Stage: React.FC<StageProps> = ({
   title,
   subheadline,
   publishedAt,
-  tags,
+  tags
 }) => {
   return (
-    <Unit className="page-stage">
+    <Unit className={styles.stage}>
       <Row>
         <Column xs={12}>
-          <div className="page-stage__inner">
-            <h1 className="page-stage__title">{title}</h1>
+          <div className={styles.inner}>
+            <h1 className={styles.title}>{title}</h1>
             {publishedAt ||
               (tags && <Meta publishedAt={publishedAt} tags={tags} />)}
             {subheadline && (
               <p
-                className={cx({
-                  'page-stage__text': true,
-                  'page-stage__text--withPaddingTop': publishedAt || tags,
-                })}
+                className={classNames(
+                  styles.text,
+                  publishedAt || (tags && styles['with-padding-top'])
+                )}
               >
                 {subheadline}
               </p>

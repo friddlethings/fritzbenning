@@ -1,0 +1,73 @@
+@import '../../styles/layout';
+@import '../../styles/variables';
+@import '../../styles/animations';
+@import '../../styles/breakpoints';
+
+.teaser {
+  color: $primary;
+  cursor: pointer;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+
+.inner {
+  overflow: hidden;
+  background-color: #eee;
+}
+
+.image {
+  display: block;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  height: auto;
+  transform: translateZ(0) scale(1);
+  animation: fade-in $speed-default;
+  transition: transform $speed-fast cubic-bezier(0.45, 0, 0.55, 1),
+    filter $speed-fast cubic-bezier(0.45, 0, 0.55, 1);
+
+  @include breakpoint('m') {
+    filter: grayscale(100) contrast(110%);
+
+    &:hover {
+      transform: translateZ(0) scale(1.04);
+      filter: grayscale(0) contrast(100%);
+    }
+  }
+}
+
+.caption {
+  padding: dm(1) 0 0 0;
+  color: currentColor;
+}
+
+.title {
+  padding: dm(1.5) 0 0 0;
+  color: currentColor;
+  transition: color $speed-fast;
+
+  @include breakpoint('m') {
+    padding: dm(2) 0 0 0;
+  }
+}
+
+.tags {
+  display: flex;
+  margin: 0;
+  padding: dm(0.5) 0 0 0;
+  list-style-type: none;
+}
+
+.tag {
+  margin: 0;
+  padding: 0 dm(1) 0 0;
+  font-size: 1.4rem;
+  line-height: lh(1.4rem);
+  text-transform: uppercase;
+  transition: color $speed-fast;
+
+  &:hover {
+    color: currentColor;
+  }
+}

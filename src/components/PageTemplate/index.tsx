@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../Footer'
 import Header from '../Header'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface PageTemplateProps {
   children: React.ReactNode
@@ -9,9 +9,9 @@ interface PageTemplateProps {
 
 const PageTemplate: React.FC<PageTemplateProps> = ({ children }) => {
   return (
-    <div className="page-template">
+    <div className={styles.template}>
       <Header />
-      <main className="page-template__main">{children}</main>
+      <main className={styles.main}>{children}</main>
       <Footer />
     </div>
   )

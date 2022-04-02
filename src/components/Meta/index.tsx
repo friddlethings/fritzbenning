@@ -1,7 +1,7 @@
+import Link from 'next/link'
 import React from 'react'
-import { Link } from 'react-bricks/frontend'
 import OnlyDesktop from '../Media/OnlyDesktop'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface MetaProps {
   tags: string[]
@@ -9,16 +9,18 @@ interface MetaProps {
 }
 
 const Meta: React.FC<MetaProps> = ({ tags, publishedAt }) => (
-  <div className="meta">
-    <span className="meta__published-at">
+  <div className={styles.meta}>
+    <span className={styles.published}>
       Veröffentlicht am{' '}
       <strong>{new Date(publishedAt).toLocaleDateString('de-DE')}</strong>
     </span>
     {tags.length > 0 && <OnlyDesktop>&middot;</OnlyDesktop>}
-    <ul className="meta__tags">
-      {tags.map((tag) => (
+    <ul className={styles.tags}>
+      {tags.map(tag => (
         <li>
-          <Link href={`/tag/${tag}`}>{`#${tag}`}</Link>
+          <Link href={`/tag/${tag}`}>
+            <a>{`#${tag}`}</a>
+          </Link>
         </li>
       ))}
     </ul>

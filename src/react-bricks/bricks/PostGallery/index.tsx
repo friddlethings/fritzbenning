@@ -16,7 +16,7 @@ interface PostGalleryProps {
 const PostGallery: types.Brick<PostGalleryProps> = ({
   category,
   pagination,
-  pageSize,
+  pageSize
 }) => {
   const galleryRef = useRef(null)
 
@@ -28,19 +28,19 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
     usePagination: pagination,
     page: page,
     pageSize: pageSize,
-    sort: '-createdAt',
+    sort: '-createdAt'
   })
 
   const changePage = (newPage: number) => {
     window.scrollTo({
       top: galleryRef.current.offsetTop - 80,
-      behavior: 'smooth',
+      behavior: 'smooth'
     })
     setPage(newPage)
   }
 
   return (
-    <Unit className="teaser-gallery" paddingTop>
+    <Unit paddingTop>
       <SwitchTransition mode="out-in">
         <CSSTransition
           key={`page-${page}`}
@@ -99,7 +99,7 @@ PostGallery.schema = {
   getDefaultProps: () => ({
     category: '',
     pageSize: 8,
-    pagination: false,
+    pagination: false
   }),
   sideEditProps: [
     {
@@ -111,21 +111,21 @@ PostGallery.schema = {
         options: [
           { value: '', label: 'Alle Kategorien' },
           { value: 'fotografie', label: 'Fotografie' },
-          { value: 'sideproject', label: 'Sideprojects' },
-        ],
-      },
+          { value: 'sideproject', label: 'Sideprojects' }
+        ]
+      }
     },
     {
       name: 'pagination',
       label: 'Pagniation',
-      type: types.SideEditPropType.Boolean,
+      type: types.SideEditPropType.Boolean
     },
     {
       name: 'pageSize',
       label: 'Maximale Anzahl pro Seite',
-      type: types.SideEditPropType.Number,
-    },
-  ],
+      type: types.SideEditPropType.Number
+    }
+  ]
 }
 
 export default PostGallery

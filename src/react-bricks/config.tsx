@@ -1,7 +1,7 @@
-import { navigate } from 'gatsby'
+import Router from 'next/router'
 import { types } from 'react-bricks/frontend'
 import bricks from './bricks'
-import GatsbyLink from './GatsbyLink'
+import NextLink from './NextLink'
 import pageTypes from './pageTypes'
 
 const config: types.ReactBricksConfig = {
@@ -13,18 +13,20 @@ const config: types.ReactBricksConfig = {
   //contentClassName: 'content',
   // isDarkColorMode: ...,
   // toggleColorMode: ...,
-  renderLocalLink: GatsbyLink,
-  navigate,
+  renderLocalLink: NextLink,
+  navigate: (path: string) => Router.push(path),
   loginPath: '/admin',
   editorPath: '/admin/editor',
   playgroundPath: '/admin/playground',
   appSettingsPath: '/admin/app-settings',
   useCssInJs: false,
-  appRootElement: '#___gatsby',
+  appRootElement: '#__next',
   clickToEditSide: types.ClickToEditSide.BottomRight,
+  customFields: [],
   //responsiveBreakpoints: [{ type: types.DeviceType.Phone, width: 480, label: 'Smartphone'}],
   enableAutoSave: true,
   disableSaveIfInvalidProps: false,
+  enablePreview: true
 }
 
 export default config

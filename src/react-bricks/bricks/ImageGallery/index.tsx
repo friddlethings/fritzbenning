@@ -1,4 +1,4 @@
-import cx from 'classnames'
+import { default as classNames } from 'classnames'
 import React, { useRef, useState } from 'react'
 import { Repeater, types, useAdminContext } from 'react-bricks/frontend'
 import Column from '../../../components/Grid/Column'
@@ -9,9 +9,9 @@ import Unit from '../../../components/Unit'
 import {
   LayoutDefaultProps,
   LayoutInterface,
-  LayoutProps,
+  LayoutProps
 } from '../../sideProps/LayoutProps'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface ImageGalleryProps extends LayoutInterface {
   images: string[]
@@ -22,7 +22,7 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
   columns,
   width,
   paddingTop,
-  paddingBottom,
+  paddingBottom
 }) => {
   const [lightbox, setLightbox] = useState(false)
   const sliderRef = useRef(null)
@@ -37,7 +37,7 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
 
   return (
     <Unit
-      className="image-gallery"
+      className={styles.gallery}
       width={width}
       paddingTop={paddingTop}
       paddingBottom={paddingBottom}
@@ -45,15 +45,15 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
       <Row>
         <Column xs={12}>
           <div
-            className={cx({
-              'image-gallery__grid': true,
-              [`with-${columns}-columns`]: columns,
-            })}
+            className={classNames(
+              styles.grid,
+              columns && styles[`with-${columns}-columns`]
+            )}
           >
             <Repeater
               propName="images"
               itemProps={{ openLightbox }}
-              renderItemWrapper={(image) => {
+              renderItemWrapper={image => {
                 const img = image.props.value.values.image
 
                 let portrait = false
@@ -71,15 +71,15 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
                   gridColumnEnd: `span 1`,
                   gridRowEnd: `span ${
                     img && getSpanEstimate(img.width, img.height)
-                  }`,
+                  }`
                 }
 
                 return (
                   <div
-                    className={cx({
-                      'image-gallery__grid__element': true,
-                      'image-gallery__grid__element--portrait': portrait,
-                    })}
+                    className={classNames(
+                      styles.element,
+                      portrait && styles.portrait
+                    )}
                     style={style}
                   >
                     {image}
@@ -118,15 +118,15 @@ ImageGallery.schema = {
   label: 'Bildergalerie',
   getDefaultProps: () => ({
     columns: 3,
-    ...LayoutDefaultProps,
+    ...LayoutDefaultProps
   }),
   repeaterItems: [
     {
       name: 'images',
       itemType: 'image',
       itemLabel: 'Bild',
-      max: 16,
-    },
+      max: 16
+    }
   ],
   sideEditProps: [
     LayoutProps,
@@ -138,10 +138,10 @@ ImageGallery.schema = {
       rangeOptions: {
         min: 2,
         max: 3,
-        step: 1,
-      },
-    },
-  ],
+        step: 1
+      }
+    }
+  ]
 }
 
 export default ImageGallery

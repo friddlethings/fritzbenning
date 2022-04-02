@@ -1,6 +1,6 @@
-import cx from 'classnames'
+import classNames from 'classnames'
 import React from 'react'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface ColumnProps {
   children: React.ReactNode
@@ -19,25 +19,25 @@ const Column: React.FC<ColumnProps> = ({
   m,
   l,
   xl,
-  gutter,
+  gutter
 }) => (
   <div
-    className={cx({
-      column: true,
-      'with-gutter': gutter,
-      [`xs-${xs}`]: xs,
-      [`s-${s}`]: s,
-      [`m-${m}`]: m,
-      [`l-${l}`]: l,
-      [`xl-${xl}`]: xl,
-    })}
+    className={classNames(
+      styles.column,
+      gutter && styles['with-gutter'],
+      xs && styles[`xs-${xs}`],
+      s && styles[`s-${s}`],
+      m && styles[`m-${m}`],
+      l && styles[`l-${l}`],
+      xl && styles[`xl-${xl}`]
+    )}
   >
     {children}
   </div>
 )
 
 Column.defaultProps = {
-  gutter: true,
+  gutter: true
 }
 
 export default Column

@@ -1,39 +1,45 @@
-import { Link } from 'gatsby'
+import classNames from 'classnames'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
-import './styles.scss'
+import styles from './styles.module.scss'
 
-const MainNav: React.FC = () => (
-  <nav className="main-nav">
-    <ul className="main-nav__list">
-      <li className="main-nav__list__item">
-        <Link
-          to="/ueber-mich/"
-          className="main-nav__list__item__link"
-          activeClassName="is-active"
-        >
-          Über mich
-        </Link>
-      </li>
-      <li className="main-nav__list__item">
-        <Link
-          to="/sideprojects"
-          className="main-nav__list__item__link"
-          activeClassName="is-active"
-        >
-          Sideprojects
-        </Link>
-      </li>
-      <li className="main-nav__list__item">
-        <Link
-          to="/fotografie"
-          className="main-nav__list__item__link"
-          activeClassName="is-active"
-        >
-          Fotografie
-        </Link>
-      </li>
-    </ul>
-  </nav>
-)
+const MainNav: React.FC = () => {
+  const router = useRouter()
+
+  const links = [
+    {
+      title: 'Über mich',
+      route: '/ueber-mich'
+    },
+    {
+      title: 'Sideprojects',
+      route: '/collection/sideprojects'
+    },
+    {
+      title: 'Fotografie',
+      route: '/collection/fotografie'
+    }
+  ]
+
+  return (
+    <nav className={styles.nav}>
+      <ul className={styles.list}>
+        {links.map(link => (
+          <li
+            className={classNames(
+              styles.item,
+              router.pathname === link.route && styles['is-active']
+            )}
+          >
+            <Link href={link.route}>
+              <a>{link.title}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
 
 export default MainNav

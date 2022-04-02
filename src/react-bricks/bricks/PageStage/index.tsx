@@ -1,4 +1,4 @@
-import cx from 'classnames'
+import classNames from 'classnames'
 import React from 'react'
 import { RichText, Text, types, usePageValues } from 'react-bricks/frontend'
 import Column from '../../../components/Grid/Column'
@@ -6,7 +6,7 @@ import Row from '../../../components/Grid/Row'
 import Meta from '../../../components/Meta'
 import Unit from '../../../components/Unit'
 import { randomIntFromInterval } from '../../../utils/randomIntFromInterval'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface PageStageProps {
   title: string
@@ -19,13 +19,13 @@ const PageStage: types.Brick<PageStageProps> = ({ subheadline, meta }) => {
   const [page] = usePageValues()
 
   return (
-    <Unit className="page-stage">
+    <Unit className={styles.stage}>
       <Row>
         <Column xs={12}>
-          <div className="page-stage__inner">
+          <div className={styles.inner}>
             <Text
-              renderBlock={(props) => (
-                <h1 className="page-stage__title">{props.children}</h1>
+              renderBlock={props => (
+                <h1 className={styles.title}>{props.children}</h1>
               )}
               placeholder="Wie soll die Seite heißen?"
               propName="title"
@@ -35,10 +35,10 @@ const PageStage: types.Brick<PageStageProps> = ({ subheadline, meta }) => {
               <RichText
                 renderBlock={({ children }) => (
                   <p
-                    className={cx({
-                      'page-stage__text': true,
-                      'page-stage__text--withPaddingTop': meta,
-                    })}
+                    className={classNames(
+                      styles.text,
+                      meta && styles['with-padding-top']
+                    )}
                   >
                     {children}
                   </p>
@@ -47,9 +47,9 @@ const PageStage: types.Brick<PageStageProps> = ({ subheadline, meta }) => {
                 placeholder="Ein aussagekräftiger Einleitungstext"
                 renderHighlight={({ children }) => (
                   <span
-                    className="is-highlighted"
+                    className={styles.highlighted}
                     style={{
-                      ['--random' as any]: `${randomIntFromInterval(-1, 1)}deg`,
+                      ['--random' as any]: `${randomIntFromInterval(-1, 1)}deg`
                     }}
                   >
                     {children}
@@ -70,20 +70,20 @@ PageStage.schema = {
   label: 'Seitenbühne',
   getDefaultProps: () => ({
     title: 'Seitentitel',
-    text: 'Einleitungstext',
+    text: 'Einleitungstext'
   }),
   sideEditProps: [
     {
       name: 'meta',
       label: 'Metainformationen anzeigen',
-      type: types.SideEditPropType.Boolean,
+      type: types.SideEditPropType.Boolean
     },
     {
       name: 'subheadline',
       label: 'Einleitungstext anzeigen',
-      type: types.SideEditPropType.Boolean,
-    },
-  ],
+      type: types.SideEditPropType.Boolean
+    }
+  ]
 }
 
 export default PageStage

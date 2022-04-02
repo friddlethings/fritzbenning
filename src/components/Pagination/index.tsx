@@ -1,6 +1,6 @@
-import cx from 'classnames'
+import classNames from 'classnames'
 import React from 'react'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface PaginationProps {
   total: number
@@ -11,15 +11,15 @@ interface PaginationProps {
 const Pagination: React.FC<PaginationProps> = ({
   total,
   currentPage,
-  changePage,
+  changePage
 }) => (
-  <div className="pagination">
+  <div className={styles.pagination}>
     {[...Array(total)].map((page, index) => (
       <div
-        className={cx({
-          pagination__item: true,
-          'is-active': currentPage === index + 1,
-        })}
+        className={classNames(
+          styles.item,
+          currentPage === index + 1 && styles.active
+        )}
         onClick={() => changePage(index + 1)}
       >
         {index + 1}

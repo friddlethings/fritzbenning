@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-bricks/frontend'
-import './styles.scss'
+import Link from 'next/link'
+import React, { useEffect } from 'react'
+import styles from './styles.module.scss'
 
 interface TeaserProps {
   title: string
@@ -10,24 +10,27 @@ interface TeaserProps {
 }
 
 const Teaser: React.FC<TeaserProps> = ({ title, image, to, tags }) => {
+  useEffect(() => {
+    console.log(to)
+  }, [to])
   return (
-    <div className="teaser" key={title}>
-      <Link href={to}>
-        <div className="teaser__inner">
-          <img src={image} alt={title} className="teaser__inner__image" />
+    <Link href={to}>
+      <a className={styles.teaser} key={title}>
+        <div className={styles.inner}>
+          <img src={image} alt={title} className={styles.image} />
         </div>
-        <div className="teaser__caption">
-          <h4 className="teaser__title">{title}</h4>
+        <div className={styles.caption}>
+          <h4 className={styles.title}>{title}</h4>
           {tags && (
-            <ul className="teaser__tags">
-              {tags.map((tag) => (
-                <li className="teaser__tags__item">#{tag}</li>
+            <ul className={styles.tags}>
+              {tags.map(tag => (
+                <li className={styles.tag}>#{tag}</li>
               ))}
             </ul>
           )}
         </div>
-      </Link>
-    </div>
+      </a>
+    </Link>
   )
 }
 

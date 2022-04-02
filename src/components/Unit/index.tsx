@@ -1,6 +1,6 @@
-import cx from 'classnames'
+import classNames from 'classnames'
 import React from 'react'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface UnitProps {
   children: React.ReactNode
@@ -15,17 +15,17 @@ const Unit: React.FC<UnitProps> = ({
   className,
   width,
   paddingTop,
-  paddingBottom,
+  paddingBottom
 }) => {
   return (
     <div
-      className={cx({
-        unit: true,
-        [`unit--${width}`]: width,
-        [`unit--withPaddingTop`]: paddingTop,
-        [`unit--withPaddingBottom`]: paddingBottom,
-        [`${className}`]: className,
-      })}
+      className={classNames(
+        styles.unit,
+        width && styles[width],
+        paddingTop && styles['with-padding-top'],
+        paddingBottom && styles['with-padding-bottom'],
+        className && className
+      )}
     >
       {children}
     </div>
@@ -35,7 +35,7 @@ const Unit: React.FC<UnitProps> = ({
 Unit.defaultProps = {
   width: 'default',
   paddingTop: true,
-  paddingBottom: true,
+  paddingBottom: true
 }
 
 export default Unit

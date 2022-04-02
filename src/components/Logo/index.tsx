@@ -1,9 +1,9 @@
 import React from 'react'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 const Logo: React.FC = () => (
-  <div className="logo">
-    UX <span className="highlight">&</span> Tollerei
+  <div className={styles.logo}>
+    UX <span className={styles.highlight}>&</span> Tollerei
   </div>
 )
 

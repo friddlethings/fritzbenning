@@ -1,26 +1,26 @@
-import { Link } from "gatsby"
-import React from "react"
-import { Instagram } from "react-feather"
-import Column from "../Grid/Column"
-import Row from "../Grid/Row"
-import "./styles.scss"
+import Link from 'next/link'
+import React from 'react'
+import { Instagram } from 'react-feather'
+import Column from '../Grid/Column'
+import Row from '../Grid/Row'
+import styles from './styles.module.scss'
 
 const Footer: React.FC = () => (
-  <footer className="footer">
-    <div className="footer__inner">
+  <footer className={styles.footer}>
+    <div className={styles.inner}>
       <Row>
         <Column xs={12} m={6}>
           UX & Tollerei © {new Date().getFullYear()} Fritz Benning
         </Column>
         <Column xs={12} m={6}>
-          <nav className="footer__nav">
+          <nav className={styles.nav}>
             <ul>
               <li>
                 <a href="mailto:mail@fritzbenning.de">Say Hi</a>
               </li>
               <li>
-                <Link to="/impressum" activeClassName="is-active">
-                  Impressum
+                <Link href="/impressum">
+                  <a>Impressum</a>
                 </Link>
               </li>
               <li>

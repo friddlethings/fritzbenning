@@ -6,9 +6,9 @@ import Unit from '../../../components/Unit'
 import {
   LayoutDefaultProps,
   LayoutInterface,
-  LayoutProps,
+  LayoutProps
 } from '../../sideProps/LayoutProps'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface PostFooterProps extends LayoutInterface {
   text: string
@@ -18,23 +18,23 @@ interface PostFooterProps extends LayoutInterface {
 const PostFooter: types.Brick<PostFooterProps> = ({
   width,
   paddingTop,
-  paddingBottom,
+  paddingBottom
 }) => {
   return (
     <Unit
-      className="post-footer"
+      className={styles['post-footer']}
       width={width}
       paddingTop={paddingTop}
       paddingBottom={paddingBottom}
     >
       <Row>
         <Column xs={12}>
-          <div className="post-footer__inner">
+          <div className={styles.inner}>
             <Text
               placeholder="Label"
               propName="label"
               renderBlock={({ children }) => (
-                <div className="post-footer__label">{children}</div>
+                <div className={styles.label}>{children}</div>
               )}
             />
             <Text
@@ -42,7 +42,7 @@ const PostFooter: types.Brick<PostFooterProps> = ({
               propName="text"
               renderBlock={({ children }) => <p>{children}</p>}
             />
-            <div className="post-footer__action">
+            <div className={styles.action}>
               <a href="mailto:mail@fritzbenning.de">Mail schreiben &rarr;</a>
             </div>
           </div>
@@ -58,9 +58,9 @@ PostFooter.schema = {
   getDefaultProps: () => ({
     label: 'Info',
     text: 'Du möchtest mehr über diesen verlassenen Ort erfahren? Dann schreib mir gerne eine persönliche Nachricht!',
-    ...LayoutDefaultProps,
+    ...LayoutDefaultProps
   }),
-  sideEditProps: [LayoutProps],
+  sideEditProps: [LayoutProps]
 }
 
 export default PostFooter

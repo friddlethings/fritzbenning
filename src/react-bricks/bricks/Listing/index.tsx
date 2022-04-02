@@ -22,7 +22,7 @@ const Listing: types.Brick<ListingProps> = ({
   width,
   columns,
   paddingTop,
-  paddingBottom,
+  paddingBottom
 }) => {
   return (
     <Unit
@@ -38,7 +38,7 @@ const Listing: types.Brick<ListingProps> = ({
               <h5>{title}</h5>
             </Column>
           </Row>
-          <Spacer size={1} />
+          <Spacer size={1} vertical />
         </>
       )}
       <Row>
@@ -62,30 +62,30 @@ Listing.schema = {
     title: 'Titel',
     firstColumnItems: [
       {
-        text: 'Listenelement',
-      },
+        text: 'Listenelement'
+      }
     ],
     secondColumnItems: [
       {
-        text: 'Listenelement',
-      },
+        text: 'Listenelement'
+      }
     ],
     columns: 2,
-    ...LayoutDefaultProps,
+    ...LayoutDefaultProps
   }),
   repeaterItems: [
     {
       name: 'firstColumnItems',
       itemType: 'listing-item',
       itemLabel: 'Element (Erste Spalte)',
-      max: 8,
+      max: 8
     },
     {
       name: 'secondColumnItems',
       itemType: 'listing-item',
       itemLabel: 'Element (Zweite Spalte)',
-      max: 8,
-    },
+      max: 8
+    }
   ],
   sideEditProps: [
     LayoutProps,
@@ -96,7 +96,7 @@ Listing.schema = {
         {
           name: 'title',
           label: 'Überschrift',
-          type: types.SideEditPropType.Text,
+          type: types.SideEditPropType.Text
         },
         {
           name: 'columns',
@@ -105,12 +105,12 @@ Listing.schema = {
           rangeOptions: {
             min: 1,
             max: 2,
-            step: 1,
-          },
-        },
-      ],
-    },
-  ],
+            step: 1
+          }
+        }
+      ]
+    }
+  ]
 }
 
 export default Listing

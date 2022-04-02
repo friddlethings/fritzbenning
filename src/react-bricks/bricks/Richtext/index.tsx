@@ -6,9 +6,9 @@ import Unit from '../../../components/Unit'
 import {
   LayoutDefaultProps,
   LayoutInterface,
-  LayoutProps,
+  LayoutProps
 } from '../../sideProps/LayoutProps'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface RichtextProps extends LayoutInterface {
   text: string
@@ -17,11 +17,11 @@ interface RichtextProps extends LayoutInterface {
 const Richtext: types.Brick<RichtextProps> = ({
   width,
   paddingTop,
-  paddingBottom,
+  paddingBottom
 }) => {
   return (
     <Unit
-      className="richtext"
+      className={styles.richtext}
       width={width}
       paddingTop={paddingTop}
       paddingBottom={paddingBottom}
@@ -39,10 +39,10 @@ const Richtext: types.Brick<RichtextProps> = ({
               types.RichTextFeatures.Code,
               types.RichTextFeatures.Link,
               types.RichTextFeatures.Heading3,
-              types.RichTextFeatures.Heading4,
+              types.RichTextFeatures.Heading4
             ]}
             renderHighlight={({ children }) => (
-              <span className="is-highlighted">{children}</span>
+              <span className={styles.highlighted}>{children}</span>
             )}
             renderCode={({ children }) => <code>{children}</code>}
           />
@@ -57,9 +57,9 @@ Richtext.schema = {
   label: 'Fließtext',
   getDefaultProps: () => ({
     text: 'Ich bin ein Fließtext.',
-    ...LayoutDefaultProps,
+    ...LayoutDefaultProps
   }),
-  sideEditProps: [LayoutProps],
+  sideEditProps: [LayoutProps]
 }
 
 export default Richtext

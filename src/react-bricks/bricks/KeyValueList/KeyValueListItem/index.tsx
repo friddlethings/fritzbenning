@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, types } from 'react-bricks/frontend'
 import Column from '../../../../components/Grid/Column'
 import Row from '../../../../components/Grid/Row'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 interface KeyValueItemProps {
   items: string
@@ -10,12 +10,12 @@ interface KeyValueItemProps {
 
 const KeyValueItem: types.Brick<KeyValueItemProps> = ({ ...rest }) => {
   return (
-    <div className="key-value-item" {...rest}>
+    <div className={styles.item} {...rest}>
       <Row>
         <Column xs={12} m={6} gutter={false}>
           <Text
-            renderBlock={(props) => (
-              <div className="key-value-item__key">{props.children}</div>
+            renderBlock={props => (
+              <div className={styles.key}>{props.children}</div>
             )}
             placeholder="Name"
             propName="key"
@@ -23,8 +23,8 @@ const KeyValueItem: types.Brick<KeyValueItemProps> = ({ ...rest }) => {
         </Column>
         <Column xs={12} m={6} gutter={false}>
           <Text
-            renderBlock={(props) => (
-              <div className="key-value-item__value">{props.children}</div>
+            renderBlock={props => (
+              <div className={styles.value}>{props.children}</div>
             )}
             placeholder="Wert"
             propName="value"
@@ -41,8 +41,8 @@ KeyValueItem.schema = {
   hideFromAddMenu: true,
   getDefaultProps: () => ({
     key: 'Name',
-    value: 'Wert',
-  }),
+    value: 'Wert'
+  })
 }
 
 export default KeyValueItem
