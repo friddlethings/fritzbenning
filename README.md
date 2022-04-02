@@ -11,15 +11,15 @@ npm install
 ## Development
 
 ```bash
-gatsby develop
+npm run dev
 ```
 
 ## Production
 
 ```bash
-gatsby build
+npm run build
 ```
 
 ```bash
-gatsby serve
+npm run start
 ```

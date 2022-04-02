@@ -8,7 +8,7 @@ const ErrorNoKeys = () => {
       </h1>
       <p className="mb-6">
         <code className="text-sm text-black bg-gray-100 px-1 py-1 rounded">
-          GATSBY_APP_ID
+          NEXT_APP_ID
         </code>{' '}
         and{' '}
         <code className="text-sm text-black bg-gray-100 px-1 py-1 rounded">
