@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { types, usePagesPublic } from 'react-bricks/frontend'
+import { types, usedataPublic } from 'react-bricks/frontend'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
@@ -9,25 +9,25 @@ import Unit from '../../../components/Unit'
 
 interface PostGalleryProps {
   category: string
-  pageSize: number
+  dataize: number
   pagination: boolean
 }
 
 const PostGallery: types.Brick<PostGalleryProps> = ({
   category,
   pagination,
-  pageSize
+  dataize
 }) => {
   const galleryRef = useRef(null)
 
   const [page, setPage] = useState(1)
 
-  const { data: pages } = usePagesPublic({
+  const { data } = usedataPublic({
     type: 'post',
     tag: category,
     usePagination: pagination,
     page: page,
-    pageSize: pageSize,
+    dataize: dataize,
     sort: '-createdAt'
   })
 
@@ -50,11 +50,11 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
           classNames="fade"
         >
           <>
-            {pages && (
+            {data && (
               <div ref={galleryRef}>
                 <Row withVerticalGap>
-                  {Array.isArray(pages) &&
-                    pages.map((post: any) => (
+                  {Array.isArray(data) &&
+                    data.map((post: any) => (
                       <Column xs={12} m={6}>
                         <Teaser
                           title={post.meta.title}
@@ -64,8 +64,8 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
                         />
                       </Column>
                     ))}
-                  {Array.isArray(pages.items) &&
-                    pages.items.map((post: any) => (
+                  {Array.isArray(data.items) &&
+                    data.items.map((post: any) => (
                       <Column xs={12} m={6}>
                         <Teaser
                           title={post.meta.title}
@@ -79,7 +79,7 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
 
                 {pagination && (
                   <Pagination
-                    total={pages.pagination.totalPages}
+                    total={data.pagination.totaldata}
                     currentPage={page}
                     changePage={changePage}
                   />
@@ -98,7 +98,7 @@ PostGallery.schema = {
   label: 'Beitragsgalerie',
   getDefaultProps: () => ({
     category: '',
-    pageSize: 8,
+    dataize: 8,
     pagination: false
   }),
   sideEditProps: [
@@ -121,7 +121,7 @@ PostGallery.schema = {
       type: types.SideEditPropType.Boolean
     },
     {
-      name: 'pageSize',
+      name: 'dataize',
       label: 'Maximale Anzahl pro Seite',
       type: types.SideEditPropType.Number
     }
