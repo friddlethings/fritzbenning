@@ -1,7 +1,4 @@
-@import '../../../../styles/layout';
-@import '../../../../styles/variables';
-
 .item {
   padding: 0 0 dm(1) 0;
-  color: $primary-50;
+  color: color(primary-50);
 }

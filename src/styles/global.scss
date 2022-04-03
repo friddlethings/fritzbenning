@@ -11,18 +11,17 @@ html {
 }
 
 body {
-  color: $primary;
-  font-weight: $fw-medium;
-  font-size: 1.6rem;
-  font-family: 'HK Grotesk', sans-serif;
+  background-color: color(primary-20);
+  color: color(primary);
+  font: font(1.6, base, medium);
 }
 
 a {
-  color: $primary;
+  color: color(primary);
   text-decoration: none;
   transition: color 0.2s;
 
   &:hover {
-    color: $secondary;
+    color: color(secondary);
   }
 }

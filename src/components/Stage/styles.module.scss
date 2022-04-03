@@ -1,8 +1,5 @@
-@import '../../styles/layout';
-@import '../../styles/variables';
-
 .stage {
-  @include breakpoint('m') {
+  @include breakpoint(m) {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -21,17 +18,15 @@
 .text {
   margin: 0;
   padding: 0;
-  color: $primary-50;
-  font-weight: $fw-medium;
-  font-size: 2.2rem;
-  line-height: lh(2.2rem);
+  color: color(primary-50);
+  font: font(2.2, base, medium);
 
-  @include breakpoint('m') {
+  @include breakpoint(m) {
     font-size: 2.6rem;
     line-height: lh(2.6rem);
   }
 
-  @include breakpoint('l') {
+  @include breakpoint(l) {
     font-size: 2.8rem;
     line-height: lh(2.8rem);
   }
@@ -45,7 +40,7 @@
     z-index: 1;
     position: relative;
     margin: 0 dm(0.5);
-    color: $secondary;
+    color: color(secondary);
 
     &::before {
       z-index: -1;
@@ -56,7 +51,7 @@
       height: 100%;
       transform: rotate(var(--random));
       border-radius: dm(0.5);
-      background-color: $secondary;
+      background-color: color(secondary);
       content: '';
       opacity: 0.2;
     }

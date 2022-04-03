@@ -1,0 +1,57 @@
+$font-family: 'HK Grotesk', sans-serif;
+
+$font-weights: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  bold: 600
+);
+
+$line-heights: (
+  small: 1.1,
+  base: 1.25,
+  large: 1.4
+);
+
+@function fw($key) {
+  @return map-get($font-weights, $key);
+}
+
+@function font($size, $lineHeight: base, $fontWeight: regular) {
+  $height: map-get($line-heights, $lineHeight);
+  $weight: map-get($font-weights, $fontWeight);
+
+  @return $weight $size + rem/$height $font-family;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/hkgrotesk-light-webfont.woff2') format('woff2'),
+    url('/fonts/hkgrotesk-light-webfont.woff') format('woff');
+  font-family: 'HK Grotesk';
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/hkgrotesk-regular-webfont.woff2') format('woff2'),
+    url('/fonts/hkgrotesk-regular-webfont.woff') format('woff');
+  font-family: 'HK Grotesk';
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/hkgrotesk-medium-webfont.woff2') format('woff2'),
+    url('/fonts/hkgrotesk-medium-webfont.woff') format('woff');
+  font-family: 'HK Grotesk';
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/hkgrotesk-bold-webfont.woff2') format('woff2'),
+    url('/fonts/hkgrotesk-bold-webfont.woff') format('woff');
+  font-family: 'HK Grotesk';
+}

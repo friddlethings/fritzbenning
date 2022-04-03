@@ -1,4 +1,4 @@
-@import "./breakpoints";
+@import './breakpoints';
 
 $max-width: 1100px;
 $content-width: 800px;
@@ -15,40 +15,22 @@ $line-height-large: 1.4;
   @return $result;
 }
 
-@function lh($fontsize) {
-  $result: $fontsize * $line-height;
-
-  @return $result;
-}
-
-@function lh-small($fontsize) {
-  $result: $fontsize * $line-height-small;
-
-  @return $result;
-}
-
-@function lh-large($fontsize) {
-  $result: $fontsize * $line-height-large;
-
-  @return $result;
-}
-
 @mixin default-width {
   max-width: $max-width;
-  padding: 0 dm(2) 0 dm(2);
   margin: 0 auto;
+  padding: 0 dm(2) 0 dm(2);
 
-  @include breakpoint("m") {
+  @include breakpoint(m) {
     padding: 0 dm(3) 0 dm(3);
   }
 }
 
 @mixin content-width {
   max-width: $content-width;
-  padding: 0 dm(2) 0 dm(2);
   margin: 0 auto;
+  padding: 0 dm(2) 0 dm(2);
 
-  @include breakpoint("m") {
+  @include breakpoint(m) {
     padding: 0 dm(3) 0 dm(3);
   }
 }

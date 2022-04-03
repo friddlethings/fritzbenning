@@ -1,15 +1,9 @@
-@import '../../styles/layout';
-@import '../../styles/variables';
-@import '../../styles/breakpoints';
-
 .footer {
   flex-grow: 0;
   margin-top: dm(16);
-  background-color: $primary-10;
-  color: $primary;
-  font-weight: $fw-medium;
-  font-size: 1.6rem;
-  line-height: lh(1.6rem);
+  background-color: color(primary-0);
+  color: color(primary);
+  font: font(1.6, base, medium);
 }
 
 .inner {
@@ -17,13 +11,13 @@
   margin: 0 auto;
   padding: dm(5) dm(3) dm(5) dm(3);
 
-  @include breakpoint('m') {
+  @include breakpoint(m) {
     padding: dm(8) dm(3) dm(8) dm(3);
   }
 }
 
 .nav {
-  font-weight: $fw-regular;
+  font-weight: fw(regular);
   text-align: right;
 
   ul {
@@ -32,14 +26,14 @@
     padding: 0;
     list-style-type: none;
 
-    @include breakpoint('m') {
+    @include breakpoint(m) {
       justify-content: flex-end;
     }
 
     li {
       margin: dm(2) dm(2) 0 0;
 
-      @include breakpoint('m') {
+      @include breakpoint(m) {
         margin: 0 0 0 dm(3);
       }
     }

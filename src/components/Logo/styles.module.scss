@@ -1,24 +1,18 @@
-@import '../../styles/variables';
-@import '../../styles/breakpoints';
-
 .logo {
-  color: $primary;
-  font-weight: $fw-bold;
-  font-size: 2rem;
-  line-height: lh(2rem);
+  color: color(primary);
+  font: font(2, base, bold);
 
-  @include breakpoint('m') {
-    font-size: 2.2rem;
-    line-height: lh(2.2rem);
+  @include breakpoint(m) {
+    font: font(2.2, base, bold);
   }
 
   &:hover {
     .highlight {
-      color: $secondary;
+      color: color(secondary);
     }
   }
 }
 
 .highlight {
-  transition: color $speed-default;
+  transition: color speed(normal);
 }

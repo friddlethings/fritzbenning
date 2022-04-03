@@ -1,8 +1,3 @@
-@import '../../../styles/layout';
-@import '../../../styles/variables';
-@import '../../../styles/breakpoints';
-@import '../../../styles/animations';
-
 .image {
   cursor: zoom-in;
 
@@ -11,8 +6,8 @@
     width: 100%;
     height: auto;
     max-height: 800px;
-    animation: fade-in $speed-default;
-    transition: opacity $speed-fast;
+    animation: fade-in speed(normal);
+    transition: opacity speed(fast);
   }
 
   &.lightbox {
@@ -24,7 +19,7 @@
       height: auto;
       border: dm(1) solid white;
 
-      @include breakpoint('m') {
+      @include breakpoint(m) {
         width: auto;
         height: 100%;
         border: dm(2) solid white;
@@ -41,6 +36,6 @@
   text-transform: uppercase;
 
   &.inverted {
-    color: $primary-50;
+    color: color(primary-50);
   }
 }

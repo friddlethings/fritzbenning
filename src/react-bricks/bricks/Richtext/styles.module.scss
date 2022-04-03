@@ -1,20 +1,12 @@
-@import '../../../styles/layout';
-@import '../../../styles/variables';
-@import '../../../styles/breakpoints';
-
 .richtext {
-  font-weight: $fw-regular;
-  font-size: 1.8rem;
-  line-height: lh-large(1.8rem);
+  font: font(1.8, large, regular);
 
-  @include breakpoint('m') {
-    font-size: 2rem;
-    line-height: lh-large(2rem);
+  @include breakpoint(m) {
+    font: font(2, large, regular);
   }
 
-  @include breakpoint('l') {
-    font-size: 2.2rem;
-    line-height: lh-large(2.2rem);
+  @include breakpoint(l) {
+    font: font(2.2, large, regular);
   }
 
   // react bricks
@@ -36,7 +28,7 @@
     }
 
     strong {
-      font-weight: 500;
+      font-weight: fw(medium);
     }
   }
 }

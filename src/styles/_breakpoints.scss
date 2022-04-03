@@ -1,13 +1,15 @@
 $media-direction: min;
+
 $mobile-width: 440px;
 $tablet-width: 768px;
 $notebook-width: 1096px;
 $desktop-width: 1280px;
+
 $breakpoints: (
   's': $mobile-width,
   'm': $tablet-width,
   'l': $notebook-width,
-  'xl': $desktop-width,
+  'xl': $desktop-width
 );
 
 @mixin breakpoint($breakpoint, $direction: $media-direction) {

@@ -1,27 +1,24 @@
-@import '../../../../styles/variables';
-@import '../../../../styles/layout';
-
 .item {
   padding: dm(3) 0;
-  border-top: 1px solid $primary;
+  border-top: 1px solid color(primary);
 
-  @include breakpoint('m') {
+  @include breakpoint(m) {
     padding: dm(4) 0;
   }
 
   &:last-child {
-    border-bottom: 1px solid $primary;
+    border-bottom: 1px solid color(primary);
   }
 }
 
 .key {
-  font-weight: $fw-bold;
+  font-weight: fw(bold);
 }
 
 .value {
   margin-top: dm(0.5);
 
-  @include breakpoint('m') {
+  @include breakpoint(m) {
     margin-top: 0;
   }
 }

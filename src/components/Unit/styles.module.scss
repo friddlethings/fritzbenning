@@ -17,7 +17,7 @@
   &.with-padding-top {
     padding-top: dm(3);
 
-    @include breakpoint('m') {
+    @include breakpoint(m) {
       padding-top: dm(5);
     }
   }
@@ -25,7 +25,7 @@
   &.with-padding-bottom {
     padding-bottom: dm(3);
 
-    @include breakpoint('m') {
+    @include breakpoint(m) {
       padding-bottom: dm(5);
     }
   }

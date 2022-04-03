@@ -1,0 +1,14 @@
+$colors: (
+  primary: #000000,
+  primary-70: #b6b6b6,
+  primary-50: #cccccc,
+  primary-30: #eeeeee,
+  primary-20: #f7f7f7,
+  primary-10: #fafafa,
+  primary-0: #ffffff,
+  secondary: #044fd1
+);
+
+@function color($key, $opactiy: 1) {
+  @return rgba(map-get($colors, $key), $opactiy);
+}
