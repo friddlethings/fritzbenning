@@ -32,15 +32,22 @@ module.exports = {
             _,
             exportName
           ) => {
-            const rootClass = path
+            const root = path
               .relative(context.rootContext, path.dirname(context.resourcePath))
               .split('/')
               .slice(-1)
               .join('-')
-              .toLowerCase()
+
+            const rootClass =
+              root.charAt(0).toLowerCase() +
+              root
+                .slice(1)
+                .replace(/([A-Z])/g, '-$1')
+                .trim()
+                .toLowerCase()
 
             if (rootClass !== exportName) {
-              return `${rootClass}-${exportName}`
+              return `${rootClass}»${exportName}`
             } else {
               return `${exportName}`
             }

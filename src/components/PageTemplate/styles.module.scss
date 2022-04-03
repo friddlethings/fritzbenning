@@ -2,9 +2,21 @@
 
 .page-template {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+
+  &:before {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--height);
+    background-color: color(primary-0);
+    content: '';
+  }
 }
 
 .main {

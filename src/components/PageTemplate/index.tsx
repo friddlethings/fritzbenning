@@ -5,11 +5,18 @@ import styles from './styles.module.scss'
 
 interface PageTemplateProps {
   children: React.ReactNode
+  split: 50 | 64
 }
 
-const PageTemplate: React.FC<PageTemplateProps> = ({ children }) => {
+const PageTemplate: React.FC<PageTemplateProps> = ({
+  children,
+  split = 50
+}) => {
   return (
-    <div className={styles.template}>
+    <div
+      className={styles['page-template']}
+      style={{ ['--height' as any]: split + 'vh' }}
+    >
       <Header />
       <main className={styles.main}>{children}</main>
       <Footer />

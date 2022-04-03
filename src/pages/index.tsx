@@ -42,11 +42,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
   console.log(posts)
 
   return (
-    <PageTemplate>
-      {/* <Stage
-        title="Gedanken. Sideprojects. Fotobücher."
-        subheadline="Hier findest du eine wilde Sammlung von Dingen, die ich neben meiner Arbeit als User Experience Designer noch so kreiere. Schau doch mal durch."
-      /> */}
+    <PageTemplate split={64}>
       <PageViewer page={pageOk} />
       <Unit paddingTop>
         <Row>
