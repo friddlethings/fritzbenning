@@ -19,14 +19,14 @@
   margin: 0;
   padding: 0;
   color: color(primary-50);
-  font: font(2.2, base, medium);
+  font: font(2.2, base, regular);
 
   @include breakpoint(m) {
-    font: font(2.4, base, medium);
+    font: font(2.4, base, regular);
   }
 
   @include breakpoint(l) {
-    font: font(2.6, base, medium);
+    font: font(2.6, base, regular);
   }
 
   &.with-padding-top {
@@ -39,19 +39,20 @@
     position: relative;
     margin: 0 dm(0.5);
     color: color(secondary);
+    font-weight: fw(medium);
 
-    &::before {
-      z-index: -1;
-      position: absolute;
-      top: 2px;
-      left: -6px;
-      width: calc(100% + 12px);
-      height: 100%;
-      transform: rotate(var(--random));
-      border-radius: dm(0.5);
-      background-color: color(secondary);
-      content: '';
-      opacity: 0.2;
-    }
+    // &::before {
+    //   z-index: -1;
+    //   position: absolute;
+    //   top: 2px;
+    //   left: -6px;
+    //   width: calc(100% + 12px);
+    //   height: 100%;
+    //   transform: rotate(var(--random));
+    //   border-radius: dm(0.5);
+    //   background-color: color(secondary);
+    //   content: '';
+    //   opacity: 0.2;
+    // }
   }
 }

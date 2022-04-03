@@ -1,3 +1,6 @@
+@use 'sass:list';
+@use 'sass:map';
+
 $media-direction: min;
 
 $mobile-width: 440px;
@@ -24,4 +27,36 @@ $breakpoints: (
       @content;
     }
   }
+}
+
+@mixin responsive-prop($property, $values) {
+  @each $value in $values {
+    &.#{$property}-#{$value} {
+      @content ($value);
+    }
+  }
+
+  @each $breakpoint, $width in $breakpoints {
+    @each $value in $values {
+      &.#{$property}-#{$breakpoint}-#{$value} {
+        @include breakpoint($breakpoint) {
+          @content ($value);
+        }
+      }
+    }
+  }
+}
+
+@function numberRange($min, $max) {
+  $output: ();
+
+  @for $i from $min through $max {
+    $output: list.append($output, $i);
+  }
+
+  @return $output;
+}
+
+@function shirtTypes() {
+  @return xs, s, m, l, xl, xxl;
 }

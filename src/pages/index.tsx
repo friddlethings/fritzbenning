@@ -53,7 +53,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
               </a>
             </Link>
           </Column>
-          <Spacer size={5} vertical />
+          <Spacer size={3} sizeWhen={{ l: 4 }} vertical />
         </Row>
         <Row withVerticalGap>
           {lastPosts.lostplaces.map((post: any) => (
@@ -84,7 +84,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
               </a>
             </Link>
           </Column>
-          <Spacer size={5} vertical />
+          <Spacer size={3} sizeWhen={{ l: 4 }} vertical />
         </Row>
         <Row withVerticalGap>
           {lastPosts.travel.map((post: any) => (
