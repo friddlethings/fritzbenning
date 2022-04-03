@@ -1,5 +1,7 @@
+import classNames from 'classnames'
 import Link from 'next/link'
-import React, { useEffect } from 'react'
+import React from 'react'
+import { useInView } from 'react-intersection-observer'
 import styles from './styles.module.scss'
 
 interface TeaserProps {
@@ -10,12 +12,17 @@ interface TeaserProps {
 }
 
 const Teaser: React.FC<TeaserProps> = ({ title, image, to, tags }) => {
-  useEffect(() => {
-    console.log(to)
-  }, [to])
+  const { ref, inView, entry } = useInView({
+    threshold: 0
+  })
+
   return (
     <Link href={to}>
-      <a className={styles.teaser} key={title}>
+      <a
+        className={classNames(styles.teaser, inView && styles['in-view'])}
+        key={title}
+        ref={ref}
+      >
         <div className={styles.inner}>
           <img src={image} alt={title} className={styles.image} />
         </div>

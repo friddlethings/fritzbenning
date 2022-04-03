@@ -1,9 +1,16 @@
 .teaser {
+  display: block;
   color: color(primary);
   cursor: pointer;
+  opacity: 0;
+  transition: opacity speed(normal);
 
   &:hover {
     color: color(secondary);
+  }
+
+  &.in-view {
+    opacity: 1;
   }
 }
 
