@@ -1,6 +1,5 @@
 .spacer {
   display: inline-block;
-  content: 'test';
 
   @include responsive-prop('width', numberRange(1, 100)) using ($value) {
     width: dm($value);
