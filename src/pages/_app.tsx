@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import 'normalize.css'
 import { ReactBricks } from 'react-bricks/frontend'
 import config from '../react-bricks/config'
@@ -10,9 +11,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }
 
   return (
-    <ReactBricks {...reactBricksConfig}>
-      <Component {...pageProps} />
-    </ReactBricks>
+    <>
+      <Head>
+        <link rel="shortcut icon" href="/favicon.svg" />
+      </Head>
+      <ReactBricks {...reactBricksConfig}>
+        <Component {...pageProps} />
+      </ReactBricks>
+    </>
   )
 }
 

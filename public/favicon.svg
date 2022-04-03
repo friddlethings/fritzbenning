@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Rectangle" fill="#044FD1" transform="translate(64.000000, 192.000000) scale(-1, 1) translate(-64.000000, -192.000000) " points="0 128 128 128 128 256"></polygon>
+        <polygon id="Rectangle" fill="#044FD1" transform="translate(64.000000, 64.000000) scale(-1, 1) translate(-64.000000, -64.000000) " points="0 0 128 0 128 128"></polygon>
+        <polygon id="Rectangle" fill="#044FD1" transform="translate(192.000000, 64.000000) scale(-1, 1) translate(-192.000000, -64.000000) " points="128 0 256 0 256 128"></polygon>
+        <polygon id="Rectangle" fill="#044FD1" transform="translate(192.000000, 192.000000) scale(-1, 1) translate(-192.000000, -192.000000) " points="128 128 256 128 256 256"></polygon>
+    </g>
+</svg>
