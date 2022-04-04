@@ -15,7 +15,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Head>
         <link rel="shortcut icon" href="/favicon.svg" />
       </Head>
-      <ReactBricks {...reactBricksConfig}>
+      <ReactBricks {...config}>
         <Component {...pageProps} />
       </ReactBricks>
     </>
