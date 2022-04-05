@@ -4,8 +4,8 @@ import Meta from '../Meta'
 import styles from './styles.module.scss'
 
 interface StageProps {
-  title: JSX.Element
-  subheadline?: JSX.Element
+  title: string | JSX.Element
+  subheadline?: string | JSX.Element
   meta?: { publishedAt?: string; tags?: string[] }
 }
 
