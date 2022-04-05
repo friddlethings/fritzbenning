@@ -1,9 +1,8 @@
 import classNames from 'classnames'
 import React from 'react'
-import { LayoutInterface } from '../../../sideProps/LayoutProps'
 import styles from './styles.module.scss'
 
-interface ImageProps extends LayoutInterface {
+interface ImageProps {
   image: string
   title: string
   index: number
