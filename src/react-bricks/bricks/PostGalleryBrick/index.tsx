@@ -13,7 +13,7 @@ interface PostGalleryProps {
   pagination: boolean
 }
 
-const PostGallery: types.Brick<PostGalleryProps> = ({
+const PostGalleryBrick: types.Brick<PostGalleryProps> = ({
   category,
   pagination,
   pageSize
@@ -93,7 +93,7 @@ const PostGallery: types.Brick<PostGalleryProps> = ({
   )
 }
 
-PostGallery.schema = {
+PostGalleryBrick.schema = {
   name: 'post-gallery',
   label: 'Beitragsgalerie',
   getDefaultProps: () => ({
@@ -128,4 +128,4 @@ PostGallery.schema = {
   ]
 }
 
-export default PostGallery
+export default PostGalleryBrick

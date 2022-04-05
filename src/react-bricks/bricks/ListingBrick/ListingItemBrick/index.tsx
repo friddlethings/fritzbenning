@@ -1,24 +1,24 @@
 import React from 'react'
 import { Text, types } from 'react-bricks/frontend'
-import styles from './styles.module.scss'
+import ListingItem from '../../../../components/ListingItem'
 
 interface ListingItemProps {
   items: string
 }
 
-const ListingItem: types.Brick<ListingItemProps> = ({ ...rest }) => {
+const ListingItemBrick: types.Brick<ListingItemProps> = ({ ...rest }) => {
   return (
-    <div className={styles.item} {...rest}>
+    <ListingItem>
       <Text
         renderBlock={props => <>{props.children}</>}
         placeholder="Name"
         propName="key"
       />
-    </div>
+    </ListingItem>
   )
 }
 
-ListingItem.schema = {
+ListingItemBrick.schema = {
   name: 'listing-item',
   label: 'Listeneintrag',
   hideFromAddMenu: true,
@@ -27,4 +27,4 @@ ListingItem.schema = {
   })
 }
 
-export default ListingItem
+export default ListingItemBrick

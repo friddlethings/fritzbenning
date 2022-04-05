@@ -17,7 +17,7 @@ interface ListingProps extends LayoutInterface {
   columns: 1 | 2
 }
 
-const Listing: types.Brick<ListingProps> = ({
+const ListingBrick: types.Brick<ListingProps> = ({
   title,
   width,
   columns,
@@ -55,7 +55,7 @@ const Listing: types.Brick<ListingProps> = ({
   )
 }
 
-Listing.schema = {
+ListingBrick.schema = {
   name: 'listing',
   label: 'Liste',
   getDefaultProps: () => ({
@@ -113,4 +113,4 @@ Listing.schema = {
   ]
 }
 
-export default Listing
+export default ListingBrick

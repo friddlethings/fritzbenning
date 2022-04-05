@@ -18,7 +18,7 @@ interface ImageGalleryProps extends LayoutInterface {
   columns: number
 }
 
-const ImageGallery: types.Brick<ImageGalleryProps> = ({
+const ImageGalleryBrick: types.Brick<ImageGalleryProps> = ({
   columns,
   width,
   paddingTop,
@@ -113,7 +113,7 @@ const ImageGallery: types.Brick<ImageGalleryProps> = ({
   )
 }
 
-ImageGallery.schema = {
+ImageGalleryBrick.schema = {
   name: 'image-gallery',
   label: 'Bildergalerie',
   getDefaultProps: () => ({
@@ -144,4 +144,4 @@ ImageGallery.schema = {
   ]
 }
 
-export default ImageGallery
+export default ImageGalleryBrick

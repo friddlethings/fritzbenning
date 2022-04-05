@@ -13,10 +13,10 @@ interface KeyValueListProps extends LayoutInterface {
   items: string
 }
 
-const KeyValueList: types.Brick<KeyValueListProps> = ({
+const KeyValueListBrick: types.Brick<KeyValueListProps> = ({
   width,
   paddingTop,
-  paddingBottom,
+  paddingBottom
 }) => {
   return (
     <Unit
@@ -27,7 +27,7 @@ const KeyValueList: types.Brick<KeyValueListProps> = ({
     >
       <Repeater
         propName="items"
-        renderWrapper={(items) => (
+        renderWrapper={items => (
           <Row>
             <Column xs={12}>{items}</Column>
           </Row>
@@ -37,27 +37,27 @@ const KeyValueList: types.Brick<KeyValueListProps> = ({
   )
 }
 
-KeyValueList.schema = {
+KeyValueListBrick.schema = {
   name: 'key-value-list',
   label: 'Tabelle',
   getDefaultProps: () => ({
     items: [
       {
         key: 'Name',
-        value: 'Wert',
-      },
+        value: 'Wert'
+      }
     ],
-    ...LayoutDefaultProps,
+    ...LayoutDefaultProps
   }),
   repeaterItems: [
     {
       name: 'items',
       itemType: 'key-value-item',
       itemLabel: 'Zeile',
-      max: 8,
-    },
+      max: 8
+    }
   ],
-  sideEditProps: [LayoutProps],
+  sideEditProps: [LayoutProps]
 }
 
-export default KeyValueList
+export default KeyValueListBrick

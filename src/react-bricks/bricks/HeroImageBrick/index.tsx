@@ -1,23 +1,21 @@
-import classNames from 'classnames'
 import React, { useState } from 'react'
 import { Image, types, useAdminContext } from 'react-bricks/frontend'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
-import Lightbox from '../../../components/Lightbox'
+import HeroImage from '../../../components/HeroImage'
 import Unit from '../../../components/Unit'
 import {
   LayoutDefaultProps,
   LayoutInterface,
   LayoutProps
 } from '../../sideProps/LayoutProps'
-import styles from './styles.module.scss'
 
 interface HeroImageProps extends LayoutInterface {
   image: string
   title: string
 }
 
-const HeroImage: types.Brick<HeroImageProps> = ({
+const HeroImageBrick: types.Brick<HeroImageProps> = ({
   title,
   width,
   paddingTop,
@@ -35,36 +33,17 @@ const HeroImage: types.Brick<HeroImageProps> = ({
     <Unit width={width} paddingTop={paddingTop} paddingBottom={paddingBottom}>
       <Row>
         <Column xs={12}>
-          <div className={styles.image} onClick={handleLighbox}>
-            <Image
-              propName="image"
-              alt="Icon"
-              containerClassName={styles.container}
-              aspectRatio={3 / 2}
-              maxWidth={3000}
-            />
-          </div>
-          {title && <caption className={styles.caption}>{title}</caption>}
-          <Lightbox show={lightbox} close={handleLighbox}>
-            <Image
-              propName="image"
-              alt="Icon"
-              containerClassName={classNames(styles.image, styles.lightbox)}
-              maxWidth={3000}
-            />
-            {title && (
-              <caption className={classNames(styles.caption, styles.inverted)}>
-                {title}
-              </caption>
-            )}
-          </Lightbox>
+          <HeroImage
+            title={title}
+            image={<Image propName="image" alt="Icon" maxWidth={3000} />}
+          />
         </Column>
       </Row>
     </Unit>
   )
 }
 
-HeroImage.schema = {
+HeroImageBrick.schema = {
   name: 'hero-image',
   label: 'Hero Bild',
   getDefaultProps: () => ({
@@ -82,4 +61,4 @@ HeroImage.schema = {
   ]
 }
 
-export default HeroImage
+export default HeroImageBrick

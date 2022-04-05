@@ -2,57 +2,50 @@ import React from 'react'
 import { Text, types } from 'react-bricks/frontend'
 import Column from '../../../components/Grid/Column'
 import Row from '../../../components/Grid/Row'
+import PostFooter from '../../../components/PostFooter'
 import Unit from '../../../components/Unit'
 import {
   LayoutDefaultProps,
   LayoutInterface,
   LayoutProps
 } from '../../sideProps/LayoutProps'
-import styles from './styles.module.scss'
 
 interface PostFooterProps extends LayoutInterface {
   text: string
   label: string
 }
 
-const PostFooter: types.Brick<PostFooterProps> = ({
+const PostFooterBrick: types.Brick<PostFooterProps> = ({
   width,
   paddingTop,
   paddingBottom
 }) => {
   return (
-    <Unit
-      className={styles['post-footer']}
-      width={width}
-      paddingTop={paddingTop}
-      paddingBottom={paddingBottom}
-    >
+    <Unit width={width} paddingTop={paddingTop} paddingBottom={paddingBottom}>
       <Row>
         <Column xs={12}>
-          <div className={styles.inner}>
-            <Text
-              placeholder="Label"
-              propName="label"
-              renderBlock={({ children }) => (
-                <div className={styles.label}>{children}</div>
-              )}
-            />
+          <PostFooter
+            label={
+              <Text
+                placeholder="Label"
+                propName="label"
+                renderBlock={({ children }) => <>{children}</>}
+              />
+            }
+          >
             <Text
               placeholder="Schreib hier einen Text ..."
               propName="text"
               renderBlock={({ children }) => <p>{children}</p>}
             />
-            <div className={styles.action}>
-              <a href="mailto:mail@fritzbenning.de">Mail schreiben &rarr;</a>
-            </div>
-          </div>
+          </PostFooter>
         </Column>
       </Row>
     </Unit>
   )
 }
 
-PostFooter.schema = {
+PostFooterBrick.schema = {
   name: 'post-footer',
   label: 'Abbinder',
   getDefaultProps: () => ({
@@ -63,4 +56,4 @@ PostFooter.schema = {
   sideEditProps: [LayoutProps]
 }
 
-export default PostFooter
+export default PostFooterBrick

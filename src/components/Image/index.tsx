@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import React from 'react'
-import { Image as Img, types } from 'react-bricks/frontend'
 import { LayoutInterface } from '../../../sideProps/LayoutProps'
 import styles from './styles.module.scss'
 
@@ -13,12 +12,13 @@ interface ImageProps extends LayoutInterface {
   openLightbox: (i: number) => void
 }
 
-const Image: types.Brick<ImageProps> = ({
+const Image: React.FC<ImageProps> = ({
+  children,
   title,
   openLightbox,
   index,
-  hover,
-  frame,
+  hover = true,
+  frame = false,
   ...rest
 }) => {
   return (
@@ -31,31 +31,10 @@ const Image: types.Brick<ImageProps> = ({
       {...rest}
       onClick={() => openLightbox && openLightbox(index)}
     >
-      <Img propName="image" alt="Icon" maxWidth={3000} />
+      {children}
       {/* {title && <caption className="image__caption">{title}</caption>} */}
     </div>
   )
-}
-
-Image.schema = {
-  name: 'image',
-  label: 'Bild',
-  getDefaultProps: () => ({
-    title: 'Titel'
-  }),
-  sideEditProps: [
-    {
-      name: 'title',
-      label: 'Bildunterschrift',
-      show: props => true,
-      type: types.SideEditPropType.Text
-    }
-  ]
-}
-
-Image.defaultProps = {
-  hover: true,
-  frame: false
 }
 
 export default Image

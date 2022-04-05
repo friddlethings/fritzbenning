@@ -1,30 +1,30 @@
 import { types } from 'react-bricks/frontend'
-import Divider from './Divider'
-import HeroImage from './HeroImage'
-import ImageGallery from './ImageGallery'
-import Image from './ImageGallery/Image'
-import KeyValueList from './KeyValueList'
-import KeyValueItem from './KeyValueList/KeyValueListItem'
-import Listing from './Listing'
-import ListingItem from './Listing/ListingItem'
-import PageStage from './PageStage'
-import PostFooter from './PostFooter'
-import PostGallery from './PostGallery'
-import Richtext from './Richtext'
+import DividerBrick from './DividerBrick'
+import HeroImageBrick from './HeroImageBrick'
+import ImageGalleryBrick from './ImageGalleryBrick'
+import ImageBrick from './ImageGalleryBrick/ImageBrick'
+import KeyValueListBrick from './KeyValueListBrick'
+import KeyValueItem from './KeyValueListBrick/KeyValueListItem'
+import ListingBrick from './ListingBrick'
+import ListingItemBrick from './ListingBrick/ListingItemBrick'
+import PostFooterBrick from './PostFooterBrick'
+import PostGalleryBrick from './PostGalleryBrick'
+import RichtextBrick from './RichtextBrick'
+import StageBrick from './StageBrick'
 
 const bricks: types.Brick<any>[] = [
-  Richtext,
-  PostFooter,
-  PageStage,
-  HeroImage,
-  PostGallery,
-  Divider,
-  KeyValueList,
+  RichtextBrick,
+  PostFooterBrick,
+  StageBrick,
+  HeroImageBrick,
+  PostGalleryBrick,
+  DividerBrick,
+  KeyValueListBrick,
   KeyValueItem,
-  Listing,
-  ListingItem,
-  ImageGallery,
-  Image,
+  ListingBrick,
+  ListingItemBrick,
+  ImageGalleryBrick,
+  ImageBrick
 ]
 
 export default bricks

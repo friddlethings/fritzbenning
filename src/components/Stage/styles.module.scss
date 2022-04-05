@@ -22,38 +22,22 @@
   font: font(2.2, base, medium);
 
   @include breakpoint(m) {
-    font-size: 2.6rem;
-    line-height: lh(2.6rem);
+    font: font(2.4, base, medium);
   }
 
   @include breakpoint(l) {
-    font-size: 2.8rem;
-    line-height: lh(2.8rem);
+    font: font(2.6, base, medium);
+  }
+
+  p {
+    margin: 0 0 dm(2) 0;
+
+    &:last-child {
+      margin: 0;
+    }
   }
 
   &.with-padding-top {
     padding-top: dm(3);
-  }
-
-  .highlighted {
-    display: inline-block;
-    z-index: 1;
-    position: relative;
-    margin: 0 dm(0.5);
-    color: color(secondary);
-
-    &::before {
-      z-index: -1;
-      position: absolute;
-      top: 2px;
-      left: -6px;
-      width: calc(100% + 12px);
-      height: 100%;
-      transform: rotate(var(--random));
-      border-radius: dm(0.5);
-      background-color: color(secondary);
-      content: '';
-      opacity: 0.2;
-    }
   }
 }

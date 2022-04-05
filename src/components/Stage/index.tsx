@@ -1,46 +1,32 @@
 import classNames from 'classnames'
 import React from 'react'
-import Column from '../Grid/Column'
-import Row from '../Grid/Row'
 import Meta from '../Meta'
-import Unit from '../Unit'
 import styles from './styles.module.scss'
 
 interface StageProps {
-  title: string
-  subheadline?: boolean
-  publishedAt?: string
-  tags?: string[]
+  title: JSX.Element
+  subheadline?: JSX.Element
+  meta?: { publishedAt?: string; tags?: string[] }
 }
 
-const Stage: React.FC<StageProps> = ({
-  title,
-  subheadline,
-  publishedAt,
-  tags
-}) => {
+const Stage: React.FC<StageProps> = ({ title, subheadline, meta }) => {
   return (
-    <Unit className={styles.stage}>
-      <Row>
-        <Column xs={12}>
-          <div className={styles.inner}>
-            <h1 className={styles.title}>{title}</h1>
-            {publishedAt ||
-              (tags && <Meta publishedAt={publishedAt} tags={tags} />)}
-            {subheadline && (
-              <p
-                className={classNames(
-                  styles.text,
-                  publishedAt || (tags && styles['with-padding-top'])
-                )}
-              >
-                {subheadline}
-              </p>
+    <div className={styles.stage}>
+      <div className={styles.inner}>
+        <h1 className={styles.title}>{title}</h1>
+        {meta && <Meta publishedAt={meta.publishedAt} tags={meta.tags} />}
+        {subheadline && (
+          <div
+            className={classNames(
+              styles.text,
+              meta && styles['with-padding-top']
             )}
+          >
+            {subheadline}
           </div>
-        </Column>
-      </Row>
-    </Unit>
+        )}
+      </div>
+    </div>
   )
 }
 
