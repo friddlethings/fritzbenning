@@ -7,7 +7,7 @@ const pageTypes: types.IPageType[] = [
     defaultLocked: false,
     defaultStatus: types.PageStatus.Published,
     defaultLanguage: 'de',
-    getDefaultContent: () => ['page-stage'],
+    getDefaultContent: () => ['page-stage']
   },
   {
     name: 'doorpage',
@@ -29,13 +29,15 @@ const pageTypes: types.IPageType[] = [
               options: [
                 { value: 'fotografie', label: 'fotografie' },
                 { value: 'sideproject', label: 'sideproject' },
-              ],
-            },
-          },
-        ],
-      },
+                { value: 'lostplaces', label: 'lostplaces' },
+                { value: 'vanlife', label: 'vanlife' }
+              ]
+            }
+          }
+        ]
+      }
     ],
-    getDefaultContent: () => ['page-stage'],
+    getDefaultContent: () => ['page-stage']
   },
   {
     name: 'post',
@@ -43,8 +45,8 @@ const pageTypes: types.IPageType[] = [
     defaultLocked: false,
     defaultStatus: types.PageStatus.Published,
     defaultLanguage: 'de',
-    getDefaultContent: () => ['page-stage'],
-  },
+    getDefaultContent: () => ['page-stage']
+  }
 ]
 
 export default pageTypes

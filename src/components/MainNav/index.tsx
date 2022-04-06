@@ -12,13 +12,17 @@ const MainNav: React.FC = () => {
       title: 'Über mich',
       route: '/ueber-mich'
     },
+    // {
+    //   title: 'Sideprojects',
+    //   route: '/collection/sideprojects'
+    // },
     {
-      title: 'Sideprojects',
-      route: '/collection/sideprojects'
+      title: 'Vanlife',
+      route: '/collection/vanlife'
     },
     {
-      title: 'Fotografie',
-      route: '/collection/fotografie'
+      title: 'Lost Places',
+      route: '/collection/lostplaces'
     }
   ]
 
