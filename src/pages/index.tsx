@@ -39,8 +39,6 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
 
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
 
-  console.log(posts)
-
   return (
     <PageTemplate split={64}>
       <PageViewer page={pageOk} />

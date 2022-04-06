@@ -61,16 +61,11 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     post.tags?.includes(tagSlug.toString())
   )
 
-  console.log(postsByTag)
-
-  console.log(tagSlug)
-
   return { props: { posts: postsByTag, filterTag: tagSlug } }
 }
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   if (!config.apiKey) {
-    console.log('error')
     return { paths: [], fallback: false }
   }
 

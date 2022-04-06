@@ -66,8 +66,6 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 
   const allPages = await fetchPages(config.apiKey)
 
-  console.log(allPages)
-
   const paths = allPages
     .filter(page => page.type === 'page' && page.slug !== 'home')
     .map(page =>
