@@ -34,6 +34,7 @@ const RichtextBrick: types.Brick<RichtextProps> = ({
                 types.RichTextFeatures.Highlight,
                 types.RichTextFeatures.Code,
                 types.RichTextFeatures.Link,
+                types.RichTextFeatures.Heading2,
                 types.RichTextFeatures.Heading3,
                 types.RichTextFeatures.Heading4
               ]}

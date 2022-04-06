@@ -25,7 +25,7 @@ const Page: React.FC<ReactBricksPageProps> = ({ page, error }) => {
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
 
   return (
-    <PageTemplate>
+    <PageTemplate split={0}>
       {pageOk && (
         <>
           <Seo
