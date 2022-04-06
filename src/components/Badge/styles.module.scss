@@ -1,0 +1,37 @@
+.badge {
+  display: flex;
+  z-index: 1;
+  position: absolute;
+  top: dm(1);
+  right: dm(1);
+  align-items: center;
+  justify-content: center;
+  width: dm(8);
+  height: dm(8);
+  color: color(primary-0);
+  font: font(1.2, small, bold);
+
+  &:after {
+    display: inline-block;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-width: 0 dm(8) dm(8) 0;
+    border-style: solid;
+    border-color: transparent color(secondary) transparent transparent;
+    content: '';
+  }
+
+  .text {
+    z-index: 2;
+    position: relative;
+    transform: rotate(45deg) translate(0%, -120%);
+    text-transform: uppercase;
+  }
+}
+
+.triangle-top-right {
+}

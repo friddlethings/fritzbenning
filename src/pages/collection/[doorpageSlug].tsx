@@ -45,6 +45,7 @@ const Page: React.FC<ReactBricksPageProps> = ({ page, posts, error }) => {
                 <Column xs={12} m={6}>
                   <Teaser
                     title={post.meta.title}
+                    date={post.publishedAt}
                     image={post.meta.featuredImage}
                     tags={post.tags}
                     to={`/blog/${post.slug}`}

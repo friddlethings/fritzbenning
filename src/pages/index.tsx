@@ -37,6 +37,8 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
 }) => {
   const { pageTypes, bricks } = useContext(ReactBricksContext)
 
+  console.log(lastPosts)
+
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
 
   return (
@@ -58,6 +60,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
             <Column xs={12} m={6} l={4}>
               <Teaser
                 title={post.meta.title}
+                date={post.publishedAt}
                 image={post.meta.featuredImage}
                 tags={post.tags}
                 to={`/blog/${post.slug}`}
@@ -89,6 +92,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
             <Column xs={12} m={6}>
               <Teaser
                 title={post.meta.title}
+                date={post.publishedAt}
                 image={post.meta.featuredImage}
                 tags={post.tags}
                 to={`/blog/${post.slug}`}
@@ -120,6 +124,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
             <Column xs={12} m={6}>
               <Teaser
                 title={post.meta.title}
+                date={post.publishedAt}
                 image={post.meta.featuredImage}
                 tags={post.tags}
                 to={`/blog/${post.slug}`}

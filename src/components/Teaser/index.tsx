@@ -1,20 +1,33 @@
 import classNames from 'classnames'
 import Link from 'next/link'
-import React from 'react'
+import React, { useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { dateDiffInDays } from '../../utils/dateDiffInDays'
+import Badge from '../Badge'
 import styles from './styles.module.scss'
 
 interface TeaserProps {
   title: string
+  date: string
   image: string
   to: string
   tags?: string[]
 }
 
-const Teaser: React.FC<TeaserProps> = ({ title, image, to, tags }) => {
+const Teaser: React.FC<TeaserProps> = ({ title, date, image, to, tags }) => {
   const { ref, inView, entry } = useInView({
     threshold: 0
   })
+
+  let diffDays = useRef(0)
+
+  const getPostLifetime = publishedAt => {
+    const now = new Date(Date.now())
+    const published = new Date(publishedAt)
+
+    const newDiffDays = dateDiffInDays(published, now)
+    diffDays.current = newDiffDays
+  }
 
   return (
     <Link href={to}>
@@ -24,10 +37,14 @@ const Teaser: React.FC<TeaserProps> = ({ title, image, to, tags }) => {
         ref={ref}
       >
         <div className={styles.inner}>
+          {diffDays.current < 30 && <Badge text="neu" />}
           <img src={image} alt={title} className={styles.image} />
         </div>
         <div className={styles.caption}>
-          <h4 className={styles.title}>{title}</h4>
+          <h4 className={styles.title}>
+            {title}
+            {getPostLifetime(date)}
+          </h4>
           {tags && (
             <ul className={styles.tags}>
               {tags.map(tag => (

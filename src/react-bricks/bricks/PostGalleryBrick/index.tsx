@@ -58,6 +58,7 @@ const PostGalleryBrick: types.Brick<PostGalleryProps> = ({
                       <Column xs={12} m={6}>
                         <Teaser
                           title={post.meta.title}
+                          date={post.publishedAt}
                           image={post.meta.featuredImage}
                           tags={post.tags}
                           to={`/blog/${post.slug}`}
@@ -69,6 +70,7 @@ const PostGalleryBrick: types.Brick<PostGalleryProps> = ({
                       <Column xs={12} m={6}>
                         <Teaser
                           title={post.meta.title}
+                          date={post.publishedAt}
                           image={post.meta.featuredImage}
                           tags={post.tags}
                           to={`/${post.slug}`}
