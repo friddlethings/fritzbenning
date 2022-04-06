@@ -29,7 +29,7 @@ const pageTypes: types.IPageType[] = [
               options: [
                 { value: 'fotografie', label: 'fotografie' },
                 { value: 'sideproject', label: 'sideproject' },
-                { value: 'lostplaces', label: 'lostplaces' },
+                { value: 'lostplace', label: 'lostplaces' },
                 { value: 'vanlife', label: 'vanlife' }
               ]
             }
