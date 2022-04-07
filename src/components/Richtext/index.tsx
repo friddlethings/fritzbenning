@@ -1,8 +1,17 @@
+import classNames from 'classnames'
 import React from 'react'
 import styles from './styles.module.scss'
 
-const Richtext: React.FC = ({ children }) => {
-  return <div className={styles.richtext}>{children}</div>
+interface RichtextProps {
+  invert: boolean
+}
+
+const Richtext: React.FC<RichtextProps> = ({ invert, children }) => {
+  return (
+    <div className={classNames(styles.richtext, invert && styles.invert)}>
+      {children}
+    </div>
+  )
 }
 
 export default Richtext

@@ -1,0 +1,9 @@
+.hero-text-tile {
+  padding: dm(8);
+  background-color: color(secondary);
+  text-align: center;
+
+  @include breakpoint(l) {
+    padding: dm(10);
+  }
+}

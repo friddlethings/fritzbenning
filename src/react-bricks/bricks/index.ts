@@ -1,6 +1,7 @@
 import { types } from 'react-bricks/frontend'
 import DividerBrick from './DividerBrick'
 import HeroImageBrick from './HeroImageBrick'
+import HeroTextTileBrick from './HeroTextTileBrick'
 import ImageGalleryBrick from './ImageGalleryBrick'
 import ImageBrick from './ImageGalleryBrick/ImageBrick'
 import KeyValueListBrick from './KeyValueListBrick'
@@ -24,7 +25,8 @@ const bricks: types.Brick<any>[] = [
   ListingBrick,
   ListingItemBrick,
   ImageGalleryBrick,
-  ImageBrick
+  ImageBrick,
+  HeroTextTileBrick
 ]
 
 export default bricks

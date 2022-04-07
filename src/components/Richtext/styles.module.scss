@@ -1,5 +1,14 @@
 .richtext {
+  color: color(primary);
   font: font(1.7, large, regular);
+
+  &.invert {
+    color: color(primary-0);
+
+    a {
+      color: color(primary-0);
+    }
+  }
 
   @include breakpoint(m) {
     font: font(1.9, large, regular);
