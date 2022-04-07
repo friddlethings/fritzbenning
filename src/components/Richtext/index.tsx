@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 
 interface RichtextProps {
-  invert: boolean
+  invert?: boolean
 }
 
 const Richtext: React.FC<RichtextProps> = ({ invert, children }) => {
