@@ -5,7 +5,7 @@ import styles from './styles.module.scss'
 
 interface PageTemplateProps {
   children: React.ReactNode
-  split?: 0 | 50 | 64
+  split?: 0 | 45 | 50 | 64
 }
 
 const PageTemplate: React.FC<PageTemplateProps> = ({
