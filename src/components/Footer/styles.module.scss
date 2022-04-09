@@ -9,10 +9,10 @@
 .inner {
   max-width: $max-width;
   margin: 0 auto;
-  padding: dm(5) dm(3) dm(5) dm(3);
+  padding: dm(5) dm(1) dm(5) dm(1);
 
   @include breakpoint(m) {
-    padding: dm(8) dm(3) dm(8) dm(3);
+    padding: dm(8) dm(2) dm(8) dm(2);
   }
 }
 

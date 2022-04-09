@@ -18,7 +18,7 @@ $line-height-large: 1.4;
 @mixin default-width {
   max-width: $max-width;
   margin: 0 auto;
-  padding: 0 dm(2) 0 dm(2);
+  padding: 0 dm(1) 0 dm(1);
 
   @include breakpoint(m) {
     padding: 0 dm(3) 0 dm(3);
@@ -28,7 +28,7 @@ $line-height-large: 1.4;
 @mixin content-width {
   max-width: $content-width;
   margin: 0 auto;
-  padding: 0 dm(2) 0 dm(2);
+  padding: 0 dm(1) 0 dm(1);
 
   @include breakpoint(m) {
     padding: 0 dm(3) 0 dm(3);
