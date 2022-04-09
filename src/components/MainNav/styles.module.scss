@@ -21,14 +21,15 @@
   }
 
   a {
+    color: currentColor;
     font: font(1.7, base, medium);
+  }
 
-    &.is-active {
+  &.is-active {
+    color: color(secondary);
+
+    &:hover {
       color: color(secondary);
-
-      &:hover {
-        color: color(secondary);
-      }
     }
   }
 }

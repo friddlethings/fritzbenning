@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './styles.module.scss'
 
 const MainNav: React.FC = () => {
@@ -26,6 +26,10 @@ const MainNav: React.FC = () => {
     }
   ]
 
+  useEffect(() => {
+    console.log(router)
+  }, [router])
+
   return (
     <nav className={styles.nav}>
       <ul className={styles.list}>
@@ -33,7 +37,7 @@ const MainNav: React.FC = () => {
           <li
             className={classNames(
               styles.item,
-              router.pathname === link.route && styles['is-active']
+              router.asPath === link.route && styles['is-active']
             )}
           >
             <Link href={link.route}>
