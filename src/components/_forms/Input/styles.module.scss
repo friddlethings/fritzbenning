@@ -1,0 +1,49 @@
+.input {
+  position: relative;
+  flex: 1;
+
+  input {
+    display: inline-block;
+    width: 100%;
+    padding: dm(1.5) dm(2);
+    border: 1px solid color(primary-30);
+    outline: 0;
+    color: color(primary);
+    font: font(1.6, small);
+    transition: border speed(fast);
+
+    &:hover {
+      border: 1px solid color(primary-50);
+    }
+
+    &:focus {
+      border: 1px solid color(secondary);
+      color: color(secondary);
+    }
+
+    &::placeholder {
+      color: color(primary-50);
+    }
+  }
+}
+
+.invalid {
+  input {
+    border: 1px solid color(negative);
+    color: color(negative);
+
+    &::placeholder {
+      color: color(negative);
+    }
+  }
+}
+
+.error {
+  margin: dm(1) 0 dm(1.5) 0;
+  color: color(negative);
+  font: font(1.4, small);
+
+  @include breakpoint(m) {
+    margin: dm(1) 0 0 0;
+  }
+}

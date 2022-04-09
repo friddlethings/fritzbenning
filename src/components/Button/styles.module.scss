@@ -1,0 +1,15 @@
+.button {
+  display: inline-block;
+  padding: dm(1.5) dm(2);
+  border: 1px solid color(secondary);
+  outline: 0;
+  background-color: color(secondary);
+  color: color(primary-0);
+  font: font(1.6, small);
+  cursor: pointer;
+  transition: filter speed(fast);
+
+  &:hover {
+    filter: brightness(110%);
+  }
+}

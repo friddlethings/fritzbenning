@@ -37,8 +37,6 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
 }) => {
   const { pageTypes, bricks } = useContext(ReactBricksContext)
 
-  console.log(lastPosts)
-
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
 
   return (

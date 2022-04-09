@@ -8,6 +8,7 @@ interface UnitProps {
   width?: 'full' | 'default' | 'content'
   paddingTop?: boolean
   paddingBottom?: boolean
+  banner?: boolean
 }
 
 const Unit: React.FC<UnitProps> = ({
@@ -15,19 +16,23 @@ const Unit: React.FC<UnitProps> = ({
   className,
   width,
   paddingTop,
-  paddingBottom
+  paddingBottom,
+  banner = false
 }) => {
   return (
     <div
       className={classNames(
         styles.unit,
-        width && styles[width],
+
         paddingTop && styles['with-padding-top'],
         paddingBottom && styles['with-padding-bottom'],
+        banner && styles.banner,
         className && className
       )}
     >
-      {children}
+      <div className={classNames(styles.inner, width && styles[width])}>
+        {children}
+      </div>
     </div>
   )
 }

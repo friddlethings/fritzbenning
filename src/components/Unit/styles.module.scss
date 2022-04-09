@@ -2,18 +2,6 @@
 @import '../../styles/breakpoints';
 
 .unit {
-  &.default {
-    @include default-width;
-  }
-
-  &.content {
-    @include content-width;
-  }
-
-  &.full {
-    width: 100%;
-  }
-
   &.with-padding-top {
     padding-top: dm(3);
 
@@ -28,5 +16,25 @@
     @include breakpoint(m) {
       padding-bottom: dm(5);
     }
+  }
+
+  &.banner {
+    border-top: 2px solid color(primary-0);
+    border-bottom: 2px solid color(primary-0);
+    background-color: color(primary-20);
+  }
+}
+
+.inner {
+  &.default {
+    @include default-width;
+  }
+
+  &.content {
+    @include content-width;
+  }
+
+  &.full {
+    width: 100%;
   }
 }

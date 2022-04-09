@@ -6,7 +6,9 @@ $colors: (
   primary-20: #f7f7f7,
   primary-10: #fafafa,
   primary-0: #ffffff,
-  secondary: #044fd1
+  secondary: #044fd1,
+  negative: #ed5046,
+  positive: #61d104
 );
 
 @function color($key, $opactiy: 1) {

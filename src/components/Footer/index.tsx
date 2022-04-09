@@ -3,10 +3,15 @@ import React from 'react'
 import { GitHub, Instagram } from 'react-feather'
 import Column from '../Grid/Column'
 import Row from '../Grid/Row'
+import Newsletter from '../Newsletter'
+import Unit from '../Unit'
 import styles from './styles.module.scss'
 
 const Footer: React.FC = () => (
   <footer className={styles.footer}>
+    <Unit width="default" banner>
+      <Newsletter />
+    </Unit>
     <div className={styles.inner}>
       <Row>
         <Column xs={12} m={6}>
