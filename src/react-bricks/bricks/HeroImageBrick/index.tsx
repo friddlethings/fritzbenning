@@ -19,7 +19,8 @@ const HeroImageBrick: types.Brick<HeroImageProps> = ({
   title,
   width,
   paddingTop,
-  paddingBottom
+  paddingBottom,
+  backgroundAnchor
 }) => {
   const { isAdmin } = useAdminContext()
 
@@ -30,7 +31,12 @@ const HeroImageBrick: types.Brick<HeroImageProps> = ({
   }
 
   return (
-    <Unit width={width} paddingTop={paddingTop} paddingBottom={paddingBottom}>
+    <Unit
+      width={width}
+      paddingTop={paddingTop}
+      paddingBottom={paddingBottom}
+      id={backgroundAnchor && 'background-anchor'}
+    >
       <Row>
         <Column xs={12}>
           <HeroImage

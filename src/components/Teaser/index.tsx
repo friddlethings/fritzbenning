@@ -7,6 +7,7 @@ import Badge from '../Badge'
 import styles from './styles.module.scss'
 
 interface TeaserProps {
+  id: string
   title: string
   date: string
   image: string
@@ -14,7 +15,14 @@ interface TeaserProps {
   tags?: string[]
 }
 
-const Teaser: React.FC<TeaserProps> = ({ title, date, image, to, tags }) => {
+const Teaser: React.FC<TeaserProps> = ({
+  id,
+  title,
+  date,
+  image,
+  to,
+  tags
+}) => {
   const { ref, inView, entry } = useInView({
     threshold: 0
   })
@@ -36,7 +44,7 @@ const Teaser: React.FC<TeaserProps> = ({ title, date, image, to, tags }) => {
         key={title}
         ref={ref}
       >
-        <div className={styles.inner}>
+        <div className={styles.inner} id={id}>
           {diffDays.current < 30 && <Badge text="neu" />}
           <img src={image} alt={title} className={styles.image} />
         </div>

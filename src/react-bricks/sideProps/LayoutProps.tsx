@@ -4,6 +4,7 @@ export interface LayoutInterface {
   width: 'full' | 'default' | 'content'
   paddingTop: boolean
   paddingBottom: boolean
+  backgroundAnchor: boolean
 }
 
 export const LayoutProps = {
@@ -13,12 +14,12 @@ export const LayoutProps = {
     {
       name: 'paddingTop',
       label: 'Abstand nach oben',
-      type: types.SideEditPropType.Boolean,
+      type: types.SideEditPropType.Boolean
     },
     {
       name: 'paddingBottom',
       label: 'Abstand nach unten',
-      type: types.SideEditPropType.Boolean,
+      type: types.SideEditPropType.Boolean
     },
     {
       name: 'width',
@@ -29,15 +30,21 @@ export const LayoutProps = {
         options: [
           { value: 'default', label: 'Standardbreite' },
           { value: 'full', label: 'Volle Breite' },
-          { value: 'content', label: 'Inhaltsbreite' },
-        ],
-      },
+          { value: 'content', label: 'Inhaltsbreite' }
+        ]
+      }
     },
-  ],
+    {
+      name: 'backgroundAnchor',
+      label: 'Hintergrundanker',
+      type: types.SideEditPropType.Boolean
+    }
+  ]
 }
 
 export const LayoutDefaultProps = {
   paddingTop: true,
   paddingBottom: true,
   width: 'default',
+  backgroundAnchor: false
 }

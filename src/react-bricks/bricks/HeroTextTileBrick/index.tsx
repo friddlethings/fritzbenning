@@ -5,9 +5,15 @@ import Row from '../../../components/Grid/Row'
 import HeroTextTile from '../../../components/HeroTextTile'
 import Unit from '../../../components/Unit'
 
-const HeroTextTileBrick: types.Brick = () => {
+interface HeroTextTileBrickProps {
+  backgroundAnchor: boolean
+}
+
+const HeroTextTileBrick: types.Brick<HeroTextTileBrickProps> = ({
+  backgroundAnchor
+}) => {
   return (
-    <Unit>
+    <Unit id={backgroundAnchor && 'background-anchor'}>
       <Row>
         <Column xs={12}>
           <HeroTextTile>
@@ -39,7 +45,14 @@ const HeroTextTileBrick: types.Brick = () => {
 HeroTextTileBrick.schema = {
   name: 'hero-text-tile',
   label: 'Info Kachel',
-  getDefaultProps: () => ({})
+  getDefaultProps: () => ({}),
+  sideEditProps: [
+    {
+      name: 'backgroundAnchor',
+      label: 'Hintergrundanker',
+      type: types.SideEditPropType.Boolean
+    }
+  ]
 }
 
 export default HeroTextTileBrick

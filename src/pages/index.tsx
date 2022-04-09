@@ -40,7 +40,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
   const pageOk = page ? cleanPage(page, pageTypes, bricks) : null
 
   return (
-    <PageTemplate split={64}>
+    <PageTemplate>
       <PageViewer page={pageOk} />
       <Unit paddingTop>
         <Row>
@@ -54,9 +54,10 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
           <Spacer size={3} sizeWhen={{ l: 4 }} vertical />
         </Row>
         <Row withVerticalGap>
-          {lastPosts.lostplaces.map((post: any) => (
+          {lastPosts.lostplaces.map((post: any, index: number) => (
             <Column xs={12} m={6} l={4}>
               <Teaser
+                id={index === 0 && 'background-anchor'}
                 title={post.meta.title}
                 date={post.publishedAt}
                 image={post.meta.featuredImage}

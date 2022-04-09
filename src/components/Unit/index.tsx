@@ -5,6 +5,7 @@ import styles from './styles.module.scss'
 interface UnitProps {
   children: React.ReactNode
   className?: string
+  id?: string
   width?: 'full' | 'default' | 'content'
   paddingTop?: boolean
   paddingBottom?: boolean
@@ -14,6 +15,7 @@ interface UnitProps {
 const Unit: React.FC<UnitProps> = ({
   children,
   className,
+  id,
   width,
   paddingTop,
   paddingBottom,
@@ -21,9 +23,9 @@ const Unit: React.FC<UnitProps> = ({
 }) => {
   return (
     <div
+      id={id}
       className={classNames(
         styles.unit,
-
         paddingTop && styles['with-padding-top'],
         paddingBottom && styles['with-padding-bottom'],
         banner && styles.banner,

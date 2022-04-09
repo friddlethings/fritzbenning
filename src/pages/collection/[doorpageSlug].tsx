@@ -41,9 +41,10 @@ const Page: React.FC<ReactBricksPageProps> = ({ page, posts, error }) => {
           <PageViewer page={pageOk} />
           <Unit paddingTop>
             <Row withVerticalGap>
-              {posts.map((post: any) => (
+              {posts.map((post: any, index: number) => (
                 <Column xs={12} m={6}>
                   <Teaser
+                    id={index === 0 && 'background-anchor'}
                     title={post.meta.title}
                     date={post.publishedAt}
                     image={post.meta.featuredImage}

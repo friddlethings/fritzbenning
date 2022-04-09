@@ -22,7 +22,8 @@ const ImageGalleryBrick: types.Brick<ImageGalleryProps> = ({
   columns,
   width,
   paddingTop,
-  paddingBottom
+  paddingBottom,
+  backgroundAnchor
 }) => {
   const [lightbox, setLightbox] = useState(false)
   const sliderRef = useRef(null)
@@ -41,6 +42,7 @@ const ImageGalleryBrick: types.Brick<ImageGalleryProps> = ({
       width={width}
       paddingTop={paddingTop}
       paddingBottom={paddingBottom}
+      id={backgroundAnchor && 'background-anchor'}
     >
       <Row>
         <Column xs={12}>
