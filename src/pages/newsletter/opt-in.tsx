@@ -44,7 +44,7 @@ const Frontpage: React.FC = () => {
       <Unit>
         <Row>
           <Column xs={12}>
-            <HeroTextTile>
+            <HeroTextTile id="background-anchor">
               <p>
                 Ihre hinterlegte E-Mail Adresse:{' '}
                 <strong>{router.query.email}</strong>
