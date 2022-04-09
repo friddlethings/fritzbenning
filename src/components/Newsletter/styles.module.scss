@@ -22,7 +22,7 @@
   @include breakpoint(m) {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   @include breakpoint(l) {

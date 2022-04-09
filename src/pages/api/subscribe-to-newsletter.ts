@@ -47,6 +47,7 @@ export default async (request, response) => {
   )
     .then(response => response.json())
     .then(data => {
+      console.log(data)
       status = data['Data'][0]['Email'] ? 'success' : 'error'
     })
 

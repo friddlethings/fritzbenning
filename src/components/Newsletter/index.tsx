@@ -13,25 +13,15 @@ const Newsletter = () => {
   const [invalid, setInvalid] = useState(false)
   const [status, setStatus] = useState('waiting')
 
-  // useEffect(() => {
-  //   fetch('./api/subscribe-to-newsletter?email=benning@neoskop.de')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setEmail(data.email)
-  //       console.log(data)
-  //     })
-  // }, [])
-
   const subscribeToNewsletter = async event => {
     event.preventDefault()
 
     if (validator.isEmail(email)) {
-      await fetch(`./api/subscribe-to-newsletter?email=${email}`)
+      await fetch(`./api/request-newsletter-optin?email=${email}`)
         .then(response => response.json())
         .then(data => {
-          setStatus(data.status)
-          setEmail(data.email)
           console.log(data)
+          setStatus('success')
         })
     } else {
       setInvalid(true)
