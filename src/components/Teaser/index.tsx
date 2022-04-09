@@ -7,7 +7,7 @@ import Badge from '../Badge'
 import styles from './styles.module.scss'
 
 interface TeaserProps {
-  id: string
+  id?: string
   title: string
   date: string
   image: string
