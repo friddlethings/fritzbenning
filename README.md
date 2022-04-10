@@ -1,6 +1,6 @@
 # fritzbenning.de
 
-PORTFOLIO & BLOG by Fritz Benning.
+BLOG by Fritz Benning.
 
 ## Quick start
 
