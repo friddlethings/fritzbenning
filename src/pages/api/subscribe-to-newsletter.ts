@@ -19,26 +19,13 @@ export default async (request, response) => {
   const decryptedMail = myDecipher(key)
 
   let status = null
-  let subscriberCount = 0
-
-  await fetch(`https://api.mailjet.com/v3/REST/contactslist/${listId}`, {
-    method: 'GET',
-    headers: new Headers({
-      Authorization: `Basic ${base64.encode(`${username}:${password}`)}`,
-      'Content-Type': 'application/json'
-    })
-  })
-    .then(response => response.json())
-    .then(data => {
-      subscriberCount = data['Data'][0]['SubscriberCount']
-    })
 
   const body = {
     Email: decryptedMail,
     Action: 'addforce'
   }
 
-  await fetch(
+  const manageContact = await fetch(
     `https://api.mailjet.com/v3/REST/contactslist/${listId}/managecontact`,
     {
       method: 'POST',
@@ -49,13 +36,14 @@ export default async (request, response) => {
       body: JSON.stringify(body)
     }
   )
-    .then(response => response.json())
-    .then(data => {
-      status = 'success'
-    })
+
+  if (manageContact.ok) {
+    status = 'subscribed'
+  } else {
+    status = 'not subscribed'
+  }
 
   return response.json({
-    subscriberCount: subscriberCount,
     status,
     mail: decryptedMail
   })

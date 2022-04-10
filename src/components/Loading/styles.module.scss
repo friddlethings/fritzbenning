@@ -1,0 +1,8 @@
+.loading {
+  opacity: 0;
+  transition: opacity speed(fast);
+}
+
+.ready {
+  opacity: 1;
+}
