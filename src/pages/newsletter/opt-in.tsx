@@ -32,7 +32,10 @@ const Frontpage: React.FC = () => {
 
   return (
     <PageTemplate>
-      <PageMeta title="Newsletter" description="Auf dieser Seite können Sie Ihre Newsletter-Anmeldung bestätigen."} />
+      <PageMeta
+        title="Newsletter"
+        description="Auf dieser Seite können Sie Ihre Newsletter-Anmeldung bestätigen."
+      />
       <Unit>
         <Row>
           <Column xs={12}>
