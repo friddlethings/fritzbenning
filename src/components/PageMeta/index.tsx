@@ -8,7 +8,7 @@ interface PageMetaProps {
 const PageMeta: React.FC<PageMetaProps> = ({ title, description }) => {
   return (
     <Head>
-      <title>{title} | Fritz Benning</title>
+      <title>{title} - Fritz Benning</title>
       <meta name="description" content={description} />
     </Head>
   )
