@@ -13,6 +13,7 @@ import ErrorNoHomePage from '../components/ErrorNoHomePage'
 import ErrorNoKeys from '../components/ErrorNoKeys'
 import Column from '../components/Grid/Column'
 import Row from '../components/Grid/Row'
+import PageMeta from '../components/PageMeta'
 import PageTemplate from '../components/PageTemplate'
 import Spacer from '../components/Spacer'
 import Teaser from '../components/Teaser'
@@ -40,6 +41,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
 
   return (
     <PageTemplate>
+      <PageMeta title={page.meta.title} description={page.meta.description} />
       <PageViewer page={pageOk} />
       <Unit paddingTop>
         <Row>

@@ -5,6 +5,7 @@ import Column from '../../components/Grid/Column'
 import Row from '../../components/Grid/Row'
 import HeroTextTile from '../../components/HeroTextTile'
 import Loading from '../../components/Loading'
+import PageMeta from '../../components/PageMeta'
 import PageTemplate from '../../components/PageTemplate'
 import Stage from '../../components/Stage'
 import Unit from '../../components/Unit'
@@ -31,6 +32,7 @@ const Frontpage: React.FC = () => {
 
   return (
     <PageTemplate>
+      <PageMeta title="Newsletter" description="Auf dieser Seite können Sie Ihre Newsletter-Anmeldung bestätigen."} />
       <Unit>
         <Row>
           <Column xs={12}>

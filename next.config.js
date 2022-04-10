@@ -16,6 +16,9 @@ module.exports = {
   eslint: {
     dirs: ['react-bricks', 'components', 'pages', 'utils']
   },
+  images: {
+    domains: ['images.reactbricks.com']
+  },
   webpack(config /* ,{ buildId, dev, isServer, defaultLoaders, webpack }*/) {
     const rules = config.module.rules
       .find(rule => typeof rule.oneOf === 'object')

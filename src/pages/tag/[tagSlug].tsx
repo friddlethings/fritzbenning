@@ -4,6 +4,7 @@ import { fetchPages, fetchTags, types } from 'react-bricks/frontend'
 import ErrorNoHomePage from '../../components/ErrorNoHomePage'
 import Column from '../../components/Grid/Column'
 import Row from '../../components/Grid/Row'
+import PageMeta from '../../components/PageMeta'
 import PageTemplate from '../../components/PageTemplate'
 import Seo from '../../components/Seo'
 import Stage from '../../components/Stage'
@@ -22,6 +23,12 @@ interface PageProps {
 const TagPage: React.FC<PageProps> = ({ filterTag, posts, error }) => {
   return (
     <PageTemplate>
+      <PageMeta
+        title={`#${capitalizeFirstLetter(filterTag)}`}
+        description={`Hier finden Sie alle Beiträge zum Tag #${capitalizeFirstLetter(
+          filterTag
+        )}`}
+      />
       <Seo title={filterTag} description={filterTag} lang="de" />
       <Stage title={`#${capitalizeFirstLetter(filterTag)}`} />
       <Unit paddingTop>

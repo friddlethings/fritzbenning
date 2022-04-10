@@ -10,6 +10,7 @@ import {
 } from 'react-bricks/frontend'
 import ErrorNoHomePage from '../components/ErrorNoHomePage'
 import ErrorNoKeys from '../components/ErrorNoKeys'
+import PageMeta from '../components/PageMeta'
 import PageTemplate from '../components/PageTemplate'
 import Seo from '../components/Seo'
 import config from '../react-bricks/config'
@@ -26,6 +27,7 @@ const Page: React.FC<ReactBricksPageProps> = ({ page, error }) => {
 
   return (
     <PageTemplate>
+      <PageMeta title={page.meta.title} description={page.meta.description} />
       {pageOk && (
         <>
           <Seo
