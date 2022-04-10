@@ -14,6 +14,30 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <link rel="shortcut icon" href="/favicon.svg" />
+        <link
+          rel="preload"
+          href="/fonts/hkgrotest-light-webfont.woff2"
+          as="font"
+          type="font/woff2"
+        />
+        <link
+          rel="preload"
+          href="/fonts/hkgrotest-regular-webfont.woff2"
+          as="font"
+          type="font/woff2"
+        />
+        <link
+          rel="preload"
+          href="/fonts/hkgrotest-medium-webfont.woff2"
+          as="font"
+          type="font/woff2"
+        />
+        <link
+          rel="preload"
+          href="/fonts/hkgrotest-bold-webfont.woff2"
+          as="font"
+          type="font/woff2"
+        />
       </Head>
       <ReactBricks {...config}>
         <Component {...pageProps} />
