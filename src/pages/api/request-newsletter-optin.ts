@@ -20,7 +20,7 @@ export default async (request, response) => {
 
   let status: any
 
-  const url = `http://fritz-benning.vercel.app/newsletter/opt-in?key=${encryptedMail}`
+  const url = `http://fritzbenning.de/newsletter/opt-in?key=${encryptedMail}`
 
   const body = {
     FromEmail: 'newsletter@fritzbenning.de',
