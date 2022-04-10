@@ -1,5 +1,6 @@
 import base64 from 'base-64'
 import Status from 'http-status-codes'
+import { decipher } from '../../utils/cipher'
 
 // GET -> http://localhost:3000/api/hello-world?email=mail@fritzbenning.de
 
@@ -9,10 +10,13 @@ export default async (request, response) => {
   }
 
   const listId = 13038
-  const email = request?.query?.email ?? ''
+  const key = request?.query?.key ?? ''
 
   const username = process.env.MAILJET_API_KEY
   const password = process.env.MAILJET_PASSWORD
+
+  const myDecipher = decipher(process.env.MAILJET_PASSWORD)
+  const decryptedMail = myDecipher(key)
 
   let status = null
   let subscriberCount = 0
@@ -30,7 +34,7 @@ export default async (request, response) => {
     })
 
   const body = {
-    Email: email,
+    Email: decryptedMail,
     Action: 'addforce'
   }
 
@@ -47,13 +51,12 @@ export default async (request, response) => {
   )
     .then(response => response.json())
     .then(data => {
-      console.log(data)
-      status = data['Data'][0]['Email'] ? 'success' : 'error'
+      status = 'success'
     })
 
   return response.json({
-    email: `${email}`,
     subscriberCount: subscriberCount,
-    status: status
+    status,
+    mail: decryptedMail
   })
 }

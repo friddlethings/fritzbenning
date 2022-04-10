@@ -23,6 +23,10 @@
   a {
     color: currentColor;
     font: font(1.7, base, medium);
+
+    &:hover {
+      color: color(secondary);
+    }
   }
 
   &.is-active {

@@ -1,5 +1,6 @@
 import base64 from 'base-64'
 import Status from 'http-status-codes'
+import { cipher } from '../../utils/cipher'
 
 // GET -> http://localhost:3000/api/hello-world?email=mail@fritzbenning.de
 
@@ -14,7 +15,12 @@ export default async (request, response) => {
   const username = process.env.MAILJET_API_KEY
   const password = process.env.MAILJET_PASSWORD
 
+  const myCipher = cipher(process.env.MAILJET_PASSWORD)
+  const encryptedMail = myCipher(email)
+
   let status: any
+
+  const url = `http://fritz-benning.vercel.app/newsletter/opt-in?key=${encryptedMail}`
 
   const body = {
     FromEmail: 'newsletter@fritzbenning.de',
@@ -26,7 +32,7 @@ export default async (request, response) => {
     ],
     To: email,
     Subject: 'Bestätige deine Newsletter-Anmeldung!',
-    'HTML-part': `<html><body><h2>Hey! Vielen Dank, für dein Interesse 👋<h2><p>Unter folgendem Link kannst du deine Anmeldung zum Newsletter abschließen:</p><p><a href="http://fritz-benning.vercel.app/newsletter/opt-in?email=${email}">Jetzt Anmeldung bestätigen</a><br /><i><a href="http://fritz-benning.vercel.app/newsletter/opt-in?email=${email}">(http://localhost:3000/newsletter/opt-in?email=${email})</a></i></p><p><strong>Viele Grüße</strong>,<br />Fritz</p></body></html>`
+    'HTML-part': `<html><body><h2>Hey! Vielen Dank, für dein Interesse 👋<h2><p>Unter folgendem Link kannst du deine Anmeldung zum Newsletter abschließen:</p><p><a href=${url}>Jetzt Anmeldung bestätigen</a><br /><i><a href=${url}>(${url})</a></i></p><p><strong>Viele Grüße</strong>,<br />Fritz</p></body></html>`
   }
 
   await fetch('https://api.mailjet.com/v3/send', {
