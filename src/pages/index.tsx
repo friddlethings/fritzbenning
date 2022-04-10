@@ -9,7 +9,6 @@ import {
   ReactBricksContext,
   types
 } from 'react-bricks/frontend'
-import Divider from '../components/Divider'
 import ErrorNoHomePage from '../components/ErrorNoHomePage'
 import ErrorNoKeys from '../components/ErrorNoKeys'
 import Column from '../components/Grid/Column'
@@ -68,14 +67,14 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
           ))}
         </Row>
       </Unit>
-      <Unit>
+      {/* <Unit>
         <Row>
           <Column xs={12}>
             <Divider />
           </Column>
         </Row>
-      </Unit>
-      <Unit paddingTop>
+      </Unit> */}
+      {/* <Unit paddingTop>
         <Row>
           <Column xs={12}>
             <Link href="/tag/travel">
@@ -99,7 +98,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
             </Column>
           ))}
         </Row>
-      </Unit>
+      </Unit> */}
       {/* <Unit>
         <Row>
           <Column xs={12}>

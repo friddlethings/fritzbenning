@@ -16,10 +16,10 @@ const MainNav: React.FC = () => {
     //   title: 'Sideprojects',
     //   route: '/collection/sideprojects'
     // },
-    {
-      title: 'Vanlife',
-      route: '/collection/vanlife'
-    },
+    // {
+    //   title: 'Vanlife',
+    //   route: '/collection/vanlife'
+    // },
     {
       title: 'Lost Places',
       route: '/collection/lostplaces'
