@@ -8,12 +8,8 @@ interface PageMetaProps {
 const PageMeta: React.FC<PageMetaProps> = ({ title, description }) => {
   return (
     <Head>
-      <title>{title} | BINGO! - Die Umweltlotterie</title>
+      <title>{title} | Fritz Benning</title>
       <meta name="description" content={description} />
-      <meta
-        name="google-site-verification"
-        content="QftNBTnYQzzbq23iL0Jaox4BM0Ak0FyJGVbAyKZlDI4"
-      />
     </Head>
   )
 }
