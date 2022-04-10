@@ -16,6 +16,7 @@ import Row from '../components/Grid/Row'
 import PageMeta from '../components/PageMeta'
 import PageTemplate from '../components/PageTemplate'
 import Spacer from '../components/Spacer'
+import TagHeadline from '../components/TagHeadline'
 import Teaser from '../components/Teaser'
 import Unit from '../components/Unit'
 import config from '../react-bricks/config'
@@ -48,7 +49,7 @@ const Frontpage: React.FC<ReactBricksPageProps> = ({
           <Column xs={12}>
             <Link href="/tag/lostplace">
               <a>
-                <h5>#lostplaces</h5>
+                <TagHeadline>#lostplaces</TagHeadline>
               </a>
             </Link>
           </Column>
