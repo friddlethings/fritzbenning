@@ -29,12 +29,20 @@ const Footer: React.FC = () => (
                 </Link>
               </li>
               <li>
-                <a href="https://www.instagram.com/fritz__ben" target="_blank">
+                <a
+                  href="https://www.instagram.com/fritz__ben"
+                  target="_blank"
+                  aria-label="Instagram"
+                >
                   <Instagram color="black" size={20} />
                 </a>
               </li>
               <li>
-                <a href="https://github.com/fritzbenning" target="_blank">
+                <a
+                  href="https://github.com/fritzbenning"
+                  target="_blank"
+                  aria-label="Github"
+                >
                   <GitHub color="black" size={20} />
                 </a>
               </li>

@@ -31,6 +31,7 @@ $line-heights: (
   src: url('/fonts/hkgrotesk-light-webfont.woff2') format('woff2'),
     url('/fonts/hkgrotesk-light-webfont.woff') format('woff');
   font-family: 'HK Grotesk';
+  font-display: swap;
 }
 
 @font-face {
@@ -39,6 +40,7 @@ $line-heights: (
   src: url('/fonts/hkgrotesk-regular-webfont.woff2') format('woff2'),
     url('/fonts/hkgrotesk-regular-webfont.woff') format('woff');
   font-family: 'HK Grotesk';
+  font-display: swap;
 }
 
 @font-face {
@@ -47,6 +49,7 @@ $line-heights: (
   src: url('/fonts/hkgrotesk-medium-webfont.woff2') format('woff2'),
     url('/fonts/hkgrotesk-medium-webfont.woff') format('woff');
   font-family: 'HK Grotesk';
+  font-display: swap;
 }
 
 @font-face {
@@ -55,4 +58,5 @@ $line-heights: (
   src: url('/fonts/hkgrotesk-bold-webfont.woff2') format('woff2'),
     url('/fonts/hkgrotesk-bold-webfont.woff') format('woff');
   font-family: 'HK Grotesk';
+  font-display: swap;
 }
