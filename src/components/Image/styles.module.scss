@@ -4,7 +4,7 @@
   img {
     display: block;
     width: 100%;
-    max-width: calc(100vw - dm(4));
+    max-width: calc(100vw - dm(8));
     height: auto;
     max-height: 80vh;
     transform: translateZ(0) scale(1);
@@ -23,6 +23,8 @@
   &.with-frame {
     img {
       border: dm(1) solid white;
+      width: auto;
+      height: 100%;
 
       @include breakpoint(m) {
         border: dm(2) solid white;
